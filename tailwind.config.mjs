@@ -8,7 +8,10 @@ export default {
 			colors: {
 				primary: "#1C274C",
 				primary2: "#FF6F61",
-				foreground: "#2C3A4B"
+				foreground: "#2C3A4B",
+				accent: "#D8B26E",
+				instate: "#2249A7",
+				page: "var(--page-color, #FF6F61)"
 			},
 			boxShadow: {
 				button: "10px 12px 45px 7px color-mix(in srgb, currentColor 50%, transparent)"
