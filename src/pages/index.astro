@@ -1,10 +1,11 @@
 ---
 import '@fontsource-variable/dm-sans'
-import Header from '../components/Header'
-import Card from '../components/ServiceCard'
+import '../styles/globals.css'
 import Projects from '../components/Projects'
 import Mission from '../components/Mission'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Services from '@/components/Services'
 ---
 
 <html lang="en">
@@ -24,7 +25,7 @@ import Footer from '../components/Footer'
 	</head>
 	<body class="bg-[#F9F9F9] relative">
 		<Header />
-		<div class="px-8 md:px-16 flex flex-col items-center w-full">
+		<div class="flex flex-col items-center w-full">
 			<div class="max-w-[1500px] w-full">
 				<main class="pt-[50px] w-full">
 					<section class="flex flex-col md:flex-row items-center justify-center gap-7 md:justify-between">
@@ -37,19 +38,15 @@ import Footer from '../components/Footer'
 					<div id="services"/>
 					<section class="flex flex-col text-center justify-center mt-32">
 						<h2 class="text-4xl font-bold font-sans text-foreground">How can we help your business <b class="text-page">improve</b></h2>
-						<div class="flex flex-row items-center justify-center gap-[100px] mt-16">
-							<Card.MVP />
-							<Card.Custom />
-							<Card.Workflow />
-						</div>
+						<Services client:visible />
 					</section>
 					<div id="projects"/>
-					<section class="mt-36 flex flex-col gap-7">
+					<section class="mt-36 flex flex-col gap-7 px-8 md:px-16">
 						<h2 class="text-4xl font-bold text-center md:text-start font-sans text-foreground">Our <b class="text-page">work</b></h2>
 						<Projects />
 					</section>
 					<div id="mission"/>
-					<section class="mt-36 flex flex-col items-center gap-7">
+					<section class="mt-36 flex flex-col items-center gap-7 px-8 md:px-16 ">
 						<h2 class="text-3xl md:text-4xl flex flex-row items-center gap-4 font-bold font-sans text-foreground">
 							Misson
 							<svg width="36" height="36" viewBox="0 0 222 222" fill="none" class="md:hidden" xmlns="http://www.w3.org/2000/svg">

@@ -70,7 +70,7 @@ export default function Projects() {
 			<div className="flex w-full flex-row justify-center md:justify-end">
 				<ProjectCard
 					href="/app"
-					className="flex-row-reverse text-accent"
+					className="flex-row-reverse text-app"
 					title="Incomodum app"
 					description="Incomodum is a time management app designed primarily for the younger generation, with a mission to help users overcome social media addiction and motivate them to self improvement."
 					logo={<img src="/app.png" draggable={false} alt="incomodum app" className="h-[135px] min-w-[135px]" />}
