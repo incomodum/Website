@@ -1,3 +1,6 @@
+import { useReducer } from "react"
+import { Divide as Hamburger } from "hamburger-react"
+
 function Logo() {
 	return (
 		<svg width="200" height="27" viewBox="0 0 200 27" fill="none" color="currentColor">
@@ -57,41 +60,60 @@ function Logo() {
 }
 
 export default function Header() {
+	const [open, toggle] = useReducer((v) => !v, false)
+
 	return (
-		<header className="sticky top-0 flex w-full flex-row items-center justify-center bg-[#F9F9F988] px-8 pt-8 pb-6 text-page backdrop-blur-lg md:px-16">
-			<div className="flex w-full max-w-[1500px] flex-row items-center justify-between">
-				<a href="/">
-					<Logo />
-				</a>
-				<div className="hidden flex-row items-center gap-20 md:flex">
-					<a href="/#services" className="text-foreground">
-						Services
-					</a>
-					<a href="/#projects" className="text-foreground">
-						Our work
-					</a>
-					<a href="/#mission" className="text-foreground">
-						Mission
-					</a>
-					<a href="/#">
-						<button className="rounded-[37px] bg-current px-10 py-5 shadow-button">
-							<p className="font-bold text-white">Contact</p>
-						</button>
-					</a>
-				</div>
-				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="md:hidden" xmlns="http://www.w3.org/2000/svg">
-					<title>Menu</title>
-					<path
-						opacity="0.5"
-						d="M16 32C8.4576 32 4.6864 32 2.3424 29.656C0 27.3152 0 23.5424 0 16C0 8.4576 0 4.6864 2.3424 2.3424C4.688 0 8.4576 0 16 0C23.5424 0 27.3136 0 29.656 2.3424C32 4.688 32 8.4576 32 16C32 23.5424 32 27.3136 29.656 29.656C27.3152 32 23.5424 32 16 32Z"
-						fill="currentColor"
-					/>
-					<path
-						d="M26.8001 9.60002C26.8001 9.91828 26.6736 10.2235 26.4486 10.4486C26.2236 10.6736 25.9183 10.8 25.6001 10.8H6.40007C6.08181 10.8 5.77659 10.6736 5.55154 10.4486C5.3265 10.2235 5.20007 9.91828 5.20007 9.60002C5.20007 9.28176 5.3265 8.97654 5.55154 8.7515C5.77659 8.52645 6.08181 8.40002 6.40007 8.40002H25.6001C25.9183 8.40002 26.2236 8.52645 26.4486 8.7515C26.6736 8.97654 26.8001 9.28176 26.8001 9.60002ZM26.8001 16C26.8001 16.3183 26.6736 16.6235 26.4486 16.8486C26.2236 17.0736 25.9183 17.2 25.6001 17.2H6.40007C6.08181 17.2 5.77659 17.0736 5.55154 16.8486C5.3265 16.6235 5.20007 16.3183 5.20007 16C5.20007 15.6818 5.3265 15.3765 5.55154 15.1515C5.77659 14.9265 6.08181 14.8 6.40007 14.8H25.6001C25.9183 14.8 26.2236 14.9265 26.4486 15.1515C26.6736 15.3765 26.8001 15.6818 26.8001 16ZM26.8001 22.4C26.8001 22.7183 26.6736 23.0235 26.4486 23.2486C26.2236 23.4736 25.9183 23.6 25.6001 23.6H6.40007C6.08181 23.6 5.77659 23.4736 5.55154 23.2486C5.3265 23.0235 5.20007 22.7183 5.20007 22.4C5.20007 22.0818 5.3265 21.7765 5.55154 21.5515C5.77659 21.3265 6.08181 21.2 6.40007 21.2H25.6001C25.9183 21.2 26.2236 21.3265 26.4486 21.5515C26.6736 21.7765 26.8001 22.0818 26.8001 22.4Z"
-						fill="#2C3A4B"
-					/>
-				</svg>
+		<>
+			<div className="fixed top-0 z-50 flex w-full flex-col bg-[#F9F9F988] backdrop-blur-lg">
+				<header className="sticky top-0 z-50 flex w-full flex-row items-center justify-center px-8 pt-8 pb-6 text-page md:px-16">
+					<div className="flex w-full max-w-[1500px] flex-row items-center justify-between">
+						<a href="/">
+							<Logo />
+						</a>
+						<div className="hidden flex-row items-center gap-20 lg:flex">
+							<a href="/#services" className="text-foreground">
+								Services
+							</a>
+							<a href="/#projects" className="text-foreground">
+								Our work
+							</a>
+							<a href="/#mission" className="text-foreground">
+								Mission
+							</a>
+							<a href="/#">
+								<button className="rounded-[37px] bg-current px-10 py-5 shadow-button">
+									<p className="font-bold text-white">Contact</p>
+								</button>
+							</a>
+						</div>
+						<div className="relative isolate scale-75 overflow-clip rounded-xl lg:hidden">
+							<Hamburger aria-controls="primary-navigation" toggled={open} toggle={toggle} size={32} rounded color="#2C3A4B" />
+							<div className="-z-10 absolute inset-0 h-full w-full bg-current opacity-50" />
+						</div>
+					</div>
+				</header>
+				{open && (
+					<div className="h-[calc(100vh-104px)] w-full overflow-scroll overscroll-contain px-8 pt-8 pb-6 text-current">
+						<div className="flex flex-col items-center gap-20">
+							<a href="/#services" onClick={toggle} className="text-foreground">
+								Services
+							</a>
+							<a href="/#projects" onClick={toggle} className="text-foreground">
+								Our work
+							</a>
+							<a href="/#mission" onClick={toggle} className="text-foreground">
+								Mission
+							</a>
+							<a href="/#">
+								<button onClick={toggle} className="rounded-[37px] bg-page px-10 py-5 shadow-button">
+									<p className="font-bold text-white">Contact</p>
+								</button>
+							</a>
+						</div>
+					</div>
+				)}
 			</div>
-		</header>
+			<div className="-z-10 h-[104px] w-full" />
+		</>
 	)
 }
