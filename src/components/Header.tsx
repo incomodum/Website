@@ -64,7 +64,7 @@ export default function Header() {
 
 	return (
 		<>
-			<div className="fixed top-0 z-50 flex w-full flex-col bg-[#F9F9F988] backdrop-blur-lg">
+			<div className="fixed top-0 z-50 flex w-full flex-col bg-[#F9F9F988] backdrop-blur-xl md:backdrop-blur-lg">
 				<header className="sticky top-0 z-50 flex w-full flex-row items-center justify-center px-8 pt-8 pb-6 text-page md:px-16">
 					<div className="flex w-full max-w-[1500px] flex-row items-center justify-between">
 						<a href="/">
@@ -93,20 +93,20 @@ export default function Header() {
 					</div>
 				</header>
 				{open && (
-					<div className="h-[calc(100vh-104px)] w-full overflow-scroll overscroll-contain px-8 pt-8 pb-6 text-current">
-						<div className="flex flex-col items-center gap-20">
-							<a href="/#services" onClick={toggle} className="text-foreground">
+					<div className="h-[calc(100vh-104px)] w-full overflow-scroll overscroll-contain px-8 pt-8 pb-6 text-current md:hidden">
+						<div className="flex flex-col gap-16 md:items-center">
+							<a href="/#services" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Services
 							</a>
-							<a href="/#projects" onClick={toggle} className="text-foreground">
+							<a href="/#projects" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Our work
 							</a>
-							<a href="/#mission" onClick={toggle} className="text-foreground">
+							<a href="/#mission" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Mission
 							</a>
 							<a href="/#">
-								<button onClick={toggle} className="rounded-[37px] bg-page px-10 py-5 shadow-button">
-									<p className="font-bold text-white">Contact</p>
+								<button onClick={toggle} className="bg-transparent text-page drop-shadow-mobile">
+									<p className="font-bold text-4xl md:text-base">Contact</p>
 								</button>
 							</a>
 						</div>

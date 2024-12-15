@@ -65,3 +65,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+.color-blur {
+	opacity: 0.9;
+	filter: blur(190px);
+	border: 1px solid;
+	border-radius: 50vw;
+	position: absolute;
+	z-index: -1;
+	width: 50vw;
+	height: 50vw;
+	background: linear-gradient(90deg, var(--page-color, #FF6F61) 0%, rgba(0,0,0,0) 100%);;
+	right: 0;
+	width: 25vw;
+	border-radius: 50vw 0vw 00vw 50vw;
+
+	&.right {
+		right: 0;
+		width: 25vw;
+		border-radius: 50vw 0vw 00vw 50vw;
+	}
+
+	&.left {
+		left: 0vw;
+		translate: -50%;
+	}
+}

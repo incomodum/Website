@@ -62,7 +62,10 @@ export default {
     			lg: 'var(--radius)',
     			md: 'calc(var(--radius) - 2px)',
     			sm: 'calc(var(--radius) - 4px)'
-    		}
+    		},
+			dropShadow: {
+				mobile: '10px 10px 8px color-mix(in srgb, currentColor 100%, transparent)'
+			}
     	}
     },
 	plugins: [require("tailwindcss-animate")],

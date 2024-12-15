@@ -25,7 +25,7 @@ import Services from '@/components/Services'
 	</head>
 	<body class="bg-[#F9F9F9] relative">
 		<Header client:load />
-		<div class="flex flex-col items-center w-full">
+		<div class="flex flex-col bg-[#F9F9F988] backdrop-blur-lg items-center w-full">
 			<div class="max-w-[1500px] w-full">
 				<main class="pt-[50px] w-full">
 					<section class="flex flex-col md:px-16 2xl:px-0 md:flex-row items-center justify-center gap-7 md:justify-between">
@@ -35,12 +35,14 @@ import Services from '@/components/Services'
 							<path opacity="0.5" d="M244.014 73.5656C245.653 74.0012 247.19 74.7555 248.537 75.7853C249.884 76.8151 251.015 78.1002 251.865 79.5673C252.715 81.0343 253.268 82.6545 253.492 84.3353C253.715 86.0161 253.606 87.7244 253.169 89.3628L184.559 347.488C183.679 350.797 181.519 353.62 178.557 355.337C175.594 357.054 172.071 357.524 168.762 356.643C165.453 355.762 162.63 353.603 160.913 350.64C159.196 347.678 158.726 344.154 159.607 340.845L228.217 82.7204C228.653 81.0817 229.407 79.545 230.437 78.1979C231.466 76.8509 232.752 75.7199 234.219 74.8697C235.686 74.0196 237.306 73.4668 238.987 73.243C240.667 73.0192 242.376 73.1289 244.014 73.5656Z" fill="currentColor"/>
 						</svg>
 					</section>
+					<div class="color-blur left" />
 					<div id="services"/>
 					<section class="flex flex-col text-center justify-center mt-32">
 						<h2 class="text-4xl font-bold font-sans text-foreground">How can we help your business <b class="text-page">improve</b></h2>
 						<Services client:visible />
 					</section>
 					<div id="projects"/>
+					<div class="color-blur right" />
 					<section class="mt-36 flex flex-col gap-7 px-8 md:px-16">
 						<h2 class="text-4xl font-bold text-center md:text-start font-sans text-foreground">Our <b class="text-page">work</b></h2>
 						<Projects />

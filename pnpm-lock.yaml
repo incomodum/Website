@@ -13,16 +13,16 @@ importers:
         version: 0.9.4(typescript@5.7.2)
       '@astrojs/react':
         specifier: ^4.1.0
-        version: 4.1.0(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(jiti@1.21.6)(lightningcss@1.27.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.82.0)(yaml@2.6.1)
+        version: 4.1.0(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(jiti@1.21.6)(lightningcss@1.27.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.83.0)(yaml@2.6.1)
       '@astrojs/tailwind':
         specifier: ^5.1.3
-        version: 5.1.3(astro@5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.82.0)(typescript@5.7.2)(yaml@2.6.1))(tailwindcss@3.4.16)
+        version: 5.1.3(astro@5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.83.0)(typescript@5.7.2)(yaml@2.6.1))(tailwindcss@3.4.16)
       '@fontsource-variable/dm-sans':
         specifier: ^5.1.0
         version: 5.1.0
       '@radix-ui/react-slot':
-        specifier: ^1.1.0
-        version: 1.1.0(@types/react@19.0.1)(react@19.0.0)
+        specifier: ^1.1.1
+        version: 1.1.1(@types/react@19.0.1)(react@19.0.0)
       '@types/react':
         specifier: ^19.0.1
         version: 19.0.1
@@ -31,7 +31,7 @@ importers:
         version: 19.0.2(@types/react@19.0.1)
       astro:
         specifier: ^5.0.5
-        version: 5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.82.0)(typescript@5.7.2)(yaml@2.6.1)
+        version: 5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.83.0)(typescript@5.7.2)(yaml@2.6.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -44,9 +44,6 @@ importers:
       embla-carousel-react:
         specifier: ^8.5.1
         version: 8.5.1(react@19.0.0)
-      framer-motion:
-        specifier: ^11.13.5
-        version: 11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       hamburger-react:
         specifier: ^2.5.1
         version: 2.5.1(react@19.0.0)
@@ -60,8 +57,8 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
       sass:
-        specifier: ^1.82.0
-        version: 1.82.0
+        specifier: ^1.83.0
+        version: 1.83.0
       tailwind-merge:
         specifier: ^2.5.5
         version: 2.5.5
@@ -811,8 +808,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@radix-ui/react-compose-refs@1.1.0':
-    resolution: {integrity: sha512-b4inOtiaOnYf9KWyO3jAeeCG6FeyfY6ldiEPanbUjWd+xIk5wZeHa8yVwmrJ2vderhu/BQvzCrJI0lHd+wIiqw==}
+  '@radix-ui/react-compose-refs@1.1.1':
+    resolution: {integrity: sha512-Y9VzoRDSJtgFMUCoiZBDVo084VQ5hfpXxVE+NgkdNsjiDBByiImMZKKhxMwCbdHvhlENG6a833CbFkOQvTricw==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -820,8 +817,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-slot@1.1.0':
-    resolution: {integrity: sha512-FUCf5XMfmW4dtYl69pdS4DbxKy8nj4M7SafBgPllysxmdachynNflAdp/gCsnYWNDnge6tI9onzMp5ARYc1KNw==}
+  '@radix-ui/react-slot@1.1.1':
+    resolution: {integrity: sha512-RApLLOcINYJA+dMVbOju7MYv1Mb2EBp2nH4HdDzXTSyaR5optlm6Otrz1euW3HbdOR8UmmFK06TD+A9frYWv+g==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -1388,20 +1385,6 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.13.5:
-    resolution: {integrity: sha512-rArI0zPU9VkpS3Wt0J7dmRxAFUWtzPWoSofNQAP0UO276CmJ+Xlf5xN19GMw3w2QsdrS2sU+0+Q2vtuz4IEZaw==}
-    peerDependencies:
-      '@emotion/is-prop-valid': '*'
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@emotion/is-prop-valid':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1835,12 +1818,6 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  motion-dom@11.13.0:
-    resolution: {integrity: sha512-Oc1MLGJQ6nrvXccXA89lXtOqFyBmvHtaDcTRGT66o8Czl7nuA8BeHAd9MQV1pQKX0d2RHFBFaw5g3k23hQJt0w==}
-
-  motion-utils@11.13.0:
-    resolution: {integrity: sha512-lq6TzXkH5c/ysJQBxgLXgM01qwBH1b4goTPh57VvZWJbVJZF/0SB31UWEn4EIqbVPf3au88n2rvK17SpDTja1A==}
-
   mrmime@2.0.0:
     resolution: {integrity: sha512-eu38+hdgojoyq63s+yTpN4XMBdt5l8HhMhc4VKLO9KM5caLIBvUm4thi7fFaxyTmCKeNnXZ5pAlBwCUnhA09uw==}
     engines: {node: '>=10'}
@@ -2136,8 +2113,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  sass@1.82.0:
-    resolution: {integrity: sha512-j4GMCTa8elGyN9A7x7bEglx0VgSpNUG4W4wNedQ33wSMdnkqQCT8HTwOaVSV4e6yQovcu/3Oc4coJP/l0xhL2Q==}
+  sass@1.83.0:
+    resolution: {integrity: sha512-qsSxlayzoOjdvXMVLkzF84DJFc2HZEL/rFyGIKbbilYtAvlCxyuzUeff9LawTn4btVnLKg75Z8MMr1lxU1lfGw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2660,15 +2637,15 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@4.1.0(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(jiti@1.21.6)(lightningcss@1.27.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.82.0)(yaml@2.6.1)':
+  '@astrojs/react@4.1.0(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(jiti@1.21.6)(lightningcss@1.27.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.83.0)(yaml@2.6.1)':
     dependencies:
       '@types/react': 19.0.1
       '@types/react-dom': 19.0.2(@types/react@19.0.1)
-      '@vitejs/plugin-react': 4.3.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1))
+      '@vitejs/plugin-react': 4.3.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1))
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       ultrahtml: 1.5.3
-      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1)
+      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -2683,9 +2660,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@5.1.3(astro@5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.82.0)(typescript@5.7.2)(yaml@2.6.1))(tailwindcss@3.4.16)':
+  '@astrojs/tailwind@5.1.3(astro@5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.83.0)(typescript@5.7.2)(yaml@2.6.1))(tailwindcss@3.4.16)':
     dependencies:
-      astro: 5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.82.0)(typescript@5.7.2)(yaml@2.6.1)
+      astro: 5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.83.0)(typescript@5.7.2)(yaml@2.6.1)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
       postcss-load-config: 4.0.2(postcss@8.4.49)
@@ -3204,15 +3181,15 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@radix-ui/react-compose-refs@1.1.0(@types/react@19.0.1)(react@19.0.0)':
+  '@radix-ui/react-compose-refs@1.1.1(@types/react@19.0.1)(react@19.0.0)':
     dependencies:
       react: 19.0.0
     optionalDependencies:
       '@types/react': 19.0.1
 
-  '@radix-ui/react-slot@1.1.0(@types/react@19.0.1)(react@19.0.0)':
+  '@radix-ui/react-slot@1.1.1(@types/react@19.0.1)(react@19.0.0)':
     dependencies:
-      '@radix-ui/react-compose-refs': 1.1.0(@types/react@19.0.1)(react@19.0.0)
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.0.1)(react@19.0.0)
       react: 19.0.0
     optionalDependencies:
       '@types/react': 19.0.1
@@ -3364,14 +3341,14 @@ snapshots:
 
   '@ungap/structured-clone@1.2.1': {}
 
-  '@vitejs/plugin-react@4.3.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1))':
+  '@vitejs/plugin-react@4.3.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.0)
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.0)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1)
+      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -3467,7 +3444,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.82.0)(typescript@5.7.2)(yaml@2.6.1):
+  astro@5.0.5(jiti@1.21.6)(lightningcss@1.27.0)(rollup@4.28.1)(sass@1.83.0)(typescript@5.7.2)(yaml@2.6.1):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
@@ -3518,8 +3495,8 @@ snapshots:
       ultrahtml: 1.5.3
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1)
-      vitefu: 1.0.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1))
+      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1)
+      vitefu: 1.0.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1))
       which-pm: 3.0.0
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
@@ -3857,15 +3834,6 @@ snapshots:
       signal-exit: 4.1.0
 
   fraction.js@4.3.7: {}
-
-  framer-motion@11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-    dependencies:
-      motion-dom: 11.13.0
-      motion-utils: 11.13.0
-      tslib: 2.8.1
-    optionalDependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   fsevents@2.3.3:
     optional: true
@@ -4485,10 +4453,6 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  motion-dom@11.13.0: {}
-
-  motion-utils@11.13.0: {}
-
   mrmime@2.0.0: {}
 
   ms@2.1.3: {}
@@ -4815,7 +4779,7 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  sass@1.82.0:
+  sass@1.83.0:
     dependencies:
       chokidar: 4.0.1
       immutable: 5.0.3
@@ -4988,7 +4952,8 @@ snapshots:
     optionalDependencies:
       typescript: 5.7.2
 
-  tslib@2.8.1: {}
+  tslib@2.8.1:
+    optional: true
 
   type-fest@4.30.0: {}
 
@@ -5077,7 +5042,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1):
+  vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1):
     dependencies:
       esbuild: 0.24.0
       postcss: 8.4.49
@@ -5086,12 +5051,12 @@ snapshots:
       fsevents: 2.3.3
       jiti: 1.21.6
       lightningcss: 1.27.0
-      sass: 1.82.0
+      sass: 1.83.0
       yaml: 2.6.1
 
-  vitefu@1.0.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1)):
+  vitefu@1.0.4(vite@6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1)):
     optionalDependencies:
-      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.82.0)(yaml@2.6.1)
+      vite: 6.0.3(jiti@1.21.6)(lightningcss@1.27.0)(sass@1.83.0)(yaml@2.6.1)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.10):
     dependencies:
