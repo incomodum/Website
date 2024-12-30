@@ -96,11 +96,9 @@ export default function ContactUs() {
 						</FormItem>
 					)}
 				/>
-				<div className="w-full text-page">
-					<Button type="submit" disabled className="mt-4 w-full rounded-3xl bg-page shadow-button hover:bg-page disabled:grayscale">
-						Submit
-					</Button>
-				</div>
+				<Button type="submit" disabled className="mt-4 w-full rounded-3xl bg-page text-page shadow-button hover:bg-page disabled:grayscale">
+					<p className="text-white">Submit</p>
+				</Button>
 			</form>
 		</Form>
 	)
