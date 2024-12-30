@@ -1,8 +1,8 @@
 function Card({ title, description, icon }: { title: string; description: React.ReactNode; icon: React.ReactNode }) {
 	return (
-		<section className="flex w-[328px] flex-col items-center justify-center rounded-[33px] bg-white p-[40px]">
+		<section className="mx-10 flex w-full flex-col items-center justify-center rounded-[33px] bg-white p-[40px] md:w-[328px]">
 			<div className="flex h-[114px] items-center justify-center">{icon}</div>
-			<h1 className="mt-5 text-center font-bold text-2xl">{title}</h1>
+			<h1 className="mt-5 text-center font-bold text-2xl md:w-max">{title}</h1>
 			<p className="mt-8 text-center text-base">{description}</p>
 		</section>
 	)
@@ -41,7 +41,7 @@ function MVP() {
 function Custom() {
 	return (
 		<Card
-			title="Custom Application"
+			title="Custom Applications"
 			description={
 				<>
 					"Software development

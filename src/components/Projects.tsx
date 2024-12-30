@@ -8,14 +8,14 @@ function ProjectCard({
 	return (
 		<a
 			href={href}
-			className={`flex w-full flex-col items-center gap-4 rounded-[33px] bg-white px-8 py-10 text-center md:max-w-[60%] md:flex-row md:items-start md:gap-10 md:text-start ${className}`}
+			className={`flex w-full flex-col items-center gap-4 rounded-[33px] bg-white px-8 py-10 text-center lg:max-w-[60%] lg:flex-row lg:items-start lg:gap-10 lg:text-start ${className}`}
 		>
 			<div className="flex h-auto flex-grow items-center justify-center" draggable={false}>
 				{logo}
 			</div>
 			<div className="flex flex-col">
 				<p className="font-bold text-[37.9px]">{title}</p>
-				<p className="text-foreground">{description}</p>
+				<p className="hidden text-foreground lg:flex">{description}</p>
 			</div>
 		</a>
 	)
@@ -23,7 +23,7 @@ function ProjectCard({
 
 export default function Projects() {
 	return (
-		<div className="flex w-full flex-col gap-12">
+		<div className="flex w-full flex-col gap-12 px-4">
 			<ProjectCard
 				href="/instate"
 				className="text-instate"
@@ -67,7 +67,7 @@ export default function Projects() {
 					</svg>
 				}
 			/>
-			<div className="flex w-full flex-row justify-center md:justify-end">
+			<div className="flex w-full flex-row justify-center lg:justify-end">
 				<ProjectCard
 					href="/app"
 					className="flex-row-reverse text-app"

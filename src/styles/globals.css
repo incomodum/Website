@@ -64,18 +64,39 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .field-sizing-content {
+	field-sizing: content;
+	min-block-size: 3.5rlh;
+    min-inline-size: 20ch;
+    max-inline-size: 50ch;
+  }
+}
+
+:root {
+	interpolate-size: allow-keywords;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 .color-blur {
+	@apply w-48 md:w-1/2;
 	opacity: 0.9;
-	filter: blur(190px);
+	filter: blur(500px);
 	border: 1px solid;
 	border-radius: 50vw;
 	position: absolute;
-	z-index: -1;
-	width: 50vw;
+	z-index: -3;
 	height: 50vw;
-	background: linear-gradient(90deg, var(--page-color, #FF6F61) 0%, rgba(0,0,0,0) 100%);;
+	background: linear-gradient(90deg, var(--page-color, #FF6F6188) 0%, rgba(0,0,0,0) 100%);;
 	right: 0;
 	width: 25vw;
 	border-radius: 50vw 0vw 00vw 50vw;
@@ -83,7 +104,7 @@
 	&.right {
 		right: 0;
 		width: 25vw;
-		border-radius: 50vw 0vw 00vw 50vw;
+		translate: 50%;
 	}
 
 	&.left {

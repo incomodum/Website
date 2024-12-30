@@ -1,4 +1,4 @@
-import { useReducer } from "react"
+import { useState } from "react"
 import { Divide as Hamburger } from "hamburger-react"
 
 function Logo() {
@@ -60,14 +60,18 @@ function Logo() {
 }
 
 export default function Header() {
-	const [open, toggle] = useReducer((v) => !v, false)
+	const [open, setOpen] = useState(false)
+
+	function toggle() {
+		setOpen(!open)
+	}
 
 	return (
 		<>
 			<div className="fixed top-0 z-50 flex w-full flex-col bg-[#F9F9F988] backdrop-blur-xl md:backdrop-blur-lg">
 				<header className="sticky top-0 z-50 flex w-full flex-row items-center justify-center px-8 pt-8 pb-6 text-page md:px-16">
 					<div className="flex w-full max-w-[1500px] flex-row items-center justify-between">
-						<a href="/">
+						<a href="/#" onClick={() => setOpen(false)}>
 							<Logo />
 						</a>
 						<div className="hidden flex-row items-center gap-20 lg:flex">
@@ -80,7 +84,7 @@ export default function Header() {
 							<a href="/#mission" className="text-foreground">
 								Mission
 							</a>
-							<a href="/#">
+							<a href="/#contact">
 								<button className="rounded-[37px] bg-current px-10 py-5 shadow-button">
 									<p className="font-bold text-white">Contact</p>
 								</button>
@@ -88,7 +92,6 @@ export default function Header() {
 						</div>
 						<div className="relative isolate scale-75 overflow-clip rounded-xl lg:hidden">
 							<Hamburger aria-controls="primary-navigation" toggled={open} toggle={toggle} size={32} rounded color="#2C3A4B" />
-							<div className="-z-10 absolute inset-0 h-full w-full bg-current opacity-50" />
 						</div>
 					</div>
 				</header>
@@ -104,8 +107,8 @@ export default function Header() {
 							<a href="/#mission" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Mission
 							</a>
-							<a href="/#">
-								<button onClick={toggle} className="bg-transparent text-page drop-shadow-mobile">
+							<a href="/#contact" onClick={toggle}>
+								<button className="bg-transparent text-page drop-shadow-mobile">
 									<p className="font-bold text-4xl md:text-base">Contact</p>
 								</button>
 							</a>

@@ -98,7 +98,7 @@ function Logo() {
 
 export default function Footer() {
 	return (
-		<footer className="mt-48 flex h-[136px] w-full flex-col items-center justify-end bg-[#1C274C]">
+		<footer className="relative z-10 flex h-[136px] w-full flex-col items-center justify-end bg-[#1C274C]">
 			<div className="flex h-auto w-full max-w-[1564px] flex-grow flex-row items-center px-8">
 				<div className="flex flex-col gap-1">
 					<Logo />

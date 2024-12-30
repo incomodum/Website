@@ -17,16 +17,16 @@ export default function Services() {
 						"(min-width: 768px)": { active: false }
 					}
 				}}
-				className="z-0 mt-16 w-full max-w-full md:max-w-[1200px]"
+				className="z-0 mt-16 w-full max-w-full lg:max-w-[1200px]"
 			>
 				<CarouselContent className="-ml-4">
-					<CarouselItem className="flex w-full items-center justify-center pl-4 md:basis-1/3">
+					<CarouselItem className="flex w-full items-center justify-center pl-4 lg:basis-1/3">
 						<Card.MVP />
 					</CarouselItem>
-					<CarouselItem className="flex w-full items-center justify-center pl-4 md:basis-1/3">
+					<CarouselItem className="flex w-full items-center justify-center pl-4 lg:basis-1/3">
 						<Card.Custom />
 					</CarouselItem>
-					<CarouselItem className="flex w-full items-center justify-center pl-4 md:basis-1/3">
+					<CarouselItem className="flex w-full items-center justify-center pl-4 lg:basis-1/3">
 						<Card.Workflow />
 					</CarouselItem>
 				</CarouselContent>
