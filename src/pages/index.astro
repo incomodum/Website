@@ -20,7 +20,6 @@ import { SEO } from "astro-seo"
 		<SEO
 			title="incomodum"
 			description="Innovative Software Solutions Driving Growth and Excellence"
-
 			openGraph={{
 				basic: {
 					title: "incomodum",
@@ -29,8 +28,8 @@ import { SEO } from "astro-seo"
 				},
 				optional: {
 					locale: "en",
-					description: "Innovative Software Solutions Driving Growth and Excellence",
-					siteName: "incomodum",
+					description:
+						"Innovative Software Solutions Driving Growth and Excellence"
 				},
 				image: {
 					width: 1280,
@@ -38,12 +37,13 @@ import { SEO } from "astro-seo"
 					type: "image/png"
 				}
 			}}
-
 			twitter={{
 				card: "summary_large_image"
 			}}
 			extend={{
-				link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+				link: [
+					{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }
+				],
 				meta: [{ name: "theme-color", content: "#FF6F61" }]
 			}}
 		/>
@@ -73,7 +73,8 @@ import { SEO } from "astro-seo"
 							Innovative <b class="text-page">Software</b><br
 								class="hidden md:block"
 							/> Solutions Driving Growth<br /> and <b
-								class="text-page">Excellence</b>
+								class="text-page">Excellence</b
+							>
 						</h1>
 						<svg
 							width="413"
@@ -101,7 +102,8 @@ import { SEO } from "astro-seo"
 							class="text-4xl font-bold font-sans text-foreground px-2"
 						>
 							How can we help your business <b class="text-page"
-								>improve</b>
+								>improve</b
+							>
 						</h2>
 						<Services client:visible />
 					</section>
