@@ -11,6 +11,10 @@ import { SEO } from "astro-seo"
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/site.webmanifest">
 		<SEO
 			title="incomodum app | incomodum"
 			description="Self-improvement app to help you reach your goals"
@@ -34,11 +38,6 @@ import { SEO } from "astro-seo"
 			}}
 			twitter={{
 				card: "summary_large_image"
-			}}
-			extend={{
-				link: [
-					{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }
-				]
 			}}
 		/>
 		<style>
