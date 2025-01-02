@@ -54,16 +54,18 @@ import { SEO } from "astro-seo"
 			}
 		</style>
 	</head>
-	<body class="bg-[#F9F9F9] relative">
+	<body class="bg-[#F9F9F9] relative overflow-x-clip">
 		<Header client:load />
-		<div class="px-8 md:px-16 flex flex-col items-center w-full">
+		<div
+			class="flex flex-col bg-[#F9F9F988] backdrop-blur-lg items-center w-full"
+		>
 			<div class="max-w-[1500px] w-full">
-				<main class="pt-[50px] w-full">
+				<main class="w-full pt-[50px]">
 					<section
 						class="flex flex-col md:flex-row items-center justify-center gap-7 md:justify-between"
 					>
 						<h1
-							class="text-4xl md:text-7xl text-center md:text-start font-bold font-sans text-foreground"
+							class="text-4xl text-center md:text-start md:text-7xl px-2 font-bold font-sans text-foreground"
 						>
 							Empowering <b class="text-page">Slovak</b>
 							<br class="hidden md:block" />Citizens with Tailored<br

@@ -68,8 +68,8 @@ export default function Header() {
 
 	return (
 		<>
-			<div className="fixed top-0 z-50 flex w-full flex-col bg-[#F9F9F988] backdrop-blur-xl md:backdrop-blur-lg">
-				<header className="sticky top-0 z-50 flex w-full flex-row items-center justify-center px-8 pt-8 pb-6 text-page md:px-16">
+			<div className="sticky top-0 left-0 z-50 flex w-full flex-col bg-[#F9F9F988] backdrop-blur-xl md:backdrop-blur-lg">
+				<header className="flex w-full flex-row items-center justify-center p-8 pb-6 text-page md:px-16">
 					<div className="flex w-full max-w-[1500px] flex-row items-center justify-between">
 						<a href="/#" onClick={() => setOpen(false)}>
 							<Logo />
@@ -90,13 +90,13 @@ export default function Header() {
 								</button>
 							</a>
 						</div>
-						<div className="relative isolate scale-75 overflow-clip rounded-xl lg:hidden">
-							<Hamburger aria-controls="primary-navigation" toggled={open} toggle={toggle} size={32} rounded color="#2C3A4B" />
+						<div className="relative isolate overflow-clip rounded-xl lg:hidden">
+							<Hamburger aria-controls="primary-navigation" toggled={open} toggle={toggle} size={24} rounded color="#2C3A4B" />
 						</div>
 					</div>
 				</header>
 				{open && (
-					<div className="h-[calc(100vh-104px)] w-full overflow-scroll overscroll-contain px-8 pt-8 pb-6 text-current md:hidden">
+					<div className="h-[calc(100vh-104px)] w-full overflow-y-auto overscroll-contain px-8 pt-8 pb-6 text-current md:hidden">
 						<div className="flex flex-col gap-16 md:items-center">
 							<a href="/#services" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Services
@@ -116,7 +116,6 @@ export default function Header() {
 					</div>
 				)}
 			</div>
-			<div className="-z-10 h-[104px] w-full" />
 		</>
 	)
 }
