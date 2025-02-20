@@ -10,7 +10,7 @@ function ProjectCard({
 			href={href}
 			className={`flex w-full flex-col items-center gap-4 rounded-[33px] bg-white px-8 py-10 text-center lg:max-w-[60%] lg:flex-row lg:items-start lg:gap-10 lg:text-start ${className}`}
 		>
-			<div className="flex h-auto flex-grow items-center justify-center" draggable={false}>
+			<div className="flex h-auto grow items-center justify-center" draggable={false}>
 				{logo}
 			</div>
 			<div className="flex flex-col">
@@ -70,10 +70,10 @@ export default function Projects() {
 			<div className="flex w-full flex-row justify-center lg:justify-end">
 				<ProjectCard
 					href="/app"
-					className="flex-row-reverse text-app"
-					title="Incomodum app"
+					className="flex-col text-app lg:flex-row-reverse"
+					title="incomodum app"
 					description="Incomodum is a time management app designed primarily for the younger generation, with a mission to help users overcome social media addiction and motivate them to self improvement."
-					logo={<img src="/app.png" draggable={false} alt="incomodum app" className="h-[135px] min-w-[135px]" />}
+					logo={<img src="/app.png" draggable={false} alt="incomodum app" className="aspect-square h-[120px] min-w-[120px]" />}
 				/>
 			</div>
 		</div>

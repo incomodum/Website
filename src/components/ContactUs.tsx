@@ -90,7 +90,7 @@ export default function ContactUs() {
 						<FormItem>
 							<FormLabel>Message</FormLabel>
 							<FormControl>
-								<Textarea placeholder="Message" {...field} />
+								<Textarea placeholder="Message" className="resize-none" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

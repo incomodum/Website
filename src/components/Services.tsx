@@ -4,7 +4,7 @@ import Card from "./ServiceCard"
 
 export default function Services() {
 	return (
-		<div className="isolate z-[1] flex w-full flex-row items-center justify-center">
+		<div className="isolate z-1 flex w-full flex-row items-center justify-center">
 			<Carousel
 				plugins={[
 					Autoplay({
