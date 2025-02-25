@@ -98,10 +98,10 @@ export default function Header() {
 				{open && (
 					<div className="h-[calc(100vh-104px)] w-full overflow-y-auto overscroll-contain px-8 pt-8 pb-6 text-current md:hidden">
 						<div className="flex flex-col gap-16 md:items-center">
-							<a href="/#services" onClick={toggle} className="font-bold text-4xl text-foreground">
+							<a href="/services" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Services
 							</a>
-							<a href="/#projects" onClick={toggle} className="font-bold text-4xl text-foreground">
+							<a href="/projects" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Our work
 							</a>
 							<a href="/#mission" onClick={toggle} className="font-bold text-4xl text-foreground">
