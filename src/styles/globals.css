@@ -14,7 +14,7 @@
 	--color-accent: hsl(var(--accent));
 	--color-accent-foreground: hsl(var(--accent-foreground));
 
-	--color-instate: #2249a7;
+	--color-navody: #2249a7;
 	--color-app: #d8b26e;
 	--color-page: var(--page-color, #ff6f61);
 	--color-background: hsl(var(--background));

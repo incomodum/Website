@@ -70,22 +70,22 @@ export default function Header() {
 		<>
 			<div className="sticky top-0 left-0 z-50 flex w-full flex-col bg-[#F9F9F988] backdrop-blur-xl md:backdrop-blur-lg">
 				<header className="flex w-full flex-row items-center justify-center p-8 pb-6 text-page md:px-16">
-					<div className="flex w-full max-w-[1500px] flex-row items-center justify-between">
+					<div className="flex w-full max-w-7xl flex-row items-center justify-between">
 						<a href="/#" onClick={() => setOpen(false)}>
 							<Logo />
 						</a>
-						<div className="hidden flex-row items-center gap-20 lg:flex">
-							<a href="/#services" className="text-foreground">
+						<div className="hidden flex-row items-center gap-8 lg:flex">
+							<a href="/services" className="text-foreground">
 								Services
 							</a>
-							<a href="/#projects" className="text-foreground">
+							<a href="/projects" className="text-foreground">
 								Our work
 							</a>
 							<a href="/#mission" className="text-foreground">
 								Mission
 							</a>
 							<a href="/#contact">
-								<button className="rounded-[37px] bg-current px-10 py-5 shadow-button">
+								<button className="rounded-[37px] bg-current px-8 py-3 shadow-button transition-all hover:scale-105">
 									<p className="font-bold text-white">Contact</p>
 								</button>
 							</a>

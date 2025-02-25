@@ -1,0 +1,180 @@
+---
+import "@fontsource-variable/dm-sans"
+import "@/styles/globals.css"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import { SEO } from "astro-seo"
+import { ArrowLeft } from "lucide-react"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<SEO
+			title="incomodum app | incomodum"
+			description="Self-improvement app to help you reach your goals"
+			openGraph={{
+				basic: {
+					title: "incomodum",
+					type: "website",
+					image: "/assets/app-og.png"
+				},
+				optional: {
+					locale: "en",
+					description:
+						"Self-improvement app to help you reach your goals",
+					siteName: "incomodum.com"
+				},
+				image: {
+					width: 1280,
+					height: 640,
+					type: "image/png"
+				}
+			}}
+			twitter={{
+				card: "summary_large_image"
+			}}
+		/>
+		<style>
+			:root {
+				--page-color: #d8b26e;
+			}
+			html,
+			body {
+				font-family: "DM Sans Variable", "BlinkMacSystemFont",
+					"Segoe UI";
+				margin: 0;
+				overscroll-behavior: none;
+			}
+		</style>
+	</head>
+	<body class="bg-[#F9F9F9] relative flex flex-col">
+		<Header client:load />
+		<div
+			class="px-8 md:px-16 flex flex-col items-center w-full min-h-screen"
+		>
+			<div class="max-w-7xl w-full">
+				<div class="py-6">
+					<a
+						href="/projects"
+						class="inline-flex items-center text-gray-600 hover:text-gray-900"
+					>
+						<ArrowLeft className="mr-2 h-4 w-4" />
+						Back to projects
+					</a>
+				</div>
+				<section class="py-12">
+					<div
+						class="flex gap-16 flex-col justify-between lg:flex-row"
+					>
+						<div class="flex flex-col justify-center lg:w-1/2">
+							<h1
+								class="mb-4 text-4xl font-bold leading-tight lg:text-6xl"
+							>
+								incomodum <span class="text-page">app</span>
+							</h1>
+							<p class="text-lg lg:text-xl text-gray-600">
+								Self-improvement app to help you<br
+									class="block md:hidden"
+								/> reach your goals
+							</p>
+						</div>
+						<div class="relative flex justify-center lg:w-1/2">
+							<img
+								src="/app-mock.png"
+								class="w-full max-w-2xl z-10"
+							/>
+							<div
+								class="absolute right-0 top-0 h-48 w-48 rotate-12 bg-page/10"
+							>
+							</div>
+							<div
+								class="absolute bottom-0 left-0 h-64 w-64 -rotate-12 bg-[#1a1b50]/10"
+							>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="my-8 w-full bg-border h-[1px]"></div>
+				<section class="pb-16">
+					<div class="grid gap-16 lg:grid-cols-2">
+						<div>
+							<h2 class="mb-8 text-3xl font-bold">
+								The <span class="text-page">Problem</span>
+							</h2>
+							<p class="mb-6 text-gray-600">
+								In this day and age people spend lots of their
+								time on social media even if they have work to
+								do or need to study. It can even lead to worse
+								mental health and demotivation.
+							</p>
+							<ul class="space-y-4 text-gray-600">
+								<li class="flex items-center">
+									<div
+										class="mr-4 h-2 w-2 rounded-full bg-page"
+									>
+									</div>
+									Limitless access to social media
+								</li>
+								<li class="flex items-center">
+									<div
+										class="mr-4 h-2 w-2 rounded-full bg-page"
+									>
+									</div>
+									No awards for hitting their goals
+								</li>
+								<li class="flex items-center">
+									<div
+										class="mr-4 h-2 w-2 rounded-full bg-page"
+									>
+									</div>
+									Not enough statistics
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h2 class="mb-8 text-3xl font-bold">
+								Our <span class="text-page">Solution</span>
+							</h2>
+							<p class="mb-6 text-gray-600">
+								Time management app designed primarily for the
+								younger generation, with a mission to help users
+								overcome social media addiction and motivate
+								them to self improvement.
+							</p>
+							<div class="grid gap-6 sm:grid-cols-2">
+								<div class="rounded-lg bg-white p-6">
+									<h3 class="mb-2 font-semibold">
+										Technology Stack
+									</h3>
+									<p class="text-sm text-gray-600">
+										Expo, React Native, October CMS, MySQL
+									</p>
+								</div>
+								<div class="rounded-lg bg-white p-6">
+									<h3 class="mb-2 font-semibold">
+										Current State
+									</h3>
+									<p class="text-sm text-gray-600">
+										Work in progress
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>

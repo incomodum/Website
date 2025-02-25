@@ -1,0 +1,108 @@
+---
+import "@fontsource-variable/dm-sans"
+import "@/styles/globals.css"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import { SEO } from "astro-seo"
+import { ArrowRight } from "lucide-react"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<SEO
+			title="Services | incomodum "
+			description="Innovative Software Solutions Driving Growth and Excellence"
+			openGraph={{
+				basic: {
+					title: "Services",
+					type: "website",
+					image: "/assets/base-og.png"
+				},
+				optional: {
+					locale: "en",
+					description:
+						"Innovative Software Solutions Driving Growth and Excellence"
+				},
+				image: {
+					width: 1280,
+					height: 640,
+					type: "image/png"
+				}
+			}}
+			twitter={{
+				card: "summary_large_image"
+			}}
+		/>
+		<style>
+			html,
+			body {
+				font-family: "DM Sans Variable", "BlinkMacSystemFont",
+					"Segoe UI";
+				margin: 0;
+				overscroll-behavior: none;
+			}
+		</style>
+	</head>
+	<body class="bg-[#F9F9F9] relative">
+		<Header client:load />
+		<div class="flex flex-col items-center w-full">
+			<main class="w-full min-h-screen">
+				<section class="relative pt-32 lg:pt-40 w-full">
+					<div class="mx-auto max-w-7xl px-8 lg:px-16">
+						<div class="mx-auto max-w-2xl text-center">
+							<h1
+								class="mb-6 text-4xl font-bold leading-tight lg:text-5xl"
+							>
+								Comprehensive <span class="text-page"
+									>Software Solutions</span
+								> for Your Business
+							</h1>
+							<p class="text-lg text-gray-600">
+								From custom software development to data analytics, we provide end-to-end solutions to help your business thrive in the digital age.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<p class="text-muted-foreground text-center mx-auto py-48 font-bold">TODO</p>
+
+				<section class="py-16 lg:py-24 w-full">
+					<div class="mx-auto max-w-7xl px-8 lg:px-16">
+						<div
+							class="rounded-3xl bg-white p-8 text-center lg:p-12"
+						>
+							<h2 class="mb-4 text-3xl font-bold">
+								Ready to start your <span class="text-[#ff7171]"
+									>project</span
+								>?
+							</h2>
+							<p class="mb-8 text-gray-600">
+								Let's discuss how we can help bring your ideas
+								to life.
+							</p>
+							<a
+								href="/#contact"
+								class="group inline-flex items-center rounded-full bg-[#ff7171] px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#ff7171]/20"
+							>
+								Get in Touch
+								<ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+							</a>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		<Footer />
+	</body>
+</html>
