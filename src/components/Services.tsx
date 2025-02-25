@@ -31,7 +31,7 @@ export default function Services() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 					viewport={{ once: true }}
-					className="mb-16 text-center"
+					className="mb-16 md:text-center"
 				>
 					<h2 className="mb-5 font-bold text-3xl lg:text-4xl">
 						How can we help your business <span className="text-page">improve</span>
