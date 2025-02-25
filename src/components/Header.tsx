@@ -81,7 +81,7 @@ export default function Header() {
 							<a href="/projects" className="text-foreground">
 								Our work
 							</a>
-							<a href="/#mission" className="text-foreground">
+							<a href="/mission" className="text-foreground">
 								Mission
 							</a>
 							<a href="/#contact">
@@ -104,7 +104,7 @@ export default function Header() {
 							<a href="/projects" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Our work
 							</a>
-							<a href="/#mission" onClick={toggle} className="font-bold text-4xl text-foreground">
+							<a href="/mission" onClick={toggle} className="font-bold text-4xl text-foreground">
 								Mission
 							</a>
 							<a href="/#contact" onClick={toggle}>

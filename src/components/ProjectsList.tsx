@@ -25,8 +25,8 @@ export default function ProjectsList() {
 	})
 	return (
 		<div className="py-16 lg:py-24">
-			<section className="py-8">
-				<div className="mx-auto max-w-7xl px-8 lg:px-16">
+			<section className="px-8 py-8 lg:px-16">
+				<div className="mx-auto max-w-7xl">
 					<div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 						<div className="flex flex-wrap gap-2">
 							{categories.map((category) => (
@@ -55,8 +55,8 @@ export default function ProjectsList() {
 			</section>
 
 			{/* Projects Grid */}
-			<section className="py-8 lg:py-12">
-				<div className="mx-auto max-w-7xl px-8 lg:px-16">
+			<section className="px-8 py-8 lg:px-16 lg:py-12">
+				<div className="mx-auto max-w-7xl">
 					<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{filteredProjects.map((project, index) => (
 							<motion.div
@@ -92,7 +92,7 @@ export default function ProjectsList() {
 										target={project.slug.includes("https://") ? "_blank" : "_self"}
 										className="inline-flex items-center text-page"
 									>
-										View Project
+										Learn More
 										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 									</a>
 								</div>

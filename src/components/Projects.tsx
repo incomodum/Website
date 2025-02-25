@@ -27,7 +27,7 @@ export default function Projects() {
 						<h3 className="mb-4 font-bold text-xl">{project.title}</h3>
 						<p className="mb-6 text-gray-600">{project.description}</p>
 						<a href={`/projects/${project.slug}`} className="inline-flex items-center text-[#ff7171]">
-							View Project
+							Learn More
 							<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 						</a>
 					</div>

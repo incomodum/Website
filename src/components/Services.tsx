@@ -12,7 +12,7 @@ const services = [
 		icon: <Smartphone className="size-8" />,
 		title: "Mobile App Development",
 		description: "Cross-platform mobile applications that deliver exceptional user experiences.",
-		link: "/services/#ai-ml"
+		link: "/services/#mobile-apps"
 	},
 	{
 		icon: <LineChart className="size-8" />,
