@@ -5,7 +5,7 @@ export default function CoreValues() {
 	return (
 		<section className="px-8 py-16 lg:px-16 lg:py-24">
 			<div className="mx-auto max-w-7xl">
-				<div className="mx-auto max-w-3xl text-center">
+				<div className="mx-auto max-w-3xl md:text-center">
 					<h2 className="mb-6 font-bold text-3xl lg:text-4xl">
 						Our Core <span className="text-page">Values</span>
 					</h2>
@@ -21,7 +21,7 @@ export default function CoreValues() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className="rounded-3xl bg-white p-6 text-center"
+							className="rounded-3xl bg-white p-6 md:text-center"
 						>
 							<div className="mx-auto mb-4 inline-block rounded-2xl bg-page/10 p-4 text-page">{value.icon}</div>
 							<h3 className="mb-2 font-bold text-xl">{value.title}</h3>
