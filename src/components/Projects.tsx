@@ -14,12 +14,12 @@ export default function Projects() {
 					viewport={{ once: true }}
 					className="group relative overflow-hidden rounded-3xl bg-white"
 				>
-					<div className="aspect-[16/9] overflow-hidden">
+					<div className="overflow-hidden">
 						<img
 							src={project.image || "/placeholder.svg"}
 							alt={project.title}
-							width={800}
-							height={450}
+							width={1280}
+							height={640}
 							className="object-cover transition-transform duration-500 group-hover:scale-105"
 						/>
 					</div>

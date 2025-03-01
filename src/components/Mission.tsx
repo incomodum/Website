@@ -24,10 +24,11 @@ export default function Mission() {
 						<div>
 							<a
 								href="/mission"
-								className="inline-flex items-center rounded-full bg-page px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-page/20"
+								className="group inline-flex items-center rounded-full bg-page px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-page/20"
 							>
-								Learn About Our Mission
-								<ArrowRight className="ml-2 h-5 w-5" />
+								<span className="hidden md:block">Learn About Our Mission</span>
+								<span className="md:hidden">Learn More</span>
+								<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 							</a>
 						</div>
 					</motion.div>

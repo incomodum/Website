@@ -67,13 +67,13 @@ export default function ProjectsList() {
 								style={project.color ? ({ "--color-page": `${project.color}` } as MotionStyle) : {}}
 								className="group flex flex-col overflow-hidden rounded-3xl bg-white transition-all hover:shadow-xl"
 							>
-								<div className="aspect-[16/9] overflow-hidden">
+								<div className="overflow-hidden">
 									<img
 										src={project.image || "/placeholder.svg"}
 										alt={project.title}
-										width={600}
-										height={338}
-										className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+										width={1280}
+										height={640}
+										className="h-fit w-full object-cover transition-transform duration-500 group-hover:scale-105"
 									/>
 								</div>
 								<div className="flex flex-grow flex-col p-6">

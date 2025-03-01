@@ -1,26 +1,6 @@
 import { motion } from "motion/react"
-import { ArrowRight, Code, LineChart, Smartphone } from "lucide-react"
-
-const services = [
-	{
-		icon: <Code className="size-8" />,
-		title: "Custom Software Development",
-		description: "Tailored solutions built with cutting-edge technology to meet your specific business needs.",
-		link: "/services/#custom-software"
-	},
-	{
-		icon: <Smartphone className="size-8" />,
-		title: "Mobile App Development",
-		description: "Cross-platform mobile applications that deliver exceptional user experiences.",
-		link: "/services/#mobile-apps"
-	},
-	{
-		icon: <LineChart className="size-8" />,
-		title: "Digital Transformation",
-		description: "Transform your business with innovative digital solutions and strategies.",
-		link: "/services/#digital-transformation"
-	}
-]
+import { ArrowRight } from "lucide-react"
+import services from "@/lib/services"
 
 export default function Services() {
 	return (
@@ -42,7 +22,7 @@ export default function Services() {
 				</motion.div>
 
 				<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-					{services.map((service, index) => (
+					{services.slice(0, 3).map((service, index) => (
 						<motion.div
 							key={service.title}
 							initial={{ opacity: 0, y: 20 }}

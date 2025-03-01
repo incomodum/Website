@@ -11,6 +11,8 @@ import ContactUs from "@/components/ContactUs"
 import Mission from "@/components/Mission"
 import { Image } from "astro:assets"
 import { SEO } from "astro-seo"
+
+import dmSans from "@fontsource-variable/dm-sans/files/dm-sans-latin-standard-normal.woff2"
 ---
 
 <html lang="en">
@@ -59,6 +61,13 @@ import { SEO } from "astro-seo"
 				overscroll-behavior: none;
 			}
 		</style>
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href={dmSans}
+			crossorigin="anonymous"
+		/>
 	</head>
 	<body class="bg-[#F9F9F9] relative overflow-x-clip">
 		<Header client:load />
@@ -94,7 +103,9 @@ import { SEO } from "astro-seo"
 								class="inline-flex w-full md:w-fit items-center justify-center group rounded-full bg-[#ff7171] px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#ff7171]/20"
 							>
 								Get Started
-								<ArrowRight className="ml-2 size-5 group-hover:translate-x-1 transition-transform" />
+								<ArrowRight
+									className="ml-2 size-5 group-hover:translate-x-1 transition-transform"
+								/>
 							</a>
 							<a
 								href="/projects"
