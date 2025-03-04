@@ -65,7 +65,7 @@ export default function ProjectsList() {
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}
 								style={project.color ? ({ "--color-page": `${project.color}` } as MotionStyle) : {}}
-								className="group flex flex-col overflow-hidden rounded-3xl bg-white transition-all hover:shadow-xl"
+								className="group flex flex-col overflow-hidden rounded-3xl bg-white transition-shadow hover:shadow-xl"
 							>
 								<div className="overflow-hidden">
 									<img

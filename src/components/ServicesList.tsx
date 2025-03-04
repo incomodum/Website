@@ -13,7 +13,7 @@ export default function ServicesList() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className="group rounded-3xl bg-white p-8 transition-all hover:shadow-xl"
+							className="group rounded-3xl bg-white p-8 transition-shadow hover:shadow-xl"
 						>
 							<div className="mb-6 inline-block rounded-2xl bg-[#ff7171]/10 p-4 text-[#ff7171]">{service.icon}</div>
 							<h3 className="mb-4 font-bold text-xl">{service.title}</h3>

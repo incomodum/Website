@@ -29,7 +29,7 @@ export default function Services() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className="group flex flex-col items-start rounded-3xl bg-white p-8 transition-all hover:bg-white hover:shadow-xl"
+							className="group flex flex-col items-start rounded-3xl bg-white p-8 transition-shadow hover:bg-white hover:shadow-xl"
 						>
 							<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">{service.icon}</div>
 							<h3 className="mb-4 text-start font-bold text-xl">{service.title}</h3>
