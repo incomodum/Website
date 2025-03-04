@@ -26,7 +26,7 @@ export default [
 		image: "/assets/projects/kskinteractive-og.png",
 		category: "hackathon",
 		slug: "https://github.com/incomodum/KSK-Interactive",
-		technologies: ["Next.js", "Figma"],
+		technologies: ["Next.js", "React", "MapLibre-GL"],
 		color: "#194E8D"
 	},
 	{
@@ -36,7 +36,7 @@ export default [
 		image: "/assets/projects/sportujtoo-og.png",
 		category: "hackathon",
 		slug: "https://github.com/incomodum/Sportuj-Too",
-		technologies: ["Next.js", "Figma"],
+		technologies: ["Next.js", "React"],
 		color: "#39B24C"
 	},
 	{
