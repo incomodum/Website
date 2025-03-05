@@ -17,30 +17,36 @@
 
 ---
 
-## TODO
-- [ ] Better project pages
+## 🚀 About
+
+**incomodum.com** is a sleek and modern presentation website built to showcase our team, projects, and vision. It is designed with performance and responsiveness in mind, ensuring an optimal experience across all devices.
+
+
+## 📌 TODO
 - [ ] Team Section
 - [ ] Nicer illustrations
-- [ ] Fix responsivity
 - [ ] Fix mobile menu
 
 
-## Local Setup
+## 🛠️ Local Setup
 
-> [!NOTE]
-> This project uses [nodejs](https://docs.astral.sh/uv/) with [corepack](https://github.com/nodejs/corepack)
+> **Note**
+> This project uses [Node.js](https://nodejs.org/) with [Corepack](https://github.com/nodejs/corepack) for package management.
 
-To **enable** corepack after installing node, run:
-```
+### 1️⃣ Enable Corepack
+After installing Node.js, run the following command:
+```sh
 corepack enable
 ```
 
-After that, to **install** all the node modules run:
-```
+### 2️⃣ Install Dependencies
+To install all required Node.js modules, run:
+```sh
 pnpm install
 ```
 
-To run the **development** server run:
-```
+### 3️⃣ Run Development Server
+To start the development server, use:
+```sh
 pnpm run dev
 ```

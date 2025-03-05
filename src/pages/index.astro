@@ -5,14 +5,12 @@ import Projects from "../components/Projects"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Services from "@/components/Services"
-import { ArrowRight, MailIcon } from "lucide-react"
-import Linkedin from "@/components/icons/linkedin"
-import ContactUs from "@/components/ContactUs"
+import { ArrowRight } from "lucide-react"
 import Mission from "@/components/Mission"
-import { Image } from "astro:assets"
 import { SEO } from "astro-seo"
 
 import dmSans from "@fontsource-variable/dm-sans/files/dm-sans-latin-standard-normal.woff2"
+import ContactCards from "@/components/ContactCards"
 ---
 
 <html lang="en">
@@ -97,7 +95,7 @@ import dmSans from "@fontsource-variable/dm-sans/files/dm-sans-latin-standard-no
 							businesses transform, scale, and achieve their
 							digital ambitions.
 						</p>
-						<div class="flex flex-wrap justify-center gap-6">
+						<div class="flex flex-wrap w-full md:w-max justify-center gap-6">
 							<a
 								href="/#contact"
 								class="inline-flex w-full md:w-fit items-center justify-center group rounded-full bg-[#ff7171] px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#ff7171]/20"
@@ -133,186 +131,7 @@ import dmSans from "@fontsource-variable/dm-sans/files/dm-sans-latin-standard-no
 					<div class="color-blur left"></div>
 					<Mission client:visible />
 					<div id="contact"></div>
-					<section
-						class="pt-56 pb-48 flex flex-col-reverse overflow-y-clip lg:flex-row relative items-center lg:justify-evenly max-w-7xl mx-auto gap-52"
-					>
-						<div
-							class="flex flex-col relative w-full lg:w-[40%] items-center gap-6"
-						>
-							<div
-								class="hidden lg:block w-[56vw] max-w-[900px] rotate-[-7.12deg] absolute h-[886px] -top-20 rounded-t-3xl bg-white z-[-2]"
-							>
-							</div>
-							<h2
-								class="text-3xl lg:text-4xl flex flex-row w-full items-center justify-center lg:justify-start font-bold font-sans px-7 text-foreground"
-							>
-								Let's&nbsp;<b class="text-page">Talk</b>
-							</h2>
-							<div
-								class="bg-white lg:bg-transparent w-full flex flex-col gap-5 rounded-[33px] p-7 lg:py-0 text-foreground"
-							>
-								<ContactUs client:visible />
-							</div>
-						</div>
-						<div
-							class="flex flex-col relative w-full lg:w-[40%] items-center gap-6"
-						>
-							<div
-								class="hidden lg:block w-[43vw] max-w-[930px] rotate-[7.12deg] absolute h-[886px] -top-20 rounded-t-3xl bg-linear-to-br from-[#1C274C] to-[#6F4154] z-[-1]"
-							>
-							</div>
-							<h2
-								class="text-3xl lg:hidden flex flex-row items-center font-bold font-sans text-foreground"
-							>
-								Our&nbsp;<b class="text-page">Team</b>
-							</h2>
-							<div
-								class="bg-linear-to-br lg:bg-none w-full flex flex-col gap-5 from-[#1C274C] to-[#6F4154] rounded-[33px] p-7 text-white"
-							>
-								<div class="flex flex-row min-w-fit gap-6">
-									<div
-										class="w-[121px] h-[121px] rounded-full p-[3px] border-page border-[3px]"
-									>
-										<Image
-											width={121}
-											height={121}
-											src="/assets/team/lucas-ligas.jpeg"
-											alt="Lucas Ligas"
-											class="w-full h-full rounded-full bg-white"
-										/>
-									</div>
-									<div class="flex flex-col justify-center">
-										<p class="font-bold text-lg">
-											Lucas Ligas
-										</p>
-										<p class="font-light">CMO</p>
-										<div
-											class="flex flex-row md:flex-col mt-2"
-										>
-											<a
-												href="https://www.linkedin.com/in/lucas-ligas-a6632b282/"
-												aria-label="linkedin"
-												class="flex flex-row items-center"
-											>
-												<Linkedin
-													className="text-app"
-												/>&nbsp;
-												<p class="hidden md:block">
-													Lucas Ligas
-												</p>
-											</a>
-											<a
-												href="mailto:lucasligas15@gmail.com"
-												class="flex flex-row items-center"
-												aria-label="email"
-											>
-												<MailIcon
-													className="text-app"
-												/>&nbsp;
-												<p class="hidden md:block">
-													lucasligas15@gmail.com
-												</p>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="flex flex-row min-w-fit gap-6">
-									<div
-										class="w-[121px] h-[121px] rounded-full p-[3px] border-page border-[3px]"
-									>
-										<Image
-											width={121}
-											height={121}
-											src="/assets/team/daniel-czaja.jpeg"
-											alt="Daniel Czaja"
-											class="w-full h-full rounded-full bg-white"
-										/>
-									</div>
-									<div class="flex flex-col justify-center">
-										<p class="font-bold text-lg">
-											Daniel Czaja
-										</p>
-										<p class="font-light">CDO</p>
-										<div
-											class="flex flex-row md:flex-col mt-2"
-										>
-											<a
-												href="https://www.linkedin.com/in/daniel-adam-czaja-2aab07257/"
-												aria-label="linkedin"
-												class="flex flex-row items-center"
-											>
-												<Linkedin
-													className="text-app"
-												/>&nbsp;
-												<p class="hidden md:block">
-													Daniel Czaja
-												</p>
-											</a>
-											<a
-												href="mailto:danielczaja12@gmail.com"
-												class="flex flex-row items-center"
-												aria-label="email"
-											>
-												<MailIcon
-													className="text-app"
-												/>&nbsp;
-												<p class="hidden md:block">
-													danielczaja12@gmail.com
-												</p>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="flex flex-row min-w-fit gap-6">
-									<div
-										class="w-[121px] h-[121px] rounded-full p-[3px] border-page border-[3px]"
-									>
-										<Image
-											width={121}
-											height={121}
-											src="/assets/team/jakub-krcmarik.jpeg"
-											alt="Jakub Krčmárik"
-											class="w-full h-full rounded-full bg-white"
-										/>
-									</div>
-									<div class="flex flex-col justify-center">
-										<p class="font-bold text-lg">
-											Jakub Krčmárik
-										</p>
-										<p class="font-light">CTO</p>
-										<div
-											class="flex flex-row md:flex-col mt-2"
-										>
-											<a
-												href="https://www.linkedin.com/in/jakub-krcmarik/"
-												aria-label="linkedin"
-												class="flex flex-row items-center"
-											>
-												<Linkedin
-													className="text-app"
-												/>&nbsp;
-												<p class="hidden md:block">
-													Jakub Krčmárik
-												</p>
-											</a>
-											<a
-												href="mailto:mindstormjak@gmail.com"
-												class="flex flex-row items-center"
-												aria-label="email"
-											>
-												<MailIcon
-													className="text-app"
-												/>&nbsp;
-												<p class="hidden md:block">
-													mindstormjak@gmail.com
-												</p>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+					<ContactCards client:visible />
 				</main>
 			</div>
 		</div>
