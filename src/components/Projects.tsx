@@ -12,7 +12,7 @@ export default function Projects() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: index * 0.1 }}
 					viewport={{ once: true }}
-					className="group relative overflow-hidden rounded-3xl bg-white"
+					className="group relative overflow-hidden rounded-3xl bg-white transition-shadow hover:shadow-xl"
 				>
 					<div className="overflow-hidden">
 						<img
@@ -26,7 +26,7 @@ export default function Projects() {
 					<div className="p-8">
 						<h3 className="mb-4 font-bold text-xl">{project.title}</h3>
 						<p className="mb-6 text-gray-600">{project.description}</p>
-						<a href={`/projects/${project.slug}`} className="inline-flex items-center text-[#ff7171]">
+						<a href={`/projects/${project.slug}`} className="inline-flex items-center text-page">
 							Learn More
 							<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 						</a>

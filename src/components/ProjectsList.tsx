@@ -27,27 +27,27 @@ export default function ProjectsList() {
 		<div className="py-16 lg:py-24">
 			<section className="px-8 py-8 lg:px-16">
 				<div className="mx-auto max-w-7xl">
-					<div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+					<div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
 						<div className="flex flex-wrap gap-2">
 							{categories.map((category) => (
 								<Button
 									key={category.value}
 									variant={selectedCategory === category.value ? "default" : "outline"}
-									className={`rounded-full ${selectedCategory === category.value ? "bg-page text-white hover:bg-page/90" : ""}`}
+									className={`rounded-full ${selectedCategory === category.value ? "bg-page text-white hover:bg-page/90" : "bg-white"}`}
 									onClick={() => setSelectedCategory(category.value)}
 								>
 									{category.label}
 								</Button>
 							))}
 						</div>
-						<div className="relative">
+						<div className="relative flex items-center">
 							<Search className="-translate-y-1/2 absolute top-1/2 left-3 h-4 w-4 text-gray-400" />
 							<Input
 								autoComplete="off"
 								placeholder="Search projects..."
 								value={searchQuery}
 								onChange={(e) => setSearchQuery(e.target.value)}
-								className="w-full rounded-full pl-10 md:w-[300px]"
+								className="w-full rounded-full bg-white pl-10 md:w-[300px]"
 							/>
 						</div>
 					</div>
@@ -64,7 +64,7 @@ export default function ProjectsList() {
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}
-								style={project.color ? ({ "--color-page": `${project.color}` } as MotionStyle) : {}}
+								style={project.color ? ({ "--page-color": `${project.color}` } as MotionStyle) : {}}
 								className="group flex flex-col overflow-hidden rounded-3xl bg-white transition-shadow hover:shadow-xl"
 							>
 								<div className="overflow-hidden">

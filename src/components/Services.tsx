@@ -29,13 +29,13 @@ export default function Services() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className="group flex flex-col items-start rounded-3xl bg-white p-8 transition-shadow hover:bg-white hover:shadow-xl"
+							className="group flex flex-col items-start rounded-3xl bg-white p-8 transition-shadow hover:shadow-xl"
 						>
 							<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">{service.icon}</div>
 							<h3 className="mb-4 text-start font-bold text-xl">{service.title}</h3>
 							<p className="mb-6 text-start text-gray-600">{service.description}</p>
 							<div className="h-auto flex-grow" />
-							<a href={service.link} className="inline-flex items-center text-[#ff7171]">
+							<a href={service.link} className="inline-flex items-center text-page">
 								Learn more
 								<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 							</a>

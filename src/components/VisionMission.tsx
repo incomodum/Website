@@ -13,7 +13,7 @@ export default function VisionMission() {
 						viewport={{ once: true }}
 						className="rounded-3xl bg-white p-8 lg:p-12"
 					>
-						<div className="mb-6 inline-block rounded-2xl bg-[#ff7171]/10 p-4 text-[#ff7171]">
+						<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">
 							<Target className="h-8 w-8" />
 						</div>
 						<h2 className="mb-4 font-bold text-2xl">Our Vision</h2>
@@ -30,7 +30,7 @@ export default function VisionMission() {
 						viewport={{ once: true }}
 						className="rounded-3xl bg-white p-8 lg:p-12"
 					>
-						<div className="mb-6 inline-block rounded-2xl bg-[#ff7171]/10 p-4 text-[#ff7171]">
+						<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">
 							<Lightbulb className="h-8 w-8" />
 						</div>
 						<h2 className="mb-4 font-bold text-2xl">Our Mission</h2>

@@ -15,18 +15,18 @@ export default function ServicesList() {
 							viewport={{ once: true }}
 							className="group rounded-3xl bg-white p-8 transition-shadow hover:shadow-xl"
 						>
-							<div className="mb-6 inline-block rounded-2xl bg-[#ff7171]/10 p-4 text-[#ff7171]">{service.icon}</div>
+							<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">{service.icon}</div>
 							<h3 className="mb-4 font-bold text-xl">{service.title}</h3>
 							<p className="mb-6 text-gray-600">{service.description}</p>
 							<ul className="space-y-3">
 								{service.features.map((feature) => (
 									<li key={feature} className="flex items-center text-gray-600 text-sm">
-										<div className="mr-3 h-1.5 w-1.5 rounded-full bg-[#ff7171]" />
+										<div className="mr-3 h-1.5 w-1.5 rounded-full bg-page" />
 										{feature}
 									</li>
 								))}
 							</ul>
-							{/* <a href={service.link} className="inline-flex items-center text-[#ff7171]">
+							{/* <a href={service.link} className="inline-flex items-center text-page">
 								Learn more
 								<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 							</a> */}

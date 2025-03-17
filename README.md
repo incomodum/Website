@@ -23,9 +23,10 @@
 
 
 ## 📌 TODO
-- [ ] Team Section
-- [ ] Nicer illustrations
-- [ ] Fix mobile menu
+- [ ] Team Section / Contact Page
+- [ ] Better mobile menu + Hover for nav items
+- [ ] Swicth to Valibot (+ Tanstack Form)
+- [ ] Fix overflow on zen
 
 
 ## 🛠️ Local Setup
