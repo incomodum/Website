@@ -143,7 +143,7 @@
 }
 
 .color-blur {
-	@apply absolute aspect-square blur-[500px] w-1/2 block rounded-full opacity-30 -z-10 bg-radial from-page to-transparent;
+	@apply absolute hidden aspect-square blur-[500px] w-1/2 md:block rounded-full opacity-30 -z-10 bg-radial from-page to-transparent;
 
 	&.right {
 		@apply right-0;
