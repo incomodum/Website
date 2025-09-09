@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import { SEO } from "astro-seo"
 import { ArrowRight } from "lucide-react"
 import ProjectsList from "@/components/ProjectsList"
+import ThemeManager from "@/components/ThemeManager.astro"
 ---
 
 <html lang="en">
@@ -46,6 +47,7 @@ import ProjectsList from "@/components/ProjectsList"
 				card: "summary_large_image"
 			}}
 		/>
+		<ThemeManager defaultTheme="auto" />
 	</head>
 	<body>
 		<Header client:load />
@@ -61,7 +63,7 @@ import ProjectsList from "@/components/ProjectsList"
 									>Projects</span
 								>
 							</h1>
-							<p class="text-lg text-gray-600">
+							<p class="text-lg text-foreground/60">
 								Explore our portfolio of successful projects and
 								see how we've helped businesses transform their
 								digital presence.
@@ -96,6 +98,6 @@ import ProjectsList from "@/components/ProjectsList"
 				</section>
 			</main>
 		</div>
-		<Footer />
+		<Footer client:load />
 	</body>
 </html>

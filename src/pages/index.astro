@@ -9,6 +9,7 @@ import Services from "@/components/Services"
 import Mission from "@/components/Mission"
 import ContactCards from "@/components/ContactCards"
 import { ArrowRight } from "lucide-react"
+import ThemeManager from "@/components/ThemeManager.astro"
 ---
 
 <html lang="en">
@@ -48,14 +49,15 @@ import { ArrowRight } from "lucide-react"
 				card: "summary_large_image"
 			}}
 		/>
+		<ThemeManager defaultTheme="auto" />
 	</head>
 	<body>
 		<Header client:load />
 		<div
-			class="flex flex-col bg-slate-50/50 backdrop-blur-lg items-center w-full"
+			class="flex flex-col backdrop-blur-lg items-center w-full"
 		>
 			<div class="w-full px-8">
-				<main class="w-full pt-[50px]">
+				<main class="w-full max-w-7xl mx-auto pt-[50px]">
 					<section
 						class="flex flex-col md:px-16 2xl:px-0 md:py-16 items-center justify-center md:justify-between"
 					>
@@ -71,7 +73,7 @@ import { ArrowRight } from "lucide-react"
 							>
 						</h1>
 						<p
-							class="mx-auto mb-12 md:text-center max-w-2xl text-xl text-gray-600"
+							class="mx-auto mb-12 md:text-center max-w-2xl text-xl text-foreground/60"
 						>
 							We create cutting-edge software solutions that help
 							businesses transform, scale, and achieve their
@@ -89,7 +91,7 @@ import { ArrowRight } from "lucide-react"
 							</a>
 							<a
 								href="/projects"
-								class="inline-flex w-full md:w-fit items-center justify-center rounded-full border-2 border-gray-200 px-8 py-4 font-medium text-gray-700 transition-all hover:border-gray-300 hover:shadow-lg"
+								class="inline-flex w-full md:w-fit items-center justify-center rounded-full border-2 px-8 py-4 font-medium text-gray-700 dark:text-gray-200 hover:dark:border-page/60 transition-all hover:border-page/60 hover:scale-105"
 							>
 								View Our Work
 							</a>
@@ -100,9 +102,11 @@ import { ArrowRight } from "lucide-react"
 					<Services client:visible />
 					<div class="color-blur right"></div>
 					<section
-						class="mt-32 flex max-w-7xl mx-auto flex-col gap-7"
+						class="mt-32 flex flex-col gap-7"
+						aria-labelledby="heading-featured-projects"
 					>
 						<h2
+							id="heading-featured-projects"
 							class="text-4xl font-bold text-center md:text-start font-sans text-foreground"
 						>
 							Featured <b class="text-page">projects</b>
@@ -117,6 +121,6 @@ import { ArrowRight } from "lucide-react"
 				</main>
 			</div>
 		</div>
-		<Footer />
+		<Footer client:visible />
 	</body>
 </html>

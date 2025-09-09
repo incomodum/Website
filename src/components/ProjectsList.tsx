@@ -1,9 +1,9 @@
-import { useState } from "react"
-import { Button } from "./ui/button"
 import { ArrowRight, Search } from "lucide-react"
-import { Input } from "./ui/input"
-import { motion, type MotionStyle } from "motion/react"
+import { type MotionStyle, motion } from "motion/react"
+import { useState } from "react"
 import projects from "@/lib/projects"
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
 
 const categories = [
 	{ label: "All Projects", value: "all" },
@@ -33,7 +33,7 @@ export default function ProjectsList() {
 								<Button
 									key={category.value}
 									variant={selectedCategory === category.value ? "default" : "outline"}
-									className={`rounded-full ${selectedCategory === category.value ? "bg-page text-white hover:bg-page/90" : "bg-white"}`}
+									className={`rounded-full ${selectedCategory === category.value ? "bg-page text-white hover:bg-page/90" : "bg-card"}`}
 									onClick={() => setSelectedCategory(category.value)}
 								>
 									{category.label}
@@ -47,7 +47,7 @@ export default function ProjectsList() {
 								placeholder="Search projects..."
 								value={searchQuery}
 								onChange={(e) => setSearchQuery(e.target.value)}
-								className="w-full rounded-full bg-white pl-10 md:w-[300px]"
+								className="w-full rounded-full pl-10 md:w-[300px] dark:bg-card"
 							/>
 						</div>
 					</div>
@@ -57,46 +57,55 @@ export default function ProjectsList() {
 			{/* Projects Grid */}
 			<section className="px-8 py-8 lg:px-16 lg:py-12">
 				<div className="mx-auto max-w-7xl">
-					<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+					<div role="list" className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{filteredProjects.map((project, index) => (
-							<motion.div
+							<motion.a
 								key={project.id}
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}
 								style={project.color ? ({ "--page-color": `${project.color}` } as MotionStyle) : {}}
-								className="group flex flex-col overflow-hidden rounded-3xl bg-white transition-shadow hover:shadow-xl"
+								className="group flex flex-col overflow-hidden rounded-3xl bg-card transition-shadow hover:shadow-xl"
+								href={project.slug.includes("https://") ? project.slug : `/projects/${project.slug}`}
+								target={project.slug.includes("https://") ? "_blank" : "_self"}
+								aria-label={project.title}
 							>
 								<div className="overflow-hidden">
 									<img
-										src={project.image || "/placeholder.svg"}
+										src={project.image ? `/assets/projects/${project.image}-og.png` : "/placeholder.svg"}
 										alt={project.title}
 										width={1280}
 										height={640}
-										className="h-fit w-full object-cover transition-transform duration-500 group-hover:scale-105"
+										className="flex h-fit w-full object-cover transition-transform duration-500 group-hover:scale-105 dark:hidden"
+									/>
+									<img
+										src={project.image ? `/assets/projects/${project.image}-dark-og.png` : "/placeholder.svg"}
+										alt={project.title}
+										width={1280}
+										height={640}
+										className="hidden h-fit w-full object-cover transition-transform duration-500 group-hover:scale-105 dark:flex"
 									/>
 								</div>
 								<div className="flex flex-grow flex-col p-6">
 									<div className="mb-4 flex flex-wrap gap-2">
 										{project.technologies.map((tech) => (
-											<span key={tech} className="rounded-full bg-page/10 px-3 py-1 text-page text-sm">
+											<span
+												key={tech}
+												className="rounded-full bg-page/10 px-3 py-1 text-page text-sm dark:bg-page/50 dark:text-white"
+											>
 												{tech}
 											</span>
 										))}
 									</div>
 									<h3 className="mb-2 font-bold text-xl">{project.title}</h3>
-									<p className="mb-4 text-gray-600">{project.description}</p>
+									<p className="mb-4 text-foreground/60">{project.description}</p>
 									<div className="h-auto flex-grow" />
-									<a
-										href={project.slug.includes("https://") ? project.slug : `/projects/${project.slug}`}
-										target={project.slug.includes("https://") ? "_blank" : "_self"}
-										className="inline-flex items-center text-page"
-									>
+									<p className="inline-flex items-center text-page">
 										Learn More
 										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-									</a>
+									</p>
 								</div>
-							</motion.div>
+							</motion.a>
 						))}
 						{filteredProjects.length === 0 && (
 							<motion.div

@@ -13,14 +13,15 @@ export default function ServicesList() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className="group rounded-3xl bg-white p-8 transition-shadow hover:shadow-xl"
+							className="group flex flex-col rounded-3xl bg-card p-8 transition-shadow hover:shadow-xl"
 						>
-							<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">{service.icon}</div>
+							<div className="mb-6 w-fit rounded-2xl bg-page/10 p-4 text-page">{service.icon}</div>
 							<h3 className="mb-4 font-bold text-xl">{service.title}</h3>
-							<p className="mb-6 text-gray-600">{service.description}</p>
+							<p className="mb-6 text-foreground/60">{service.description}</p>
+							<div className="h-auto grow" />
 							<ul className="space-y-3">
 								{service.features.map((feature) => (
-									<li key={feature} className="flex items-center text-gray-600 text-sm">
+									<li key={feature} className="flex items-center text-foreground/60 text-sm">
 										<div className="mr-3 h-1.5 w-1.5 rounded-full bg-page" />
 										{feature}
 									</li>

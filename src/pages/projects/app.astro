@@ -5,6 +5,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { SEO } from "astro-seo"
 import { ArrowLeft } from "lucide-react"
+import ThemeManager from "@/components/ThemeManager.astro"
 ---
 
 <html lang="en">
@@ -47,9 +48,10 @@ import { ArrowLeft } from "lucide-react"
 		/>
 		<style>
 			:root {
-				--page-color: hsl(38 58% 64%);
+				--page-color: oklch(0.7806 0.0965 80.15);
 			}
 		</style>
+		<ThemeManager defaultTheme="auto" />
 	</head>
 	<body class="flex flex-col">
 		<Header client:load />
@@ -60,7 +62,7 @@ import { ArrowLeft } from "lucide-react"
 				<div class="py-6">
 					<a
 						href="/projects"
-						class="inline-flex items-center text-gray-600 hover:text-gray-900"
+						class="inline-flex items-center text-foreground/60 hover:text-foreground"
 					>
 						<ArrowLeft className="mr-2 h-4 w-4" />
 						Back to projects
@@ -76,7 +78,7 @@ import { ArrowLeft } from "lucide-react"
 							>
 								incomodum <span class="text-page">app</span>
 							</h1>
-							<p class="text-lg lg:text-xl text-gray-600">
+							<p class="text-lg lg:text-xl text-foreground/60">
 								Self-improvement app to help you<br
 									class="block md:hidden"
 								/> reach your goals
@@ -105,13 +107,13 @@ import { ArrowLeft } from "lucide-react"
 							<h2 class="mb-8 text-3xl font-bold">
 								The <span class="text-page">Problem</span>
 							</h2>
-							<p class="mb-6 text-gray-600">
+							<p class="mb-6 text-foreground/60">
 								In this day and age people spend lots of their
 								time on social media even if they have work to
 								do or need to study. It can even lead to worse
 								mental health and demotivation.
 							</p>
-							<ul class="space-y-4 text-gray-600">
+							<ul class="space-y-4 text-foreground/60">
 								<li class="flex items-center">
 									<div
 										class="mr-4 h-2 w-2 rounded-full bg-page"
@@ -139,26 +141,26 @@ import { ArrowLeft } from "lucide-react"
 							<h2 class="mb-8 text-3xl font-bold">
 								Our <span class="text-page">Solution</span>
 							</h2>
-							<p class="mb-6 text-gray-600">
+							<p class="mb-6 text-foreground/60">
 								Time management app designed primarily for the
 								younger generation, with a mission to help users
 								overcome social media addiction and motivate
 								them to self improvement.
 							</p>
 							<div class="grid gap-6 sm:grid-cols-2">
-								<div class="rounded-lg bg-white p-6">
+								<div class="rounded-lg bg-card p-6">
 									<h3 class="mb-2 font-semibold">
 										Technology Stack
 									</h3>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm text-foreground/60">
 										Expo, React Native, October CMS, MySQL
 									</p>
 								</div>
-								<div class="rounded-lg bg-white p-6">
+								<div class="rounded-lg bg-card p-6">
 									<h3 class="mb-2 font-semibold">
 										Current State
 									</h3>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm text-foreground/60">
 										Work in progress
 									</p>
 								</div>
@@ -168,6 +170,6 @@ import { ArrowLeft } from "lucide-react"
 				</section>
 			</div>
 		</div>
-		<Footer />
+		<Footer client:load />
 	</body>
 </html>

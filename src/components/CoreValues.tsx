@@ -9,7 +9,7 @@ export default function CoreValues() {
 					<h2 className="mb-6 font-bold text-3xl lg:text-4xl">
 						Our Core <span className="text-page">Values</span>
 					</h2>
-					<p className="mb-12 text-gray-600">
+					<p className="mb-12 text-foreground/60">
 						These principles guide everything we do and shape how we work with our clients and each other.
 					</p>
 				</div>
@@ -21,11 +21,11 @@ export default function CoreValues() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className="rounded-3xl bg-white p-6 md:text-center"
+							className="rounded-3xl bg-card p-6 md:text-center"
 						>
 							<div className="mx-auto mb-4 inline-block rounded-2xl bg-page/10 p-4 text-page">{value.icon}</div>
 							<h3 className="mb-2 font-bold text-xl">{value.title}</h3>
-							<p className="text-gray-600">{value.description}</p>
+							<p className="text-foreground/60">{value.description}</p>
 						</motion.div>
 					))}
 				</div>

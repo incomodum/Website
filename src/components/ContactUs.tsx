@@ -30,7 +30,11 @@ export default function ContactUs() {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full flex-col gap-2 bg-none lg:max-w-[450px]">
+			<form
+				onSubmit={form.handleSubmit(onSubmit)}
+				aria-label="Send a message to us"
+				className="flex w-full flex-col gap-2 bg-none lg:max-w-[450px]"
+			>
 				<FormField
 					control={form.control}
 					name="email"

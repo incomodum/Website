@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
@@ -14,9 +14,6 @@
 			"jsxQuoteStyle": "double"
 		}
 	},
-	"organizeImports": {
-		"enabled": false
-	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -26,11 +23,14 @@
 			},
 			"correctness": {
 				"noUnusedVariables": "warn",
-				"noUnusedImports": "warn"
+				"noUnusedImports": "warn",
+				"useUniqueElementIds": "off"
 			},
 			"a11y": {
 				"useButtonType": "off",
-				"useValidAnchor": "off"
+				"useValidAnchor": "off",
+				"useSemanticElements": "off",
+				"noSvgWithoutTitle": "off"
 			},
 			"nursery": {
 				"useSortedClasses": "warn"
@@ -38,22 +38,24 @@
 		}
 	},
 	"files": {
-		"include": ["./*.ts", "./**/*.tsx", "astro.config.mjs"],
-		"ignore": [
-			"./*.d.ts",
-			"./node-modules",
-			"./.expo",
-			"./.vscode",
-			"./yarn.lock",
-			"./ios",
-			"./android",
-			"./.DS_Store",
-			"./*.lock",
-			"./.gitattributes",
-			"*.md",
-			"*.ttf",
-			"*.png",
-			"*.yml"
+		"includes": [
+			"**/*.ts",
+			"**/*.tsx",
+			"**/astro.config.mjs",
+			"!**/*.d.ts",
+			"!node-modules",
+			"!.expo",
+			"!.vscode",
+			"!yarn.lock",
+			"!ios",
+			"!android",
+			"!.DS_Store",
+			"!**/*.lock",
+			"!.gitattributes",
+			"!**/*.md",
+			"!**/*.ttf",
+			"!**/*.png",
+			"!**/*.yml"
 		]
 	}
 }

@@ -11,13 +11,13 @@ export default function VisionMission() {
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true }}
-						className="rounded-3xl bg-white p-8 lg:p-12"
+						className="rounded-3xl bg-card p-8 lg:p-12"
 					>
 						<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">
-							<Target className="h-8 w-8" />
+							<Target className="size-8" />
 						</div>
 						<h2 className="mb-4 font-bold text-2xl">Our Vision</h2>
-						<p className="text-gray-600">
+						<p className="text-foreground/60">
 							To be the leading force in digital innovation, creating technology solutions that shape the future of businesses
 							worldwide. We envision a world where every organization can harness the full potential of technology to achieve their
 							goals.
@@ -28,13 +28,13 @@ export default function VisionMission() {
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true }}
-						className="rounded-3xl bg-white p-8 lg:p-12"
+						className="rounded-3xl bg-card p-8 lg:p-12"
 					>
 						<div className="mb-6 inline-block rounded-2xl bg-page/10 p-4 text-page">
-							<Lightbulb className="h-8 w-8" />
+							<Lightbulb className="size-8" />
 						</div>
 						<h2 className="mb-4 font-bold text-2xl">Our Mission</h2>
-						<p className="text-gray-600">
+						<p className="text-foreground/60">
 							To deliver exceptional software solutions that empower businesses to thrive in the digital age. We combine technical
 							excellence with innovative thinking to create solutions that drive real business value and lasting impact.
 						</p>

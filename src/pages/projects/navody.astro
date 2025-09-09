@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import { SEO } from "astro-seo"
 import { ArrowLeft } from "lucide-react"
 import navody from "../../../public/assets/projects/navody.webp"
+import ThemeManager from "@/components/ThemeManager.astro"
 ---
 
 <html lang="en">
@@ -48,9 +49,10 @@ import navody from "../../../public/assets/projects/navody.webp"
 		/>
 		<style>
 			:root {
-				--page-color: hsl(222 66% 39%);
+				--page-color: oklch(0.4351 0.1553 263.78);
 			}
 		</style>
+		<ThemeManager defaultTheme="auto" />
 	</head>
 	<body class="flex flex-col">
 		<Header client:load />
@@ -59,7 +61,7 @@ import navody from "../../../public/assets/projects/navody.webp"
 				<div class="py-6">
 					<a
 						href="/projects"
-						class="inline-flex items-center text-gray-600 hover:text-gray-900"
+						class="inline-flex items-center text-foreground/60 hover:text-foreground"
 					>
 						<ArrowLeft className="mr-2 h-4 w-4" />
 						Back to projects
@@ -76,7 +78,7 @@ import navody from "../../../public/assets/projects/navody.webp"
 								><wbr />.slovensko.sk
 							</h1>
 							</a>
-							<p class="text-lg lg:text-xl text-gray-600">
+							<p class="text-lg lg:text-xl text-foreground/60">
 								Empowering Slovak Citizens with Tailored Guides
 								and Tutorials
 							</p>
@@ -93,10 +95,10 @@ import navody from "../../../public/assets/projects/navody.webp"
 							<h2 class="mb-8 text-3xl font-bold">
 								The <span class="text-page">Challenge</span>
 							</h2>
-							<p class="mb-6 text-gray-600">
+							<p class="mb-6 text-foreground/60">
 								Create a user friendly app for all citizens of Slovakia for guides and resources around legal actions
 							</p>
-							<ul class="space-y-4 text-gray-600">
+							<ul class="space-y-4 text-foreground/60">
 								<li class="flex items-center">
 									<div
 										class="mr-4 h-2 w-2 rounded-full bg-page"
@@ -124,21 +126,21 @@ import navody from "../../../public/assets/projects/navody.webp"
 							<h2 class="mb-8 text-3xl font-bold">
 								Our <span class="text-page">Solution</span>
 							</h2>
-							<p class="mb-6 text-gray-600">
+							<p class="mb-6 text-foreground/60">
 								Originaly created during a hackathon (hacknime.to) as InState, we polished the user exprierence and made the UI using IDSK 3 for MIRRI (Slovak government department).
 							</p>
 							<div class="grid gap-6 sm:grid-cols-2">
-								<div class="rounded-lg bg-white p-6">
+								<div class="rounded-lg bg-card p-6">
 									<h3 class="mb-2 font-semibold">
 										Technology Stack
 									</h3>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm text-foreground/60">
 										Next.js, React, October CMS, MySQL
 									</p>
 								</div>
-								<div class="rounded-lg bg-white p-6">
+								<div class="rounded-lg bg-card p-6">
 									<h3 class="mb-2 font-semibold">Timeline</h3>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm text-foreground/60">
 										6 months
 									</p>
 								</div>
@@ -148,6 +150,6 @@ import navody from "../../../public/assets/projects/navody.webp"
 				</section>
 			</div>
 		</div>
-		<Footer />
+		<Footer client:load />
 	</body>
 </html>
