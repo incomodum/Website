@@ -8,8 +8,8 @@ export default function Projects() {
 			{projects.slice(0, 2).map((project, index) => (
 				<motion.a
 					key={project.slug}
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
+					initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+					whileInView={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8, delay: index * 0.1 }}
 					viewport={{ once: true }}
 					href={`/projects/${project.slug}`}

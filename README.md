@@ -3,9 +3,11 @@
 
 <p align="center">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./.github/logo-dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="./.github/logo-light.svg">
-        <img alt="incomodum" src="./.github/logo-light.svg" width="60%">
+        <source media="(prefers-color-scheme: dark)" srcset="./.github/logo-dark.svg" type="image/svg+xml">
+        <source media="(prefers-color-scheme: dark)" srcset="./.github/logo-dark.png" type="image/png">
+        <source media="(prefers-color-scheme: light)" srcset="./.github/logo-light.svg" type="image/svg+xml">
+        <source media="(prefers-color-scheme: light)" srcset="./.github/logo-light.png" type="image/png">
+        <img alt="incomodum" src="./.github/logo-light.png" width="60%">
     </picture>
 </p>
 
@@ -23,8 +25,9 @@
 
 
 ## 📌 TODO
-- [ ] Team Section / Contact Page
+- [ ] Team Section
 - [ ] Better mobile menu + Hover for nav items
+- [ ] More/Improve project pages (KSK)
 - [ ] Swicth to Valibot (+ Tanstack Form)
 - [ ] Fix overflow on zen
 

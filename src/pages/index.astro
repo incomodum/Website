@@ -7,7 +7,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Services from "@/components/Services"
 import Mission from "@/components/Mission"
-import ContactCards from "@/components/ContactCards"
+import Contact from "@/components/Contact"
 import { ArrowRight } from "lucide-react"
 import ThemeManager from "@/components/ThemeManager.astro"
 ---
@@ -81,7 +81,7 @@ import ThemeManager from "@/components/ThemeManager.astro"
 						</p>
 						<div class="flex flex-wrap w-full md:w-max justify-center gap-6">
 							<a
-								href="/#contact"
+								href="/contact"
 								class="inline-flex w-full md:w-fit items-center justify-center group rounded-full bg-page px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-page/60"
 							>
 								Get Started
@@ -117,7 +117,7 @@ import ThemeManager from "@/components/ThemeManager.astro"
 					<div class="color-blur left"></div>
 					<Mission client:visible />
 					<div id="contact"></div>
-					<ContactCards client:visible />
+					<Contact client:visible />
 				</main>
 			</div>
 		</div>

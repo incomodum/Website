@@ -1,9 +1,9 @@
-import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
 import { z } from "astro/zod"
-import { Input } from "./ui/input"
+import { useForm } from "react-hook-form"
 import { Button } from "./ui/button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
+import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 
 const formSchema = z.object({
@@ -40,9 +40,15 @@ export default function ContactUs() {
 					name="email"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Email</FormLabel>
+							<FormLabel id="contact-label-email">Email</FormLabel>
 							<FormControl>
-								<Input type="email" autoComplete="email" placeholder="example@gmail.com" {...field} />
+								<Input
+									aria-labelledby="contact-label-email"
+									type="email"
+									autoComplete="email"
+									placeholder="example@gmail.com"
+									{...field}
+								/>
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -53,9 +59,15 @@ export default function ContactUs() {
 					name="firstName"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>First Name</FormLabel>
+							<FormLabel id="contact-label-first-name">First Name</FormLabel>
 							<FormControl>
-								<Input type="text" autoComplete="given-name" placeholder="John" {...field} />
+								<Input
+									aria-labelledby="contact-label-first-name"
+									type="text"
+									autoComplete="given-name"
+									placeholder="John"
+									{...field}
+								/>
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -66,9 +78,15 @@ export default function ContactUs() {
 					name="lastName"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Last Name</FormLabel>
+							<FormLabel id="contact-label-last-name">Last Name</FormLabel>
 							<FormControl>
-								<Input type="text" autoComplete="family-name" placeholder="Doe" {...field} />
+								<Input
+									aria-labelledby="contact-label-last-name"
+									type="text"
+									autoComplete="family-name"
+									placeholder="Doe"
+									{...field}
+								/>
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -79,9 +97,9 @@ export default function ContactUs() {
 					name="subject"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Subject</FormLabel>
+							<FormLabel id="contact-label-subject">Subject</FormLabel>
 							<FormControl>
-								<Input type="text" autoComplete="none" placeholder="Subject" {...field} />
+								<Input aria-labelledby="contact-label-subject" type="text" autoComplete="none" placeholder="Subject" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -92,9 +110,9 @@ export default function ContactUs() {
 					name="message"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Message</FormLabel>
+							<FormLabel id="contact-label-message">Message</FormLabel>
 							<FormControl>
-								<Textarea placeholder="Message" className="resize-none" {...field} />
+								<Textarea aria-labelledby="contact-label-message" placeholder="Message" className="resize-none" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

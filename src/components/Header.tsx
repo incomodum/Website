@@ -2,7 +2,6 @@ import { Divide as Hamburger } from "hamburger-react"
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
 import Logo from "./Logo"
-import { ThemeToggle } from "./ThemeToggle"
 
 const links = [
 	{
@@ -30,7 +29,7 @@ export default function Header() {
 		<div className="sticky top-0 left-0 z-50 flex w-full flex-col bg-background/50 backdrop-blur-xl lg:backdrop-blur-lg">
 			<header className="flex w-full flex-row items-center justify-center p-8 pb-6 text-page">
 				<div className="flex w-full max-w-7xl flex-row items-center justify-between">
-					<a href="/#" onClick={() => setOpen(false)}>
+					<a href="/" onClick={() => setOpen(false)}>
 						<Logo />
 					</a>
 					<nav className="hidden flex-row items-center gap-8 lg:flex">
@@ -39,7 +38,7 @@ export default function Header() {
 								{link.name}
 							</a>
 						))}
-						<a href="/#contact">
+						<a href="/contact">
 							<button className="rounded-[37px] bg-current px-8 py-3 shadow-button transition-all hover:scale-105">
 								<p className="font-bold text-white">Contact</p>
 							</button>
@@ -65,7 +64,7 @@ export default function Header() {
 									{link.name}
 								</a>
 							))}
-							<a href="/#contact" onClick={() => setOpen(false)}>
+							<a href="/contact" onClick={() => setOpen(false)}>
 								<button className="bg-transparent text-page drop-shadow-mobile">
 									<p className="font-bold text-4xl">Contact</p>
 								</button>

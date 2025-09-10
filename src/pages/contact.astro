@@ -1,0 +1,74 @@
+---
+import "@fontsource-variable/dm-sans"
+import "@/styles/globals.css"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import { SEO } from "astro-seo"
+import ThemeManager from "@/components/ThemeManager.astro"
+import ContactCards from "@/components/ContactCards"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<SEO
+			title="Contact Us | incomodum "
+			description="Get in touch with us to start the conversation about how we can help bring your ideas to life."
+			openGraph={{
+				basic: {
+					title: "Contact Us",
+					type: "website",
+					image: "/assets/base-og.png"
+				},
+				optional: {
+					locale: "en",
+					description:
+						"Get in touch with us to start the conversation about how we can help bring your ideas to life.",
+					siteName: "incomodum"
+				},
+				image: {
+					width: 1280,
+					height: 640,
+					type: "image/png"
+				}
+			}}
+			twitter={{
+				card: "summary_large_image"
+			}}
+		/>
+		<ThemeManager defaultTheme="auto" />
+	</head>
+	<body>
+		<Header client:load />
+		<div class="flex flex-col items-center w-full">
+			<main class="w-full min-h-screen">
+				<section class="relative pt-32 px-8 lg:pt-40 w-full">
+					<div class="mx-auto max-w-7xl">
+						<div class="mx-auto max-w-3xl md:text-center">
+							<h1
+								class="mb-6 text-4xl font-bold leading-tight lg:text-5xl"
+							>
+								Let's discuss your <span class="text-page">next project</span>
+							</h1>
+							<p class="text-lg md:max-w-[500px] md:text-center mx-auto text-foreground/60">
+								Get in touch with us to start the conversation about how we can help bring your ideas to life.
+							</p>
+						</div>
+					</div>
+					<ContactCards client:visible />
+				</section>
+			</main>
+		</div>
+		<Footer client:load />
+	</body>
+</html>
