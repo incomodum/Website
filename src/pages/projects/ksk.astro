@@ -1,0 +1,152 @@
+---
+import "@fontsource-variable/dm-sans"
+import "@/styles/globals.css"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import { SEO } from "astro-seo"
+import { ArrowLeft } from "lucide-react"
+import ksk from "../../../public/assets/projects/ksk-interactive.webp"
+import ThemeManager from "@/components/ThemeManager.astro"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<SEO
+			title="KSK Interactive | incomodum"
+			description="Interactive investment portal for the region of Košice"
+			openGraph={{
+				basic: {
+					title: "KSK Interactive",
+					type: "website",
+					image: "/assets/projects/kskinteractive-og.png"
+				},
+				optional: {
+					locale: "en",
+					description:
+						"Interactive investment portal for the region of Košice",
+					siteName: "incomodum"
+				},
+				image: {
+					width: 1280,
+					height: 640,
+					type: "image/png"
+				}
+			}}
+			twitter={{
+				card: "summary_large_image"
+			}}
+		/>
+		<style>
+			:root {
+				--page-color: oklch(0.4271 0.1205 255.72);
+			}
+		</style>
+		<ThemeManager defaultTheme="auto" />
+	</head>
+	<body class="flex flex-col">
+		<Header client:load />
+		<div class="px-8 md:px-16 flex flex-col items-center w-full min-h-screen">
+			<div class="max-w-7xl w-full">
+				<div class="py-6">
+					<a
+						href="/projects"
+						class="inline-flex items-center text-foreground/60 hover:text-foreground"
+					>
+						<ArrowLeft className="mr-2 h-4 w-4" />
+						Back to projects
+					</a>
+				</div>
+				<section class="py-12 max-w-full">
+					<div class="grid gap-16 lg:grid-cols-2 max-w-full">
+						<div class="flex flex-col justify-center">
+							<a href="https://github.com/incomodum/KSK-Interactive" target="_blank">
+							<h1
+								class="mb-4 text-4xl font-bold leading-tight lg:text-6xl"
+							>
+								<span class="text-page">KSK</span> Interactive
+							</h1>
+							</a>
+							<p class="text-lg lg:text-xl text-foreground/60">
+								Interactive investment portal for the region of Košice
+							</p>
+						</div>
+						<div class="w-full relative isolate">
+							<img src={ksk.src} width={ksk.width} height={ksk.height} class="w-full z-10 rounded-lg shadow-2xl" />
+						</div>
+					</div>
+				</section>
+				<div class="my-8 w-full bg-border h-[1px]" />
+				<section class="pb-16">
+					<div class="grid gap-16 lg:grid-cols-2">
+						<div>
+							<h2 class="mb-8 text-3xl font-bold">
+								The <span class="text-page">Challenge</span>
+							</h2>
+							<p class="mb-6 text-foreground/60">
+								Create an investment oportunity portal that would be intriguing for local/foreign investors.
+							</p>
+							<ul class="space-y-4 text-foreground/60">
+								<li class="flex items-start">
+									<div
+										class="mr-4 mt-2 size-2 rounded-full bg-page"
+									/>
+									List of available investment opportunities
+								</li>
+								<li class="flex items-start">
+									<div
+										class="mr-4 mt-2 size-2 rounded-full bg-page"
+									>
+									</div>
+									Way of connecting between the investors and the regional staff
+								</li>
+								<li class="flex items-start">
+									<div
+										class="mr-4 mt-2 size-2 rounded-full bg-page"
+									>
+									</div>
+									Centralised location for information related to the land, locations, infrastructure, etc.
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h2 class="mb-8 text-3xl font-bold">
+								Our <span class="text-page">Solution</span>
+							</h2>
+							<p class="mb-6 text-foreground/60">
+								Originally built during the hackathon (hacknime.to) under the name  <a class="underline underline-offset-2 decoration-dashed hover:decoration-solid hover:text-white" href="https://github.com/incomodum/KSK-Interactive" target="_blank">KSK Interactive</a>, the project was later handed over to the team at <a class="underline underline-offset-2 decoration-dashed hover:decoration-solid hover:text-white" href="https://cherrypeak.eu/" target="_blank">CherryPeak</a>, who brought it to its production release. We now continue to support the project’s development as consultants, helping shape its direction.
+							</p>
+							<div class="grid gap-6 sm:grid-cols-2">
+								<div class="rounded-lg bg-card p-6">
+									<h3 class="mb-2 font-semibold">
+										Technology Stack
+									</h3>
+									<p class="text-sm text-foreground/60">
+										Next.js, React, Maplibre-GL
+									</p>
+								</div>
+								<div class="rounded-lg bg-card p-6">
+									<h3 class="mb-2 font-semibold">Timeline</h3>
+									<p class="text-sm text-foreground/60">
+										Ongoing
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<Footer client:load />
+	</body>
+</html>

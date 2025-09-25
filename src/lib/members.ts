@@ -3,7 +3,13 @@ export default [
 		name: "Lucas Ligas",
 		position: "CMO",
 		image: "/assets/team/lucas-ligas.jpeg",
+		link: "https://lucasligas.com",
 		links: [
+			{
+				type: "site",
+				text: "lucasligas.com",
+				link: "https://lucasligas.com"
+			},
 			{
 				type: "linkedin",
 				text: "Lucas Ligas",
@@ -56,5 +62,6 @@ export interface Member {
 	name: string
 	position: string
 	image: string
-	links: { type: "linkedin" | "email"; text: string; link: string }[]
+	link?: string
+	links: { type: "linkedin" | "email" | "site"; text: string; link: string }[]
 }

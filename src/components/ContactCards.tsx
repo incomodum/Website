@@ -4,7 +4,7 @@ import members, { type Member } from "@/lib/members"
 import ContactUs from "./ContactUs"
 import Linkedin from "./icons/linkedin"
 
-function MemberCard({ name, position, links, image, index }: Member & { index: number }) {
+function MemberCard({ name, position, links, image, index, link }: Member & { index: number }) {
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
@@ -19,21 +19,34 @@ function MemberCard({ name, position, links, image, index }: Member & { index: n
 				<img width={121} height={121} src={image} alt={name} aria-label="Photo" className="h-full w-full rounded-full bg-card" />
 			</div>
 			<address className="flex flex-col justify-center not-italic">
-				<p aria-description="Name" className="font-bold text-lg">
-					{name}
-				</p>
+				{link && (
+					<a
+						aria-description="Name"
+						className="font-bold text-lg underline decoration-white/50 decoration-dashed underline-offset-2 transition-all hover:decoration-white hover:decoration-solid"
+						href={link}
+					>
+						{name}
+					</a>
+				)}
+				{!link && (
+					<p aria-description="Name" className="font-bold text-lg">
+						{name}
+					</p>
+				)}
 				<p aria-description="Position" className="font-light">
 					{position}
 				</p>
 				<div className="mt-2 flex flex-row md:flex-col">
-					{links.map((v) => (
-						<a key={v.link} href={v.link} aria-label={v.type} className="flex flex-row items-center">
-							{v.type === "linkedin" && <Linkedin className="text-app" />}
-							{v.type === "email" && <MailIcon className="text-app" />}
-							&nbsp;
-							<span className="hidden md:block">{v.text}</span>
-						</a>
-					))}
+					{links
+						.filter((v) => v.type !== "site")
+						.map((v) => (
+							<a key={v.link} href={v.link} aria-label={v.type} className="flex flex-row items-center">
+								{v.type === "linkedin" && <Linkedin className="text-app" />}
+								{v.type === "email" && <MailIcon className="text-app" />}
+								&nbsp;
+								<span className="hidden md:block">{v.text}</span>
+							</a>
+						))}
 				</div>
 			</address>
 		</motion.div>

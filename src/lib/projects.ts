@@ -7,7 +7,7 @@ export default [
 		category: "mobile",
 		slug: "app",
 		technologies: ["Expo", "React Native"],
-		color: "hsl(38 58% 64%)"
+		color: "oklch(0.7806 0.0965 80.15)"
 	},
 	{
 		id: 2,
@@ -17,7 +17,7 @@ export default [
 		category: "web",
 		slug: "navody",
 		technologies: ["Next.js", "React", "OCMS"],
-		color: "hsl(222 66% 39%)"
+		color: "oklch(0.4351 0.1553 263.78)"
 	},
 	{
 		id: 3,
@@ -25,9 +25,9 @@ export default [
 		description: "Interactive investment portal for the region of Košice",
 		image: "kskinteractive",
 		category: "hackathon",
-		slug: "https://github.com/incomodum/KSK-Interactive",
+		slug: "ksk",
 		technologies: ["Next.js", "React", "MapLibre-GL"],
-		color: "hsl(213 70% 33%)"
+		color: "oklch(0.4271 0.1205 255.72)"
 	},
 	{
 		id: 4,
@@ -37,7 +37,7 @@ export default [
 		category: "hackathon",
 		slug: "https://github.com/incomodum/Sportuj-Too",
 		technologies: ["Next.js", "React"],
-		color: "hsl(129 51% 46%)"
+		color: "oklch(0.6722 0.1768 145.74)"
 	},
 	{
 		id: 5,
@@ -47,7 +47,7 @@ export default [
 		category: "hackathon",
 		slug: "https://github.com/incomodum/Traffi",
 		technologies: ["Python", "PyTorch"],
-		color: "hsl(360 64% 44%)"
+		color: "oklch(0.5135 0.1801 26.33)"
 	},
 	{
 		id: 6,
@@ -57,6 +57,6 @@ export default [
 		category: "hackathon",
 		slug: "https://github.com/incomodum/VirtuFest",
 		technologies: ["Next.js", "React"],
-		color: "hsl(157 96% 37%)"
+		color: "oklch(0.692 0.161936 157.7671)"
 	}
 ]
