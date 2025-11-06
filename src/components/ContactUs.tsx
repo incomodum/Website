@@ -1,24 +1,24 @@
-import { valibotResolver } from "@hookform/resolvers/valibot"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "astro/zod"
 import { useForm } from "react-hook-form"
-import * as v from "valibot"
 import { Button } from "./ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 
-const formSchema = v.object({
-	email: v.pipe(v.string(), v.email()),
-	firstName: v.pipe(v.string(), v.minLength(1)),
-	lastName: v.pipe(v.string(), v.minLength(1)),
-	subject: v.pipe(v.string(), v.minLength(1)),
-	company: v.optional(v.string()),
-	role: v.optional(v.string()),
-	message: v.pipe(v.string(), v.minLength(1))
+const formSchema = z.object({
+	email: z.string().email(),
+	firstName: z.string().min(1),
+	lastName: z.string().min(1),
+	subject: z.string().min(1),
+	company: z.string().optional(),
+	role: z.string().optional(),
+	message: z.string().min(1)
 })
 
 export default function ContactUs() {
-	const form = useForm<v.InferInput<typeof formSchema>>({
-		resolver: valibotResolver(formSchema),
+	const form = useForm<z.infer<typeof formSchema>>({
+		resolver: zodResolver(formSchema),
 		defaultValues: {
 			email: ""
 		}
