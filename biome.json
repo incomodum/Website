@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.4/schema.json",
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
@@ -12,6 +12,11 @@
 			"trailingCommas": "none",
 			"lineWidth": 150,
 			"jsxQuoteStyle": "double"
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	},
 	"linter": {
@@ -41,6 +46,7 @@
 		"includes": [
 			"**/*.ts",
 			"**/*.tsx",
+			"**/*.css",
 			"**/astro.config.mjs",
 			"!**/*.d.ts",
 			"!node-modules",

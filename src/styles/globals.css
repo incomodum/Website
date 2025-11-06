@@ -1,7 +1,7 @@
-@import 'tailwindcss';
-@plugin 'tailwindcss-animate';
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme inline {
 	--color-primary: var(--primary);
@@ -52,46 +52,15 @@
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
 
-	--shadow-button: 10px 12px 45px 7px
-		color-mix(in srgb, currentColor 50%, transparent);
+	--shadow-button: 10px 12px 45px 7px color-mix(in srgb, currentColor 50%, transparent);
 
-	--font-sans:
-		DM Sans Variable, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-sans: DM Sans Variable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 	--radius-lg: var(--radius);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-sm: calc(var(--radius) - 4px);
 
-	--drop-shadow-mobile: 10px 10px 8px
-		color-mix(in srgb, currentColor 100%, transparent);
-}
-
-@layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
-	}
-
-	* {
-		@apply border-border box-border;
-	}
-
-	html,
-	body {
-		@apply font-sans m-0 overscroll-none;
-	}
-
-	html {
-		@apply overflow-y-scroll overflow-x-clip max-w-full scroll-smooth motion-reduce:scroll-auto;
-	}
-
-	body {
-		@apply bg-background overflow-x-clip max-w-full text-foreground;
-	}
+	--drop-shadow-mobile: 10px 10px 8px color-mix(in srgb, currentColor 100%, transparent);
 }
 
 @layer base {
@@ -130,23 +99,23 @@
 		--sidebar-border: oklch(0.922 0 0);
 		--sidebar-ring: oklch(0.708 0 0);
 	}
-	[data-theme=dark] {
-		--background: oklch(0.2244 0.0074 67.4370);
+	[data-theme="dark"] {
+		--background: oklch(0.2244 0.0074 67.437);
 		--foreground: oklch(0.9288 0.0126 255.5078);
-		--card: oklch(0.2801 0.0080 59.3379);
+		--card: oklch(0.2801 0.008 59.3379);
 		--card-foreground: oklch(0.9288 0.0126 255.5078);
-		--popover: oklch(0.2801 0.0080 59.3379);
+		--popover: oklch(0.2801 0.008 59.3379);
 		--popover-foreground: oklch(0.9288 0.0126 255.5078);
 		--primary: oklch(0.7138 0.1795 27.6173);
-		--primary-foreground: oklch(0.2244 0.0074 67.4370);
+		--primary-foreground: oklch(0.2244 0.0074 67.437);
 		--secondary: oklch(0.3359 0.0077 59.4197);
 		--secondary-foreground: oklch(0.8717 0.0093 258.3382);
-		--muted: oklch(0.2801 0.0080 59.3379);
+		--muted: oklch(0.2801 0.008 59.3379);
 		--muted-foreground: oklch(0.7137 0.0192 261.3246);
 		--accent: oklch(0.3896 0.0074 59.4734);
 		--accent-foreground: oklch(0.8717 0.0093 258.3382);
 		--destructive: oklch(0.6368 0.2078 25.3313);
-		--destructive-foreground: oklch(0.2244 0.0074 67.4370);
+		--destructive-foreground: oklch(0.2244 0.0074 67.437);
 		--border: oklch(0.3359 0.0077 59.4197);
 		--input: oklch(0.3359 0.0077 59.4197);
 		--ring: oklch(0.6801 0.1583 276.9349);
@@ -158,24 +127,41 @@
 		--sidebar: oklch(0.3359 0.0077 59.4197);
 		--sidebar-foreground: oklch(0.9288 0.0126 255.5078);
 		--sidebar-primary: oklch(0.6801 0.1583 276.9349);
-		--sidebar-primary-foreground: oklch(0.2244 0.0074 67.4370);
+		--sidebar-primary-foreground: oklch(0.2244 0.0074 67.437);
 		--sidebar-accent: oklch(0.3896 0.0074 59.4734);
 		--sidebar-accent-foreground: oklch(0.8717 0.0093 258.3382);
 		--sidebar-border: oklch(0.3359 0.0077 59.4197);
 		--sidebar-ring: oklch(0.6801 0.1583 276.9349);
 	}
-}
 
-.color-blur {
-	@apply absolute hidden aspect-square blur-[500px] w-1/2 md:block rounded-full opacity-30 -z-10 bg-radial from-page to-transparent;
-
-	&.right {
-		@apply right-0;
-		translate: 70%;
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
 	}
 
-	&.left {
-		@apply left-0;
-		translate: -70%;
+	* {
+		@apply border-border box-border;
+	}
+
+	html,
+	body {
+		@apply font-sans m-0 overscroll-none;
+	}
+
+	html {
+		@apply overflow-y-scroll overflow-x-clip max-w-full scroll-smooth motion-reduce:scroll-auto;
+	}
+
+	body {
+		@apply bg-background overflow-x-clip max-w-full text-foreground;
+	}
+}
+
+@layer components {
+	.color-blur {
+		@apply absolute hidden aspect-square blur-[500px] [&.right]:right-0 [&.right]:translate-x-[70%] [&.left]:left-0 [&.left]:translate-x-[-70%] w-1/2 md:block rounded-full opacity-30 -z-10 bg-radial from-page to-transparent;
 	}
 }

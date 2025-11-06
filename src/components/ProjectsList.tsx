@@ -86,7 +86,7 @@ export default function ProjectsList() {
 										className="hidden h-fit w-full object-cover transition-transform duration-500 group-hover:scale-105 dark:flex"
 									/>
 								</div>
-								<div className="flex flex-grow flex-col p-6">
+								<div className="flex grow flex-col p-6">
 									<div className="mb-4 flex flex-wrap gap-2">
 										{project.technologies.map((tech) => (
 											<span
@@ -99,7 +99,7 @@ export default function ProjectsList() {
 									</div>
 									<h3 className="mb-2 font-bold text-xl">{project.title}</h3>
 									<p className="mb-4 text-foreground/60">{project.description}</p>
-									<div className="h-auto flex-grow" />
+									<div className="h-auto grow" />
 									<p className="inline-flex items-center text-page">
 										Learn More
 										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

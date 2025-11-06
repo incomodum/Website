@@ -28,7 +28,6 @@
 - [ ] Team Section
 - [ ] Better mobile menu + Hover for nav items
 - [ ] More/Improve project pages (KSK)
-- [ ] Swicth to Valibot (+ Tanstack Form)
 <!-- - [ ] https://tailwindcss.com/plus/templates/radiant/preview -->
 - [ ] Fix overflow on zen
 
