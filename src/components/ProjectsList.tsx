@@ -1,7 +1,8 @@
-import { ArrowRight, Search } from "lucide-react"
-import { type MotionStyle, motion } from "motion/react"
+import { ArrowRight, Inbox, Search } from "lucide-react"
+import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
 import projects from "@/lib/projects"
+import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 
@@ -23,31 +24,42 @@ export default function ProjectsList() {
 			project.title.toLowerCase().includes(searchQuery.toLowerCase()) || project.description.toLowerCase().includes(searchQuery.toLowerCase())
 		return matchesCategory && matchesSearch
 	})
+
 	return (
-		<div className="py-16 lg:py-24">
-			<section className="px-8 py-8 lg:px-16">
+		<div className="min-h-screen py-16 lg:py-24">
+			{/* Header & Filters */}
+			<section className="mb-12 px-8 lg:px-16">
 				<div className="mx-auto max-w-7xl">
-					<div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-						<div className="flex flex-wrap gap-2">
-							{categories.map((category) => (
-								<Button
-									key={category.value}
-									variant={selectedCategory === category.value ? "default" : "outline"}
-									className={`rounded-full ${selectedCategory === category.value ? "bg-page text-white hover:bg-page/90" : "bg-card"}`}
-									onClick={() => setSelectedCategory(category.value)}
-								>
-									{category.label}
-								</Button>
-							))}
+					<div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+						<div className="space-y-4">
+							<h2 className="font-bold text-3xl lg:text-4xl">
+								Featured <span className="text-page">Projects</span>
+							</h2>
+							<div className="flex flex-wrap gap-2">
+								{categories.map((category) => (
+									<Button
+										key={category.value}
+										variant="ghost"
+										className={`rounded-full px-6 transition-all ${
+											selectedCategory === category.value
+												? "bg-page text-white shadow-lg shadow-page/20 hover:bg-page/90"
+												: "bg-card hover:bg-page/10 hover:text-page"
+										}`}
+										onClick={() => setSelectedCategory(category.value)}
+									>
+										{category.label}
+									</Button>
+								))}
+							</div>
 						</div>
-						<div className="relative flex items-center">
-							<Search className="-translate-y-1/2 absolute top-1/2 left-3 h-4 w-4 text-gray-400" />
+
+						<div className="group relative">
+							<Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-page" />
 							<Input
-								autoComplete="off"
-								placeholder="Search projects..."
+								placeholder="Search by name or tech..."
 								value={searchQuery}
 								onChange={(e) => setSearchQuery(e.target.value)}
-								className="w-full rounded-full pl-10 md:w-[300px] dark:bg-card"
+								className="h-12 w-full rounded-2xl border-none bg-card pr-4 pl-11 shadow-sm focus-visible:ring-2 focus-visible:ring-page md:w-87.5"
 							/>
 						</div>
 					</div>
@@ -55,71 +67,112 @@ export default function ProjectsList() {
 			</section>
 
 			{/* Projects Grid */}
-			<section className="px-8 py-8 lg:px-16 lg:py-12">
+			<section className="px-8 lg:px-16">
 				<div className="mx-auto max-w-7xl">
-					<div role="list" className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-						{filteredProjects.map((project, index) => (
-							<motion.a
-								key={project.id}
-								initial={{ opacity: 0, y: 20 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-								style={project.color ? ({ "--page-color": `${project.color}` } as MotionStyle) : {}}
-								className="group flex flex-col overflow-hidden rounded-3xl bg-card transition-shadow hover:shadow-xl"
-								href={project.slug.includes("https://") ? project.slug : `/projects/${project.slug}`}
-								target={project.slug.includes("https://") ? "_blank" : "_self"}
-								aria-label={project.title}
-							>
-								<div className="overflow-hidden">
-									<img
-										src={project.image ? `/assets/projects/${project.image}-og.png` : "/placeholder.svg"}
-										alt={project.title}
-										width={1280}
-										height={640}
-										className="flex h-fit w-full object-cover transition-transform duration-500 group-hover:scale-105 dark:hidden"
-									/>
-									<img
-										src={project.image ? `/assets/projects/${project.image}-dark-og.png` : "/placeholder.svg"}
-										alt={project.title}
-										width={1280}
-										height={640}
-										className="hidden h-fit w-full object-cover transition-transform duration-500 group-hover:scale-105 dark:flex"
-									/>
-								</div>
-								<div className="flex grow flex-col p-6">
-									<div className="mb-4 flex flex-wrap gap-2">
-										{project.technologies.map((tech) => (
-											<span
-												key={tech}
-												className="rounded-full bg-page/10 px-3 py-1 text-page text-sm dark:bg-page/50 dark:text-white"
-											>
-												{tech}
-											</span>
-										))}
-									</div>
-									<h3 className="mb-2 font-bold text-xl">{project.title}</h3>
-									<p className="mb-4 text-foreground/60">{project.description}</p>
-									<div className="h-auto grow" />
-									<p className="inline-flex items-center text-page">
-										Learn More
-										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-									</p>
-								</div>
-							</motion.a>
-						))}
+					<motion.div layout className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+						<AnimatePresence mode="popLayout">
+							{filteredProjects.map((project) => (
+								<ProjectCard key={project.id} project={project} />
+							))}
+						</AnimatePresence>
+					</motion.div>
+
+					{/* Empty State */}
+					<AnimatePresence>
 						{filteredProjects.length === 0 && (
 							<motion.div
-								initial={{ opacity: 0, y: 20 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.5 }}
-								className="col-span-full row-span-3 flex flex-col text-center text-muted-foreground"
+								initial={{ opacity: 0, scale: 0.9 }}
+								animate={{ opacity: 1, scale: 1 }}
+								exit={{ opacity: 0, scale: 0.9 }}
+								className="flex flex-col items-center justify-center py-32 text-center"
 							>
-								Nothing to show yet 🙂
+								<div className="mb-4 rounded-full bg-card p-6 text-muted-foreground">
+									<Inbox className="h-10 w-10" />
+								</div>
+								<h3 className="font-semibold text-xl">No projects found</h3>
+								<p className="text-muted-foreground">Try adjusting your filters or search term.</p>
+								<Button
+									variant="link"
+									className="mt-2 text-page"
+									onClick={() => {
+										setSelectedCategory("all")
+										setSearchQuery("")
+									}}
+								>
+									Clear all filters
+								</Button>
 							</motion.div>
 						)}
-					</div>
+					</AnimatePresence>
 				</div>
 			</section>
 		</div>
+	)
+}
+
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+	const isExternal = project.slug.includes("https://")
+	const projectUrl = isExternal ? project.slug : `/projects/${project.slug}`
+
+	return (
+		<motion.div
+			layout // Keep layout here for filtering transitions
+			initial={{ opacity: 0, scale: 0.9 }}
+			animate={{ opacity: 1, scale: 1 }}
+			exit={{ opacity: 0, scale: 0.9 }}
+			transition={{ duration: 0.4 }}
+			className="h-full"
+		>
+			<a
+				href={projectUrl}
+				target={isExternal ? "_blank" : "_self"}
+				// Added transform-gpu and fixed overflow to stabilize hover
+				className="group flex h-full transform-gpu flex-col overflow-hidden rounded-2xl border border-transparent bg-card transition-all duration-300 ease-out hover:border-page/20 hover:shadow-2xl hover:shadow-page/10"
+			>
+				{/* Image Container - Fixed height/fit logic */}
+				<div className="relative overflow-hidden bg-muted">
+					<img
+						src={project.image ? `/assets/projects/${project.image}-og.png` : "/placeholder.svg"}
+						alt={project.title}
+						width={1280}
+						height={640}
+						// Added back-face visibility and blur-0 to prevent "shaking" text on scale
+						className="backface-hidden flex h-fit w-full transform-gpu object-cover transition-transform duration-500 ease-out group-hover:scale-105 dark:hidden"
+					/>
+					<img
+						src={project.image ? `/assets/projects/${project.image}-dark-og.png` : "/placeholder.svg"}
+						alt={project.title}
+						width={1280}
+						height={640}
+						className="backface-hidden hidden h-fit w-full transform-gpu object-cover transition-transform duration-500 ease-out group-hover:scale-105 dark:flex"
+					/>
+					{/* Overlay */}
+					<div className="absolute inset-0 bg-linear-to-t from-card/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+				</div>
+
+				{/* Content */}
+				<div className="flex grow flex-col p-8">
+					<div className="mb-4 flex flex-wrap gap-2">
+						{project.technologies.slice(0, 3).map((tech: string) => (
+							<Badge key={tech} variant="secondary" className="border-none bg-page/10 text-page transition-colors hover:bg-page/20">
+								{tech}
+							</Badge>
+						))}
+					</div>
+
+					<h3 className="mb-3 font-bold text-2xl tracking-tight transition-colors group-hover:text-page">{project.title}</h3>
+					<p className="mb-6 line-clamp-2 text-foreground/60 text-sm leading-relaxed">{project.description}</p>
+
+					<div className="mt-auto flex items-center justify-between">
+						<span className="inline-flex items-center font-semibold text-page">
+							View Case Study
+							<ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" />
+						</span>
+
+						<span className="font-bold text-[10px] text-muted-foreground/40 uppercase tracking-widest">{project.category}</span>
+					</div>
+				</div>
+			</a>
+		</motion.div>
 	)
 }

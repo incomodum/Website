@@ -12,39 +12,42 @@ function MemberCard({ name, position, links, image, index, link }: Member & { in
 			transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
 			viewport={{ once: true }}
 			role="listitem"
-			aria-label={name}
-			className="flex min-w-fit flex-row gap-6"
+			className="group relative flex items-center gap-5 rounded-2xl p-4 transition-colors hover:bg-white/5"
 		>
-			<div className="h-[121px] w-[121px] rounded-full border-[3px] border-page p-[3px]">
-				<img width={121} height={121} src={image} alt={name} aria-label="Photo" className="h-full w-full rounded-full bg-card" />
+			{/* Avatar with Ring */}
+			<div className="relative size-24 shrink-0 overflow-hidden rounded-full border-2 border-page/50 p-1 group-hover:border-page">
+				<img src={image} alt={name} className="h-full w-full rounded-full object-cover grayscale transition-all group-hover:grayscale-0" />
 			</div>
-			<address className="flex flex-col justify-center not-italic">
-				{link && (
-					<a
-						aria-description="Name"
-						className="font-bold text-lg underline decoration-white/50 decoration-dashed underline-offset-2 transition-all hover:decoration-white hover:decoration-solid"
-						href={link}
-					>
-						{name}
-					</a>
-				)}
-				{!link && (
-					<p aria-description="Name" className="font-bold text-lg">
-						{name}
-					</p>
-				)}
-				<p aria-description="Position" className="font-light">
-					{position}
-				</p>
-				<div className="mt-2 flex flex-row md:flex-col">
+
+			{/* Content */}
+			<address className="flex flex-col not-italic">
+				<div className="mb-0.5">
+					{link ? (
+						<a href={link} className="font-bold text-lg tracking-tight hover:text-page">
+							{name}
+						</a>
+					) : (
+						<span className="font-bold text-lg tracking-tight">{name}</span>
+					)}
+				</div>
+
+				<p className="text-sm text-white/70 tracking-wider">{position}</p>
+
+				{/* Social Links */}
+				<div className="mt-3 flex w-full gap-2">
 					{links
 						.filter((v) => v.type !== "site")
 						.map((v) => (
-							<a key={v.link} href={v.link} aria-label={v.type} className="flex flex-row items-center">
-								{v.type === "linkedin" && <Linkedin className="text-app" />}
-								{v.type === "email" && <MailIcon className="text-app" />}
-								&nbsp;
-								<span className="hidden md:block">{v.text}</span>
+							<a
+								key={v.link}
+								href={v.link}
+								aria-label={v.type}
+								data-wide={v.text !== undefined}
+								className="flex items-center gap-2 rounded-full bg-white/10 px-2 py-1 text-xs transition-all hover:bg-page hover:text-white"
+							>
+								{v.type === "linkedin" && <Linkedin className="size-3" />}
+								{v.type === "email" && <MailIcon className="size-3" />}
+								{v.text && <span className="hidden sm:inline-block">{v.text}</span>}
 							</a>
 						))}
 				</div>
@@ -62,7 +65,7 @@ export default function ContactCards() {
 					whileInView={{ opacity: 1, x: 0, y: 0, rotate: -7.12 }}
 					transition={{ duration: 0.5, delay: 0.2 }}
 					viewport={{ once: true }}
-					className="-top-20 absolute z-[-2] hidden h-[886px] w-[70vw] max-w-[900px] rounded-t-3xl bg-card lg:block"
+					className="absolute -top-20 z-[-2] hidden h-221.5 w-[70vw] max-w-225 rounded-t-3xl bg-card lg:block"
 				/>
 				<motion.section
 					aria-labelledby="lets-talk"
@@ -89,7 +92,7 @@ export default function ContactCards() {
 					whileInView={{ opacity: 1, x: 0, y: 0, rotate: 7.12 }}
 					transition={{ duration: 0.8, delay: 0.2 }}
 					viewport={{ once: true }}
-					className="-top-20 absolute z-[-1] hidden h-[886px] w-[70vw] max-w-[930px] rounded-t-3xl bg-linear-to-br from-[#1C274C] to-[#6F4154] lg:block"
+					className="absolute -top-20 z-[-1] hidden h-221.5 w-[70vw] max-w-232.5 rounded-t-3xl bg-linear-to-br from-[#1C274C] to-[#6F4154] lg:block"
 				/>
 				<h2 id="our-team" className="flex flex-row items-center font-bold font-sans text-3xl text-foreground lg:hidden">
 					Our&nbsp;<b className="text-page">Team</b>

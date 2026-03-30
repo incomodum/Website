@@ -14,34 +14,36 @@
     "ci": "biome ci"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.1",
-    "@astrojs/vercel": "^9.0.0",
+    "@astrojs/react": "^5.0.2",
+    "@astrojs/vercel": "^10.0.3",
     "@fontsource-variable/dm-sans": "^5.2.8",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
-    "astro": "^5.15.3",
-    "astro-seo": "^0.8.4",
+    "@tanstack/react-form": "^1.28.6",
+    "astro": "^6.1.1",
+    "astro-seo": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "developer-icons": "^6.0.5",
     "hamburger-react": "^2.5.2",
-    "lucide-react": "^0.552.0",
-    "motion": "^12.23.24",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-hook-form": "^7.66.0",
-    "tailwind-merge": "^3.3.1",
+    "lucide-react": "^1.7.0",
+    "motion": "^12.38.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-hook-form": "^7.72.0",
+    "tailwind-merge": "^3.5.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.4",
-    "@tailwindcss/vite": "^4.1.16",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "tailwindcss": "^4.1.16",
-    "typescript": "^5.9.3"
+    "@biomejs/biome": "^2.4.9",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2"
   },
-  "packageManager": "pnpm@10.20.0"
+  "packageManager": "pnpm@10.33.0"
 }

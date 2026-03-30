@@ -27,7 +27,7 @@ export default function Header() {
 
 	return (
 		<>
-			<div className="h-[104px] w-full" />
+			<div className="h-26 w-full" />
 			<div className="fixed top-0 left-0 z-50 flex w-full flex-col bg-background/50 backdrop-blur-sm">
 				<header className="flex w-full flex-row items-center justify-center p-8 pb-6 text-page">
 					<div className="flex w-full max-w-7xl flex-row items-center justify-between">

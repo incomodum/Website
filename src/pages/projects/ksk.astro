@@ -1,12 +1,13 @@
 ---
-import "@fontsource-variable/dm-sans"
 import "@/styles/globals.css"
 import { SEO } from "astro-seo"
+import { ExternalLink, Map, Users, Info, BarChart3, Globe, Code2, Layers } from "lucide-react"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
-import ThemeManager from "@/components/ThemeManager.astro"
 import ksk from "/public/assets/projects/ksk-interactive.webp"
 import ProjectsBack from "@/components/ProjectsBack.astro"
+import ThemeManager from "@/components/ThemeManager.astro"
+import { Badge } from "@/components/ui/badge"
 ---
 
 <html lang="en">
@@ -49,96 +50,155 @@ import ProjectsBack from "@/components/ProjectsBack.astro"
 		/>
 		<style>
 			:root {
+				/* Deep Košice Regional Blue */
 				--page-color: oklch(0.4271 0.1205 255.72);
+				--page-rgb: 0, 94, 184;
 			}
 		</style>
 		<ThemeManager defaultTheme="auto" />
 	</head>
-	<body class="flex flex-col">
+	<body class="bg-background text-foreground selection:bg-page/30">
 		<Header client:load />
-		<div class="px-8 md:px-16 flex flex-col items-center w-full min-h-screen">
-			<div class="max-w-7xl w-full">
-				<ProjectsBack />
-				<section class="py-12 max-w-full">
-					<div class="grid gap-16 lg:grid-cols-2 max-w-full">
-						<div class="flex flex-col justify-center">
-							<a href="https://rrp.geoportalksk.sk/" target="_blank">
-							<h1
-								class="mb-4 text-4xl font-bold leading-tight lg:text-6xl"
-							>
-								<span class="text-page">KSK</span> Interactive
-							</h1>
-							</a>
-							<p class="text-lg lg:text-xl text-foreground/60">
-								Interactive investment portal for the region of Košice
-							</p>
+
+		<main class="relative w-full">
+			<section class="relative px-8 pt-24 pb-16 md:px-16 lg:pt-32 lg:pb-32 overflow-hidden">
+				<div class="mx-auto max-w-7xl">
+					<ProjectsBack />
+
+					<div class="mt-12 grid gap-16 lg:grid-cols-2 items-center">
+						<div class="space-y-8">
+							<div class="space-y-4">
+								<Badge className="bg-page/50 text-foreground hover:bg-page px-4 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
+									Regional Investment Portal
+								</Badge>
+								<a href="https://rrp.geoportalksk.sk/" target="_blank" class="group block">
+									<h1 class="text-5xl flex items-center font-black leading-[1.1] lg:text-6xl tracking-tighter transition-colors group-hover:text-page">
+										<span class="text-page">KSK</span> Interactive
+										<ExternalLink className="inline-block ml-4 size-8 opacity-20 group-hover:opacity-100 transition-opacity" />
+									</h1>
+								</a>
+								<p class="text-xl text-muted-foreground leading-relaxed max-w-xl">
+									A high-performance geospatial platform connecting global investors with the strategic potential of the Košice region.
+								</p>
+							</div>
+
+							<div class="flex gap-8">
+								<div class="flex flex-col border-l-2 border-page/20 pl-4">
+									<span class="text-xs font-bold uppercase text-muted-foreground/50">Status</span>
+									<span class="font-bold">Consulting / Live</span>
+								</div>
+								<div class="flex flex-col border-l-2 border-page/20 pl-4">
+									<span class="text-xs font-bold uppercase text-muted-foreground/50">Tech Focus</span>
+									<span class="font-bold">WebGIS & Mapping</span>
+								</div>
+							</div>
 						</div>
-						<div class="w-full relative isolate">
-							<img src={ksk.src} width={ksk.width} height={ksk.height} class="w-full z-10 rounded-lg shadow-2xl" />
+
+						<div class="relative group">
+							<div class="absolute -inset-4 bg-page/5 blur-3xl rounded-full opacity-50"></div>
+							<div class="relative overflow-hidden rounded-2xl shadow-2xl transition-all transform-gpu group-hover:scale-[1.02] border border-white/10">
+								<img
+									src={ksk.src}
+									alt="KSK Interactive Portal Preview"
+									class="w-full h-auto object-cover"
+								/>
+							</div>
+							<div class="absolute -top-6 -left-6 h-32 w-32 bg-page/10 rounded-full blur-2xl -z-10"></div>
 						</div>
 					</div>
-				</section>
-				<div class="my-8 w-full bg-border h-px" />
-				<section class="pb-16">
-					<div class="grid gap-16 lg:grid-cols-2">
-						<div>
-							<h2 class="mb-8 text-3xl font-bold">
-								The <span class="text-page">Challenge</span>
-							</h2>
-							<p class="mb-6 text-foreground/60">
-								Create an investment oportunity portal that would be intriguing for local/foreign investors.
+				</div>
+			</section>
+
+			<section class="bg-card/30 py-24 lg:py-32 backdrop-blur-sm border-y border-white/5">
+				<div class="mx-auto max-w-7xl px-8 md:px-16">
+					<div class="grid gap-24 lg:grid-cols-2">
+						<div class="space-y-8">
+							<div class="flex items-center gap-3 text-page">
+								<BarChart3 className="size-6" />
+								<h2 class="text-3xl font-bold tracking-tight">The Challenge</h2>
+							</div>
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								The Košice Self-Governing Region needed a sophisticated way to present investment opportunities, land data, and infrastructure details to a global audience in an intriguing, interactive format.
 							</p>
-							<ul class="space-y-4 text-foreground/60">
-								<li class="flex items-start">
-									<div
-										class="mr-4 mt-2 size-2 rounded-full bg-page"
-									/>
-									List of available investment opportunities
-								</li>
-								<li class="flex items-start">
-									<div
-										class="mr-4 mt-2 size-2 rounded-full bg-page"
-									>
-									</div>
-									Way of connecting between the investors and the regional staff
-								</li>
-								<li class="flex items-start">
-									<div
-										class="mr-4 mt-2 size-2 rounded-full bg-page"
-									>
-									</div>
-									Centralised location for information related to the land, locations, infrastructure, etc.
-								</li>
+							<ul class="space-y-5">
+								{[
+									"Visualizing complex land and infrastructure data",
+									"Streamlining communication with regional staff",
+									"Creating a centralized geospatial information hub"
+								].map((item) => (
+									<li class="flex items-start gap-4 group">
+										<div class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-page group-hover:scale-150 transition-all" />
+										<span class="text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
+									</li>
+								))}
 							</ul>
 						</div>
-						<div>
-							<h2 class="mb-8 text-3xl font-bold">
-								Our <span class="text-page">Solution</span>
-							</h2>
-							<p class="mb-6 text-foreground/60">
-								Originally built during the hackathon (hacknime.to) under the name  <a class="underline underline-offset-2 decoration-dashed hover:decoration-solid hover:text-white" href="https://github.com/incomodum/KSK-Interactive" target="_blank">KSK Interactive</a>, the project was later handed over to the team at <a class="underline underline-offset-2 decoration-dashed hover:decoration-solid hover:text-white" href="https://cherrypeak.eu/" target="_blank">CherryPeak</a>, who brought it to its production release. We now continue to support the project’s development as consultants, helping shape its direction.
+
+						<div class="space-y-8">
+							<div class="flex items-center gap-3 text-page">
+								<Globe className="size-6" />
+								<h2 class="text-3xl font-bold tracking-tight">Collaborative Delivery</h2>
+							</div>
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								Originally born from a winning hackathon concept, the project was scaled to production in partnership with <a href="https://cherrypeak.eu/" class="text-foreground font-bold hover:text-page underline decoration-page/30 underline-offset-4">CherryPeak</a>. We continue to drive the technical direction as lead consultants.
 							</p>
-							<div class="grid gap-6 sm:grid-cols-2">
-								<div class="rounded-lg bg-card p-6">
-									<h3 class="mb-2 font-semibold">
-										Technology Stack
-									</h3>
-									<p class="text-sm text-foreground/60">
-										Next.js, React, Maplibre-GL
-									</p>
+
+							<div class="grid gap-4 sm:grid-cols-2">
+								<div class="rounded-2xl bg-card p-6 border border-white/5 group hover:border-page/20 transition-all">
+									<Map className="text-page mb-4 size-6 group-hover:rotate-6 transition-transform" />
+									<h3 class="font-bold mb-2 text-sm uppercase">Interactive GIS</h3>
+									<p class="text-xs text-muted-foreground leading-relaxed">Maplibre-GL integration for fluid, high-resolution geospatial rendering.</p>
 								</div>
-								<div class="rounded-lg bg-card p-6">
-									<h3 class="mb-2 font-semibold">Timeline</h3>
-									<p class="text-sm text-foreground/60">
-										Ongoing
-									</p>
+								<div class="rounded-2xl bg-card p-6 border border-white/5 group hover:border-page/20 transition-all">
+									<Users className="text-page mb-4 size-6 group-hover:scale-110 transition-transform" />
+									<h3 class="font-bold mb-2 text-sm uppercase">Lead Gen</h3>
+									<p class="text-xs text-muted-foreground leading-relaxed">Direct bridge between global capital and regional development opportunities.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-			</div>
-		</div>
+				</div>
+			</section>
+
+			<section class="py-24 lg:py-32">
+				<div class="mx-auto max-w-7xl px-8 md:px-16 text-center">
+					<h2 class="mb-16 text-3xl font-bold lg:text-4xl">Technical <span class="text-page">Architecture</span></h2>
+					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+						{[
+							{ title: "Framework", tech: "Next.js / React", icon: <Code2 />, desc: "Server-side rendering for optimal performance and SEO." },
+							{ title: "Mapping Engine", tech: "Maplibre-GL", icon: <Layers />, desc: "Handling vector tiles and complex regional layers." },
+							{ title: "Data Model", tech: "Centralised GIS Hub", icon: <Info />, desc: "Unified infrastructure, land, and location data." }
+						].map((item) => (
+							<div class="group rounded-[2.5rem] bg-card/50 p-10 border border-white/5 hover:bg-card transition-all transform-gpu hover:-translate-y-2">
+								<div class="mx-auto mb-6 w-fit text-page group-hover:scale-110 transition-transform">
+									{item.icon}
+								</div>
+								<h3 class="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-2">{item.title}</h3>
+								<p class="font-bold text-lg mb-4">{item.tech}</p>
+								<p class="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="px-8 pb-32 md:px-16">
+				<div class="mx-auto max-w-4xl rounded-[3rem] bg-linear-to-br from-[#003C71] to-[#1C274C] p-12 text-center text-white shadow-2xl relative overflow-hidden">
+					<div class="relative z-10">
+						<h2 class="mb-6 text-3xl font-bold lg:text-4xl">Explore the portal</h2>
+						<p class="mb-10 text-white/70 max-w-xl mx-auto">
+							The investment portal is live, providing a transparent window into the infrastructure and growth opportunities within the Košice region.
+						</p>
+						<a href="https://rrp.geoportalksk.sk/" target="_blank" class="inline-flex items-center rounded-full bg-white px-10 py-4 font-bold text-[#003C71] hover:bg-page hover:text-white transition-all transform-gpu hover:scale-105">
+							Open Interactive Portal
+							<ExternalLink className="ml-2 size-4" />
+						</a>
+					</div>
+					<div class="absolute -right-20 -top-20 size-80 bg-white/5 blur-[100px] rounded-full"></div>
+				</div>
+			</section>
+		</main>
+
 		<Footer client:load />
 	</body>
 </html>

@@ -1,7 +1,7 @@
 ---
-import "@fontsource-variable/dm-sans"
 import "@/styles/globals.css"
 import { SEO } from "astro-seo"
+import { motion } from "motion/react"
 import { ArrowRight } from "lucide-react"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
@@ -51,76 +51,63 @@ import ThemeManager from "@/components/ThemeManager.astro"
 		/>
 		<ThemeManager defaultTheme="auto" />
 	</head>
-	<body>
-		<Header client:load />
-		<div
-			class="flex flex-col backdrop-blur-lg items-center w-full"
-		>
-			<div class="w-full px-8">
-				<main class="w-full max-w-7xl mx-auto pt-[50px]">
-					<section
-						class="flex flex-col md:px-16 2xl:px-0 md:py-16 items-center justify-center md:justify-between"
-					>
-						<h1
-							class="mb-6 text-5xl font-bold leading-tight lg:text-7xl"
-						>
-							Innovative <span class="text-page"
-								>Software Solutions</span
-							>
-							<br />
-							Driving Growth and <span class="text-page"
-								>Excellence</span
-							>
-						</h1>
-						<p
-							class="mx-auto mb-12 md:text-center max-w-2xl text-xl text-foreground/60"
-						>
-							We create cutting-edge software solutions that help
-							businesses transform, scale, and achieve their
-							digital ambitions.
-						</p>
-						<div class="flex flex-wrap w-full md:w-max justify-center gap-6">
-							<a
-								href="/contact"
-								class="inline-flex w-full md:w-fit items-center justify-center group rounded-full bg-page px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-page/60"
-							>
-								Get Started
-								<ArrowRight
-									className="ml-2 size-5 group-hover:translate-x-1 transition-transform"
-								/>
-							</a>
-							<a
-								href="/projects"
-								class="inline-flex w-full md:w-fit items-center justify-center rounded-full border-2 px-8 py-4 font-medium text-gray-700 dark:text-gray-200 hover:dark:border-page/60 transition-all hover:border-page/60 hover:scale-105"
-							>
-								View Our Work
-							</a>
-						</div>
-					</section>
-					<div class="color-blur left"></div>
-					<div id="services"></div>
-					<Services client:visible />
-					<div class="color-blur right"></div>
-					<section
-						class="mt-32 flex flex-col gap-7"
-						aria-labelledby="heading-featured-projects"
-					>
-						<h2
-							id="heading-featured-projects"
-							class="text-4xl font-bold text-center md:text-start font-sans text-foreground"
-						>
-							Featured <b class="text-page">projects</b>
-						</h2>
-						<Projects client:visible />
-					</section>
-					<div id="mission"></div>
-					<div class="color-blur left"></div>
-					<Mission client:visible />
-					<div id="contact"></div>
-					<Contact client:visible />
-				</main>
-			</div>
-		</div>
-		<Footer client:visible />
-	</body>
+	<body class="bg-background text-foreground selection:bg-page/30">
+    <Header client:load />
+    <div class="flex flex-col items-center w-full overflow-x-hidden px-6 lg:px-16">
+        <main class="w-full max-w-7xl mx-auto pt-24 lg:pt-32">
+
+            <section class="flex flex-col items-center text-center mb-24 lg:mb-32">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    client:load
+                >
+                    <h1 class="mb-8 text-5xl font-bold leading-[1.1] lg:text-7xl tracking-tight">
+                        Innovative <span class="text-page">Software</span><br />
+                        Solutions <span class="text-page">Built to Scale</span>
+                    </h1>
+                    <p class="mx-auto mb-12 max-w-2xl text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                        We create cutting-edge software solutions that help businesses transform,
+                        scale, and achieve their digital ambitions with precision and excellence.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/contact" class="group relative flex items-center justify-center rounded-full bg-page px-10 py-4 font-bold text-white transition-all transform-gpu hover:scale-105 hover:shadow-[0_20px_50px_rgba(var(--page-rgb),0.3)]">
+                            Get Started
+                            <ArrowRight className="ml-2 size-5 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        <a href="/projects" class="flex items-center justify-center rounded-full border-2 border-border bg-card/50 backdrop-blur-sm px-10 py-4 font-bold transition-all hover:border-page/50 hover:bg-card">
+                            View Our Work
+                        </a>
+                    </div>
+                </motion.div>
+            </section>
+
+            <div id="services" class="scroll-mt-24">
+                <Services client:visible />
+            </div>
+
+            <section class="mt-32 space-y-10" aria-labelledby="heading-featured-projects">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-4">
+                    <h2 id="heading-featured-projects" class="text-4xl font-bold tracking-tight">
+                        Featured <span class="text-page">Projects</span>
+                    </h2>
+                    <a href="/projects" class="text-page font-semibold flex items-center group">
+                        View gallery <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                </div>
+                <Projects client:visible />
+            </section>
+
+            <div id="mission" class="scroll-mt-24">
+                <Mission client:visible />
+            </div>
+
+            <div id="contact" class="scroll-mt-24 pb-24">
+                <Contact client:visible />
+            </div>
+        </main>
+    </div>
+    <Footer client:visible />
+</body>
 </html>

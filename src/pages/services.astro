@@ -1,36 +1,12 @@
 ---
-import "@fontsource-variable/dm-sans"
 import "@/styles/globals.css"
 import { SEO } from "astro-seo"
-import { ArrowRight } from "lucide-react"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
-import Placeholder from "@/components/Placeholder"
 import ServicesList from "@/components/ServicesList"
 import ThemeManager from "@/components/ThemeManager.astro"
-
-const technologies = [
-	{
-		category: "Frontend",
-		items: ["React", "Next.js", "Vue.js", "Nuxt", "TypeScript"]
-	},
-	{
-		category: "Backend",
-		items: ["Node.js", "Python", "Rust", "PHP"]
-	},
-	{
-		category: "Mobile",
-		items: ["React Native"]
-	},
-	{
-		category: "Database",
-		items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"]
-	},
-	{
-		category: "DevOps",
-		items: ["Docker", "GitHub Actions"]
-	}
-]
+import TechSection from "@/components/Technologies"
+import Contact from "@/components/Contact"
 ---
 
 <html lang="en">
@@ -98,74 +74,11 @@ const technologies = [
 
 				<ServicesList client:visible />
 
-				<section class="py-16 lg:py-24 px-8 lg:px-16">
-					<div class="mx-auto max-w-7xl">
-						<div class="grid gap-12 lg:grid-cols-2">
-							<div>
-								<h2 class="mb-6 text-3xl font-bold lg:text-4xl w-full">
-									Technologies We <span class="text-page"
-										>Work With</span
-									>
-								</h2>
-								<p class="mb-8 text-foreground/60">
-									We use the latest technologies and
-									frameworks to build scalable, secure, and
-									high-performance solutions.
-								</p>
-								<div class="grid gap-6 sm:grid-cols-2">
-									{
-										technologies.map((tech) => (
-											<div class="rounded-lg bg-card p-6">
-												<h3 class="mb-2 font-semibold">
-													{tech.category}
-												</h3>
-												<p class="text-sm text-foreground/60">
-													{tech.items.join(", ")}
-												</p>
-											</div>
-										))
-									}
-								</div>
-							</div>
-							<div class="relative aspect-square lg:aspect-auto">
-								<Placeholder className="rounded-3xl overflow-clip max-w-[600px] aspect-square w-full" />
-								<div
-									class="absolute -right-4 -top-4 h-48 w-48 rotate-12 rounded-3xl bg-page/10"
-								>
-								</div>
-								<div
-									class="absolute -bottom-4 -left-4 h-48 w-48 -rotate-12 rounded-3xl bg-[#1a1b50]/10"
-								>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				<TechSection client:visible />
 
-				<section class="py-16 lg:py-24 px-8 lg:px-16 w-full">
+				<section class="overflow-hidden lg:px-16 lg:py-24 scroll-mt-24 pb-24">
 					<div class="mx-auto max-w-7xl">
-						<div
-							class="rounded-3xl bg-card p-8 md:text-center lg:p-12"
-						>
-							<h2 class="mb-4 text-3xl font-bold">
-								Ready to start your <span class="text-page"
-									>project</span
-								>?
-							</h2>
-							<p class="mb-8 text-foreground/60">
-								Let's discuss how we can help bring your ideas
-								to life.
-							</p>
-							<a
-								href="/contact"
-								class="group inline-flex items-center rounded-full bg-page px-8 py-4 font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-page/20"
-							>
-								Get in Touch
-								<ArrowRight
-									className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
-								/>
-							</a>
-						</div>
+						<Contact client:visible />
 					</div>
 				</section>
 			</main>

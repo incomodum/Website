@@ -1,7 +1,7 @@
 export default [
 	{
 		name: "Lucas Ligas",
-		position: "CMO",
+		position: "Chief Marketing Officer (CMO)",
 		image: "/assets/team/lucas-ligas.jpeg",
 		link: "https://lucasligas.com",
 		links: [
@@ -12,7 +12,7 @@ export default [
 			},
 			{
 				type: "linkedin",
-				text: "Lucas Ligas",
+				// text: "Lucas Ligas",
 				link: "https://www.linkedin.com/in/lucas-ligas-a6632b282/"
 			},
 			{
@@ -24,12 +24,12 @@ export default [
 	},
 	{
 		name: "Daniel Czaja",
-		position: "CDO",
+		position: "Chief Data Officer (CDO)",
 		image: "/assets/team/daniel-czaja.jpeg",
 		links: [
 			{
 				type: "linkedin",
-				text: "Daniel Czaja",
+				// text: "Daniel Czaja",
 				link: "https://www.linkedin.com/in/daniel-adam-czaja-2aab07257/"
 			},
 			{
@@ -41,12 +41,12 @@ export default [
 	},
 	{
 		name: "Jakub Krčmárik",
-		position: "CTO",
+		position: "Chief technology officer (CTO)",
 		image: "/assets/team/jakub-krcmarik.jpeg",
 		links: [
 			{
 				type: "linkedin",
-				text: "Jakub Krčmárik",
+				// text: "Jakub Krčmárik",
 				link: "https://www.linkedin.com/in/jakub-krcmarik/"
 			},
 			{
@@ -63,5 +63,5 @@ export interface Member {
 	position: string
 	image: string
 	link?: string
-	links: { type: "linkedin" | "email" | "site"; text: string; link: string }[]
+	links: { type: "linkedin" | "email" | "site"; text?: string; link: string }[]
 }

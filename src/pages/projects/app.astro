@@ -1,11 +1,12 @@
 ---
-import "@fontsource-variable/dm-sans"
 import "@/styles/globals.css"
 import { SEO } from "astro-seo"
+import { Layout, Smartphone, Database, Clock, Zap } from "lucide-react"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import ThemeManager from "@/components/ThemeManager.astro"
 import ProjectsBack from "@/components/ProjectsBack.astro"
+import { Badge } from "@/components/ui/badge"
 ---
 
 <html lang="en">
@@ -48,120 +49,145 @@ import ProjectsBack from "@/components/ProjectsBack.astro"
 		/>
 		<style>
 			:root {
+				/* Keeping your specific page color */
 				--page-color: oklch(0.7806 0.0965 80.15);
+				--page-rgb: 199, 185, 115; /* Approximate RGB for shadows */
 			}
 		</style>
 		<ThemeManager defaultTheme="auto" />
 	</head>
-	<body class="flex flex-col">
+	<body class="bg-background text-foreground selection:bg-page/30">
 		<Header client:load />
-		<div
-			class="px-8 md:px-16 flex flex-col items-center w-full min-h-screen"
-		>
-			<div class="max-w-7xl w-full">
-				<ProjectsBack />
-				<section class="py-12">
-					<div
-						class="flex gap-16 flex-col justify-between lg:flex-row"
-					>
-						<div class="flex flex-col justify-center lg:w-1/2">
-							<h1
-								class="mb-4 text-4xl font-bold leading-tight lg:text-6xl"
-							>
-								incomodum <span class="text-page">app</span>
-							</h1>
-							<p class="text-lg lg:text-xl text-foreground/60">
-								Self-improvement app to help you<br
-									class="block md:hidden"
-								/> reach your goals
-							</p>
+
+		<main class="relative w-full">
+			<section class="relative px-8 pt-24 pb-16 md:px-16 lg:pt-32 lg:pb-32 overflow-hidden">
+				<div class="mx-auto max-w-7xl">
+					<ProjectsBack />
+
+					<div class="mt-12 grid gap-16 lg:grid-cols-2 items-center">
+						<div class="space-y-8">
+							<div class="space-y-4">
+								<Badge className="bg-page/50 text-foreground hover:bg-page px-4 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
+									Mobile Application
+								</Badge>
+								<h1 class="text-5xl font-black leading-[1.1] lg:text-6xl tracking-tighter">
+									incomodum <span class="text-page">app</span>
+								</h1>
+								<p class="text-xl text-muted-foreground leading-relaxed max-w-xl">
+									A next-generation self-improvement ecosystem designed to bridge the gap between digital distraction and personal ambition.
+								</p>
+							</div>
+
+							<div class="flex gap-4">
+								<div class="flex flex-col border-l-2 border-page/20 pl-4">
+									<span class="text-xs font-bold uppercase text-muted-foreground/50">Status</span>
+									<span class="font-bold">Work in Progress</span>
+								</div>
+								<div class="flex flex-col border-l-2 border-page/20 pl-4">
+									<span class="text-xs font-bold uppercase text-muted-foreground/50">Role</span>
+									<span class="font-bold">Product Design & Dev</span>
+								</div>
+							</div>
 						</div>
-						<div class="relative flex justify-center lg:w-1/2">
+
+						<div class="relative group">
+							<div class="absolute -inset-4 bg-page/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
 							<img
 								src="/assets/projects/app-mock.png"
-								class="w-full max-w-2xl z-10"
+								alt="App Mockup"
+								class="relative z-10 w-full max-w-2xl transform-gpu transition-transform duration-700 group-hover:scale-[1.02]"
 							/>
-							<div
-								class="absolute right-0 top-0 h-48 w-48 rotate-12 bg-page/10"
-							>
-							</div>
-							<div
-								class="absolute bottom-0 left-0 h-64 w-64 -rotate-12 bg-[#1a1b50]/10"
-							>
-							</div>
+							<div class="absolute right-0 top-0 h-48 w-48 rotate-12 bg-page/10 rounded-[3rem] -z-10 animate-pulse"></div>
+							<div class="absolute bottom-0 left-0 h-64 w-64 -rotate-12 bg-[#1a1b50]/10 rounded-[3rem] -z-10"></div>
 						</div>
 					</div>
-				</section>
-				<div class="my-8 w-full bg-border h-px"></div>
-				<section class="pb-16">
-					<div class="grid gap-16 lg:grid-cols-2">
-						<div>
-							<h2 class="mb-8 text-3xl font-bold">
-								The <span class="text-page">Problem</span>
+				</div>
+			</section>
+
+			<section class="bg-card/30 py-24 lg:py-32 backdrop-blur-sm">
+				<div class="mx-auto max-w-7xl px-8 md:px-16">
+					<div class="grid gap-24 lg:grid-cols-2">
+						<div class="space-y-8">
+							<h2 class="text-3xl font-bold lg:text-4xl tracking-tight">
+								The <span class="text-page">Challenge</span>
 							</h2>
-							<p class="mb-6 text-foreground/60">
-								In this day and age people spend lots of their
-								time on social media even if they have work to
-								do or need to study. It can even lead to worse
-								mental health and demotivation.
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								In an era of infinite scrolls, our attention is the primary currency. Social media consumption often leads to a cycle of demotivation and declining mental health.
 							</p>
-							<ul class="space-y-4 text-foreground/60">
-								<li class="flex items-center">
-									<div
-										class="mr-4 h-2 w-2 rounded-full bg-page"
-									>
-									</div>
-									Limitless access to social media
-								</li>
-								<li class="flex items-center">
-									<div
-										class="mr-4 h-2 w-2 rounded-full bg-page"
-									>
-									</div>
-									No awards for hitting their goals
-								</li>
-								<li class="flex items-center">
-									<div
-										class="mr-4 h-2 w-2 rounded-full bg-page"
-									>
-									</div>
-									Not enough statistics
-								</li>
+							<ul class="space-y-5">
+								{[
+									"Limitless access to addictive algorithms",
+									"Lack of tangible rewards for real-world goals",
+									"Insufficient data on personal growth habits"
+								].map((item) => (
+									<li class="flex items-start gap-4 group">
+										<div class="mt-1 h-2 w-2 rounded-full bg-page group-hover:scale-150 transition-transform" />
+										<span class="text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
+									</li>
+								))}
 							</ul>
 						</div>
-						<div>
-							<h2 class="mb-8 text-3xl font-bold">
-								Our <span class="text-page">Solution</span>
+
+						<div class="space-y-8">
+							<h2 class="text-3xl font-bold lg:text-4xl tracking-tight">
+								Our <span class="text-page">Impact</span>
 							</h2>
-							<p class="mb-6 text-foreground/60">
-								Time management app designed primarily for the
-								younger generation, with a mission to help users
-								overcome social media addiction and motivate
-								them to self improvement.
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								We designed a time-management sanctuary for Gen-Z. By gamifying self-improvement and providing deep analytical insights, we turn discipline into a habit.
 							</p>
-							<div class="grid gap-6 sm:grid-cols-2">
-								<div class="rounded-lg bg-card p-6">
-									<h3 class="mb-2 font-semibold">
-										Technology Stack
-									</h3>
-									<p class="text-sm text-foreground/60">
-										Expo, React Native, October CMS, MySQL
-									</p>
+
+							<div class="grid gap-4 sm:grid-cols-2">
+								<div class="rounded-2xl bg-card p-6 border border-white/5 hover:border-page/20 transition-colors">
+									<Zap className="text-page mb-4 size-6" />
+									<h3 class="font-bold mb-2">Gamified Motivation</h3>
+									<p class="text-xs text-muted-foreground leading-relaxed">Earn rewards for hitting milestones and staying off social apps.</p>
 								</div>
-								<div class="rounded-lg bg-card p-6">
-									<h3 class="mb-2 font-semibold">
-										Current State
-									</h3>
-									<p class="text-sm text-foreground/60">
-										Work in progress
-									</p>
+								<div class="rounded-2xl bg-card p-6 border border-white/5 hover:border-page/20 transition-colors">
+									<Clock className="text-page mb-4 size-6" />
+									<h3 class="font-bold mb-2">Focus Analytics</h3>
+									<p class="text-xs text-muted-foreground leading-relaxed">Visualize where your time goes with precision heatmaps.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-			</div>
-		</div>
+				</div>
+			</section>
+
+			<section class="py-24 lg:py-32">
+				<div class="mx-auto max-w-7xl px-8 md:px-16 text-center">
+					<h2 class="mb-16 text-3xl font-bold lg:text-4xl">Technical <span class="text-page">Core</span></h2>
+					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+						{[
+							{ title: "Frontend", tech: "React Native / Expo", icon: <Smartphone /> },
+							{ title: "Interface", tech: "Tailwind CSS", icon: <Layout /> },
+							{ title: "Backend", tech: "October CMS", icon: <Database /> },
+							{ title: "Storage", tech: "MySQL", icon: <Database /> }
+						].map((item) => (
+							<div class="group rounded-2xl bg-card/50 p-8 border border-white/5 hover:bg-card transition-all transform-gpu hover:-translate-y-2">
+								<div class="mx-auto mb-6 w-fit text-page group-hover:scale-110 transition-transform">
+									{item.icon}
+								</div>
+								<h3 class="font-bold text-sm uppercase tracking-widest text-muted-foreground mb-2">{item.title}</h3>
+								<p class="font-bold">{item.tech}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- <section class="px-8 pb-32 md:px-16">
+				<div class="mx-auto max-w-3xl rounded-[3rem] bg-linear-to-br from-[#1C274C] to-[#6F4154] p-12 text-center text-white shadow-2xl">
+					<h2 class="mb-6 text-3xl font-bold lg:text-4xl">Interested in the Beta?</h2>
+					<p class="mb-10 text-white/70">
+						The incomodum app is currently in active development. We are fine-tuning the experience for our initial launch.
+					</p>
+					<a href="/contact" class="inline-flex items-center rounded-full bg-white px-8 py-4 font-bold text-[#1C274C] hover:bg-page hover:text-white transition-all transform-gpu hover:scale-105">
+						Get Early Access
+					</a>
+				</div>
+			</section> -->
+		</main>
+
 		<Footer client:load />
 	</body>
 </html>
