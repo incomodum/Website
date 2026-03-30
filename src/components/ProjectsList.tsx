@@ -28,83 +28,79 @@ export default function ProjectsList() {
 	return (
 		<div className="min-h-screen py-16 lg:py-24">
 			{/* Header & Filters */}
-			<section className="mb-12 px-8 lg:px-16">
-				<div className="mx-auto max-w-7xl">
-					<div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-						<div className="space-y-4">
-							<h2 className="font-bold text-3xl lg:text-4xl">
-								Featured <span className="text-page">Projects</span>
-							</h2>
-							<div className="flex flex-wrap gap-2">
-								{categories.map((category) => (
-									<Button
-										key={category.value}
-										variant="ghost"
-										className={`rounded-full px-6 transition-all ${
-											selectedCategory === category.value
-												? "bg-page text-white shadow-lg shadow-page/20 hover:bg-page/90"
-												: "bg-card hover:bg-page/10 hover:text-page"
-										}`}
-										onClick={() => setSelectedCategory(category.value)}
-									>
-										{category.label}
-									</Button>
-								))}
-							</div>
+			<section className="mx-auto mb-12 max-w-7xl">
+				<div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+					<div className="space-y-4">
+						<h2 className="font-bold text-3xl lg:text-4xl">
+							Featured <span className="text-page">Projects</span>
+						</h2>
+						<div className="flex flex-wrap gap-2">
+							{categories.map((category) => (
+								<Button
+									key={category.value}
+									variant="ghost"
+									className={`rounded-full px-6 transition-all ${
+										selectedCategory === category.value
+											? "bg-page text-white shadow-lg shadow-page/20 hover:bg-page/90"
+											: "bg-card hover:bg-page/10 hover:text-page"
+									}`}
+									onClick={() => setSelectedCategory(category.value)}
+								>
+									{category.label}
+								</Button>
+							))}
 						</div>
+					</div>
 
-						<div className="group relative">
-							<Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-page" />
-							<Input
-								placeholder="Search by name or tech..."
-								value={searchQuery}
-								onChange={(e) => setSearchQuery(e.target.value)}
-								className="h-12 w-full rounded-2xl border-none bg-card pr-4 pl-11 shadow-sm focus-visible:ring-2 focus-visible:ring-page md:w-87.5"
-							/>
-						</div>
+					<div className="group relative">
+						<Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-page" />
+						<Input
+							placeholder="Search by name or tech..."
+							value={searchQuery}
+							onChange={(e) => setSearchQuery(e.target.value)}
+							className="h-12 w-full rounded-2xl border-none bg-card pr-4 pl-11 shadow-sm focus-visible:ring-2 focus-visible:ring-page md:w-87.5"
+						/>
 					</div>
 				</div>
 			</section>
 
 			{/* Projects Grid */}
-			<section className="px-8 lg:px-16">
-				<div className="mx-auto max-w-7xl">
-					<motion.div layout className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-						<AnimatePresence mode="popLayout">
-							{filteredProjects.map((project) => (
-								<ProjectCard key={project.id} project={project} />
-							))}
-						</AnimatePresence>
-					</motion.div>
-
-					{/* Empty State */}
-					<AnimatePresence>
-						{filteredProjects.length === 0 && (
-							<motion.div
-								initial={{ opacity: 0, scale: 0.9 }}
-								animate={{ opacity: 1, scale: 1 }}
-								exit={{ opacity: 0, scale: 0.9 }}
-								className="flex flex-col items-center justify-center py-32 text-center"
-							>
-								<div className="mb-4 rounded-full bg-card p-6 text-muted-foreground">
-									<Inbox className="h-10 w-10" />
-								</div>
-								<h3 className="font-semibold text-xl">No projects found</h3>
-								<p className="text-muted-foreground">Try adjusting your filters or search term.</p>
-								<Button
-									variant="link"
-									className="mt-2 text-page"
-									onClick={() => {
-										setSelectedCategory("all")
-										setSearchQuery("")
-									}}
-								>
-									Clear all filters
-								</Button>
-							</motion.div>
-						)}
+			<section className="mx-auto max-w-7xl">
+				<motion.div layout className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+					<AnimatePresence mode="popLayout">
+						{filteredProjects.map((project) => (
+							<ProjectCard key={project.id} project={project} />
+						))}
 					</AnimatePresence>
-				</div>
+				</motion.div>
+
+				{/* Empty State */}
+				<AnimatePresence>
+					{filteredProjects.length === 0 && (
+						<motion.div
+							initial={{ opacity: 0, scale: 0.9 }}
+							animate={{ opacity: 1, scale: 1 }}
+							exit={{ opacity: 0, scale: 0.9 }}
+							className="flex flex-col items-center justify-center py-32 text-center"
+						>
+							<div className="mb-4 rounded-full bg-card p-6 text-muted-foreground">
+								<Inbox className="h-10 w-10" />
+							</div>
+							<h3 className="font-semibold text-xl">No projects found</h3>
+							<p className="text-muted-foreground">Try adjusting your filters or search term.</p>
+							<Button
+								variant="link"
+								className="mt-2 text-page"
+								onClick={() => {
+									setSelectedCategory("all")
+									setSearchQuery("")
+								}}
+							>
+								Clear all filters
+							</Button>
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</section>
 		</div>
 	)
