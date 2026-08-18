@@ -1,9 +1,9 @@
 import { useForm } from "@tanstack/react-form"
 import { z } from "astro/zod"
-import { Button } from "./ui/button"
-import { Field, FieldError, FieldLabel } from "./ui/field"
-import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
+import { Button } from "../ui/button"
+import { Field, FieldError, FieldLabel } from "../ui/field"
+import { Input } from "../ui/input"
+import { Textarea } from "../ui/textarea"
 
 const formSchema = z.object({
 	email: z.email("Invalid email address"),

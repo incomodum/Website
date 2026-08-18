@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.9/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.8/schema.json",
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
@@ -22,7 +22,7 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true,
+			"preset": "recommended",
 			"complexity": {
 				"noUselessFragments": "warn"
 			},
@@ -51,18 +51,16 @@
 			"**/astro.config.mjs",
 			"!**/*.d.ts",
 			"!node-modules",
-			"!.expo",
 			"!.vscode",
-			"!yarn.lock",
-			"!ios",
-			"!android",
 			"!.DS_Store",
 			"!**/*.lock",
 			"!.gitattributes",
 			"!**/*.md",
 			"!**/*.ttf",
 			"!**/*.png",
-			"!**/*.yml"
+			"!**/*.yml",
+			"!dist",
+			"!.vercel"
 		]
 	}
 }

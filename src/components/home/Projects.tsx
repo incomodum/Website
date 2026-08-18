@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { motion } from "motion/react"
 import projects from "@/lib/projects"
-import { Badge } from "./ui/badge"
+import { Badge } from "../ui/badge"
 
 export default function Projects() {
 	return (
@@ -15,6 +15,7 @@ export default function Projects() {
 					viewport={{ once: true }}
 					className="h-full"
 				>
+					{/** biome-ignore lint/a11y/noAmbiguousAnchorText: intended */}
 					<a
 						href={`/projects/${project.slug}`}
 						className="group flex h-full transform-gpu flex-col overflow-hidden rounded-2xl border border-transparent bg-card transition-all duration-300 ease-out hover:border-page/20 hover:shadow-2xl hover:shadow-page/10"

@@ -1,8 +1,8 @@
 import { MailIcon } from "lucide-react"
 import { motion } from "motion/react"
 import members, { type Member } from "@/lib/members"
+import Linkedin from "../icons/linkedin"
 import ContactUs from "./ContactUs"
-import Linkedin from "./icons/linkedin"
 
 function MemberCard({ name, position, links, image, index, link }: Member & { index: number }) {
 	return (

@@ -27,9 +27,9 @@
 ## 📌 TODO
 - [ ] Team Section
 - [ ] Better mobile menu + Hover for nav items
-- [ ] More/Improve project pages (KSK)
+- [ ] Better SEO
+- [ ] Add more project pages
 <!-- - [ ] https://tailwindcss.com/plus/templates/radiant/preview -->
-- [ ] Fix overflow on zen
 
 
 ## 🛠️ Local Setup
@@ -40,6 +40,7 @@
 ### 1️⃣ Enable Corepack
 After installing Node.js, run the following command:
 ```sh
+npm i -g corepack
 corepack enable
 ```
 

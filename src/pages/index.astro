@@ -1,14 +1,14 @@
 ---
 import "@/styles/globals.css"
 import { SEO } from "astro-seo"
-import { motion } from "motion/react"
 import { ArrowRight } from "lucide-react"
-import Contact from "@/components/Contact"
+import Title from "@/components/home/Title"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
-import Mission from "@/components/Mission"
-import Projects from "@/components/Projects"
-import Services from "@/components/Services"
+import Mission from "@/components/home/Mission"
+import Contact from "@/components/Contact"
+import Projects from "@/components/home/Projects"
+import Services from "@/components/home/Services"
 import ThemeManager from "@/components/ThemeManager.astro"
 ---
 
@@ -57,30 +57,7 @@ import ThemeManager from "@/components/ThemeManager.astro"
         <main class="w-full max-w-7xl mx-auto pt-24 lg:pt-32">
 
             <section class="flex flex-col items-center text-center mb-24 lg:mb-32">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    client:load
-                >
-                    <h1 class="mb-8 text-5xl font-bold leading-[1.1] lg:text-7xl tracking-tight">
-                        Innovative <span class="text-page">Software</span><br />
-                        Solutions <span class="text-page">Built to Scale</span>
-                    </h1>
-                    <p class="mx-auto mb-12 max-w-2xl text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                        We create cutting-edge software solutions that help businesses transform,
-                        scale, and achieve their digital ambitions with precision and excellence.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="/contact" class="group relative flex items-center justify-center rounded-full bg-page px-10 py-4 font-bold text-white transition-all transform-gpu hover:scale-105 hover:shadow-[0_20px_50px_rgba(var(--page-rgb),0.3)]">
-                            Get Started
-                            <ArrowRight className="ml-2 size-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <a href="/projects" class="flex items-center justify-center rounded-full border-2 border-border bg-card/50 backdrop-blur-sm px-10 py-4 font-bold transition-all hover:border-page/50 hover:bg-card">
-                            View Our Work
-                        </a>
-                    </div>
-                </motion.div>
+                <Title client:load />
             </section>
 
             <div id="services" class="scroll-mt-24">

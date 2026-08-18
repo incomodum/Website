@@ -2,9 +2,9 @@ import { ArrowRight, Inbox, Search } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
 import projects from "@/lib/projects"
-import { Badge } from "./ui/badge"
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
+import { Badge } from "../ui/badge"
+import { Button } from "../ui/button"
+import { Input } from "../ui/input"
 
 const categories = [
 	{ label: "All Projects", value: "all" },
