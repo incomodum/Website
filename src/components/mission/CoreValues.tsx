@@ -32,7 +32,7 @@ export default function CoreValues() {
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					className="mx-auto mb-16 max-w-3xl text-center"
+					className="mx-auto mb-16 max-w-4xl text-center"
 				>
 					<h2 className="mb-6 font-bold text-4xl tracking-tight lg:text-5xl">
 						Our Core <span className="text-page">Values</span>

@@ -161,6 +161,16 @@
 	}
 }
 
+@layer utilities {
+	.no-scrollbar::-webkit-scrollbar {
+		display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}
+
 @layer components {
 	.color-blur {
 		@apply absolute hidden aspect-square blur-[500px] [&.right]:right-0 [&.right]:translate-x-[70%] [&.left]:left-0 [&.left]:translate-x-[-70%] w-1/2 md:block rounded-full opacity-30 -z-10 bg-radial from-page to-transparent;

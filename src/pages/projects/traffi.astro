@@ -1,0 +1,216 @@
+---
+import "@/styles/globals.css"
+import { SEO } from "astro-seo"
+import { ExternalLink, BrainCircuit, Car, Cpu, Network, Sliders, Zap, Activity } from "lucide-react"
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
+import ProjectsBack from "@/components/ProjectsBack.astro"
+import ThemeManager from "@/components/ThemeManager.astro"
+import { Badge } from "@/components/ui/badge"
+import { AnimatedMascot } from "@/components/projects/TraffiMascot"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<SEO
+			title="Traffi | incomodum"
+			description="Traffic lights optimization for city of Trnava"
+			openGraph={{
+				basic: {
+					title: "Traffi",
+					type: "website",
+					image: "/assets/projects/traffi-og.png"
+				},
+				optional: {
+					locale: "en",
+					description:
+						"Traffic lights optimization for city of Trnava",
+					siteName: "incomodum"
+				},
+				image: {
+					width: 1280,
+					height: 640,
+					type: "image/png"
+				}
+			}}
+			twitter={{
+				card: "summary_large_image"
+			}}
+		/>
+		<style>
+			:root {
+				/* Traffic Red/Amber Signal Hue */
+				--page-color: oklch(0.5135 0.1801 26.33);
+				--page-rgb: 196, 59, 39;
+			}
+		</style>
+		<ThemeManager defaultTheme="auto" />
+	</head>
+	<body class="bg-background text-foreground selection:bg-page/30">
+		<Header client:load />
+
+		<main class="relative w-full">
+			<section class="relative px-8 pt-24 pb-16 md:px-16 lg:pt-32 lg:pb-32 overflow-hidden">
+				<div class="mx-auto max-w-7xl">
+					<ProjectsBack />
+
+					<div class="mt-12 grid gap-16 lg:grid-cols-2 items-center">
+						<div class="space-y-8">
+							<div class="space-y-4">
+								<Badge className="bg-page/70 text-foreground hover:bg-page px-4 py-1 rounded-full uppercase tracking-widest text-[10px] font-bold">
+									AI & Smart City Hackathon
+								</Badge>
+								<a href="https://github.com/incomodum/Traffi" target="_blank" rel="noopener noreferrer" class="group block">
+									<h1 class="text-5xl flex items-center font-black leading-[1.1] lg:text-6xl tracking-tighter text-foreground duration-1000 *:transition-colors pt-4">
+										<span class="group-hover:text-page flex items-baseline">
+											<span class="relative inline-block group-hover:text-">
+												<svg
+													viewBox="0 0 68 26"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+													class="absolute -top-1 pl-0.5 md:pl-1 left-1/2 -translate-x-1/2 w-7 md:w-9 h-auto fill-current text-foreground group-hover:opacity-50 transition-all"
+												>
+													<path d="M60.1888 25.9906H6.15567L0 6.15567L17.7831 15.0472L33.5142 0L48.5614 15.0472L67.0284 6.15567L60.1888 25.9906Z" />
+												</svg>
+												T
+											</span>r
+										</span>
+										<span class="group-hover:text-[#FF8C00]">af</span>
+										<span class="group-hover:text-[#6BB500]">fi</span>
+										<ExternalLink className="inline-block ml-4 size-8 opacity-20 group-hover:opacity-100 text-foreground transition-opacity" />
+									</h1>
+								</a>
+								<p class="text-xl text-muted-foreground leading-relaxed max-w-xl">
+									An intelligent traffic light signal optimization model designed to reduce congestion and vehicle idle times in the city of Trnava.
+								</p>
+							</div>
+
+							<div class="flex gap-8">
+								<div class="flex flex-col border-l-2 border-page/20 pl-4">
+									<span class="text-xs font-bold uppercase text-muted-foreground/50">Domain</span>
+									<span class="font-bold">Deep Reinforcement Learning</span>
+								</div>
+								<div class="flex flex-col border-l-2 border-page/20 pl-4">
+									<span class="text-xs font-bold uppercase text-muted-foreground/50">Target Area</span>
+									<span class="font-bold">Trnava Municipality</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="relative group">
+							<div class="absolute -inset-4 bg-page/5 blur-3xl rounded-full opacity-50"></div>
+							<div class="relative overflow-hidden md:p-32 p-8 rounded-2xl transition-all">
+								<AnimatedMascot client:load />
+							</div>
+							<div class="absolute -bottom-6 -left-6 h-32 w-32 bg-page/10 rounded-full blur-2xl -z-10"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="bg-card/30 py-24 px-8 md:px-16 lg:py-32 backdrop-blur-sm border-y border-white/5">
+				<div class="mx-auto max-w-7xl">
+					<div class="grid gap-24 lg:grid-cols-2">
+						<div class="space-y-8">
+							<div class="flex items-center gap-3 text-page">
+								<Car className="size-6" />
+								<h2 class="text-3xl font-bold tracking-tight">The Challenge</h2>
+							</div>
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								Fixed-timer signal light cycles struggle to adapt during peak transit hours in Trnava, leading to bottlenecked intersections, unnecessary idle emissions, and delayed public transport.
+							</p>
+							<ul class="space-y-5">
+								{[
+									"Inflexible timer intervals during unpredictable traffic shifts",
+									"Elevated CO2 emissions caused by excessive stop-and-go idling",
+									"Lack of real-time adaptive flow management across intersections"
+								].map((item) => (
+									<li class="flex items-start gap-4 group">
+										<div class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-page group-hover:scale-150 transition-all" />
+										<span class="text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+
+						<div class="space-y-8">
+							<div class="flex items-center gap-3 text-page">
+								<BrainCircuit className="size-6" />
+								<h2 class="text-3xl font-bold tracking-tight">AI-Driven Solution</h2>
+							</div>
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								Traffi models key municipal intersections as a multi-agent reinforcement learning environment, dynamically tuning signal lengths based on live simulated traffic density.
+							</p>
+
+							<div class="grid gap-4 sm:grid-cols-2">
+								<div class="rounded-2xl bg-card p-6 border border-white/5 group hover:border-page/20 transition-all">
+									<Sliders className="text-page mb-4 size-6 group-hover:scale-110 transition-transform" />
+									<h3 class="font-bold mb-2 text-sm uppercase">Adaptive Signal Timing</h3>
+									<p class="text-xs text-muted-foreground leading-relaxed">Dynamically alters green light durations to maximize vehicle throughput.</p>
+								</div>
+								<div class="rounded-2xl bg-card p-6 border border-white/5 group hover:border-page/20 transition-all">
+									<Activity className="text-page mb-4 size-6 group-hover:rotate-12 transition-transform" />
+									<h3 class="font-bold mb-2 text-sm uppercase">Emission Reduction</h3>
+									<p class="text-xs text-muted-foreground leading-relaxed">Minimizes stop times to directly decrease urban carbon footprint.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="py-24 lg:py-32">
+				<div class="mx-auto max-w-7xl px-8 md:px-16 text-center">
+					<h2 class="mb-16 text-3xl font-bold lg:text-4xl">Technical <span class="text-page">Architecture</span></h2>
+					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+						{[
+							{ title: "Core Language", tech: "Python 3", icon: <Cpu />, desc: "Primary language powering data processing, simulation logic, and model training." },
+							{ title: "ML Framework", tech: "PyTorch", icon: <BrainCircuit />, desc: "Deep Neural Networks and Reinforcement Learning agents driving decision policies." },
+							{ title: "Network Simulation", tech: "Traffic Flow Modeling", icon: <Network />, desc: "Simulated traffic topology modeled on real-world Trnava road networks." }
+						].map((item) => (
+							<div class="group rounded-[2.5rem] bg-card/50 p-10 border border-white/5 hover:bg-card transition-all transform-gpu hover:-translate-y-2">
+								<div class="mx-auto mb-6 w-fit text-page group-hover:scale-110 transition-transform">
+									{item.icon}
+								</div>
+								<h3 class="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-2">{item.title}</h3>
+								<p class="font-bold text-lg mb-4">{item.tech}</p>
+								<p class="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="px-8 md:px-16 pb-32">
+				<div class="w-full max-w-7xl mx-auto">
+					<div class="rounded-[3rem] bg-linear-to-br from-[#5C1D18] to-[#1C274C] p-12 text-center text-white shadow-2xl relative overflow-hidden">
+						<div class="relative z-10">
+							<h2 class="mb-6 text-3xl font-bold lg:text-4xl">View on GitHub</h2>
+							<p class="mb-10 text-white/70 max-w-xl mx-auto">
+								Check out the PyTorch model implementation, training scripts, and simulation environment for Traffi.
+							</p>
+							<a href="https://github.com/incomodum/Traffi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-white px-10 py-4 font-bold text-[#5C1D18] hover:bg-page hover:text-white transition-all transform-gpu hover:scale-105">
+								Open GitHub Repository
+								<ExternalLink className="ml-2 size-4" />
+							</a>
+						</div>
+						<div class="absolute -right-20 -bottom-20 size-80 bg-white/5 blur-3xl rounded-full"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<Footer client:load />
+	</body>
+</html>

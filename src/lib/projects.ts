@@ -1,3 +1,15 @@
+export interface Project {
+	id: number
+	title: string
+	description: string
+	image?: string
+	category: string
+	slug: string
+	technologies: string[]
+	color?: string
+	date?: string
+}
+
 export default [
 	{
 		id: 1,
@@ -35,9 +47,10 @@ export default [
 		description: "Sporting grounds reservations for the city part of Petržalka",
 		image: "sportujtoo",
 		category: "hackathon",
-		slug: "https://github.com/incomodum/Sportuj-Too",
+		slug: "sportuj-too",
 		technologies: ["Next.js", "React"],
-		color: "oklch(0.6722 0.1768 145.74)"
+		color: "oklch(0.6722 0.1768 145.74)",
+		date: "11/16/2024"
 	},
 	{
 		id: 5,
@@ -45,9 +58,10 @@ export default [
 		description: "Traffic lights optimization for city of Trnava",
 		image: "traffi",
 		category: "hackathon",
-		slug: "https://github.com/incomodum/Traffi",
+		slug: "traffi",
 		technologies: ["Python", "PyTorch"],
-		color: "oklch(0.5135 0.1801 26.33)"
+		color: "oklch(0.5135 0.1801 26.33)",
+		date: "12/06/2024"
 	},
 	{
 		id: 6,
@@ -55,8 +69,9 @@ export default [
 		description: "Your virtual fair and event companion",
 		image: "virtufest",
 		category: "hackathon",
-		slug: "https://github.com/incomodum/VirtuFest",
+		slug: "virtufest",
 		technologies: ["Next.js", "React"],
-		color: "oklch(0.692 0.161936 157.7671)"
+		color: "oklch(0.692 0.161936 157.7671)",
+		date: "02/01/2025"
 	}
-]
+] satisfies Project[]
