@@ -2,6 +2,7 @@ import { ArrowRight, ExternalLink, Globe, Inbox, Layers, Palette, Search, Smartp
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
 import projects, { type Project } from "@/lib/projects"
+import { useTheme } from "@/lib/theme"
 import { Badge } from "../ui/badge"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
@@ -51,7 +52,7 @@ export default function ProjectsList() {
 							<p className="mt-1 text-muted-foreground text-sm">Explore case studies, web applications, and hackathon prototypes.</p>
 						</div>
 
-						{/* Desktop Reset Filters Button (hidden on mobile) */}
+						{/* Desktop Reset Filters Button */}
 						<AnimatePresence>
 							{hasActiveFilters && (
 								<motion.div
@@ -163,7 +164,7 @@ export default function ProjectsList() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
-							transition={{ duration: 0.2 }}
+							transition={{ duration: 0.1 }}
 							className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
 						>
 							<AnimatePresence mode="popLayout">
@@ -201,6 +202,7 @@ export function ProjectCard({ project, index }: { project: Project; index?: numb
 	const isExternal = project.slug.startsWith("http://") || project.slug.startsWith("https://")
 	const projectUrl = isExternal ? project.slug : `/projects/${project.slug}`
 
+	const theme = useTheme()
 	const imageLight = project.image ? `/assets/projects/${project.image}-og.png` : "/placeholder.svg"
 	const imageDark = project.image ? `/assets/projects/${project.image}-dark-og.png` : imageLight
 
@@ -218,31 +220,31 @@ export function ProjectCard({ project, index }: { project: Project; index?: numb
 				target={isExternal ? "_blank" : "_self"}
 				rel={isExternal ? "noopener noreferrer" : undefined}
 				style={project.color ? ({ "--page-color": project.color } as React.CSSProperties) : undefined}
-				className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/40 bg-card transition-all duration-300 ease-out hover:-translate-y-1 hover:border-page/30 hover:shadow-page/10 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-page"
+				className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-page/40 hover:bg-card hover:shadow-2xl hover:shadow-page/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-page"
 			>
-				{/* Image Container with Fixed Aspect Ratio to Prevent Cumulative Layout Shift (CLS) */}
+				{/* Top Edge Highlight Line */}
+				<div className="absolute inset-x-0 top-0 z-20 h-px bg-linear-to-r from-transparent via-page/0 to-transparent transition-all duration-500 group-hover:via-page/40" />
+
+				{/* Image Container with Fixed Aspect Ratio */}
 				<div className="relative aspect-2/1 w-full overflow-hidden bg-muted">
-					<picture>
-						<source media="(prefers-color-scheme: dark)" srcSet={imageDark} />
-						<img
-							src={imageLight}
-							alt={project.title}
-							loading="lazy"
-							decoding="async"
-							className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-							onError={(e) => {
-								// Fallback if dark/light image fails to load
-								;(e.currentTarget as HTMLImageElement).src = "/placeholder.svg"
-							}}
-						/>
-					</picture>
+					<img
+						key={`image-${project.slug}-${theme}`}
+						src={theme === "dark" ? imageDark : imageLight}
+						alt={project.title}
+						loading="lazy"
+						decoding="async"
+						className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+						onError={(e) => {
+							;(e.currentTarget as HTMLImageElement).src = "/placeholder.svg"
+						}}
+					/>
 
 					{/* Gradient Overlay */}
-					<div className="absolute inset-0 bg-linear-to-t from-card/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+					<div className="absolute inset-0 bg-linear-to-t from-card/80 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
 
-					{/* Category Badge on Image */}
-					<div className="absolute top-3 right-3">
-						<span className="rounded-full border border-white/10 bg-background/80 px-2.5 py-1 font-bold text-[10px] text-muted-foreground uppercase tracking-wider backdrop-blur-md">
+					{/* Category Badge */}
+					<div className="absolute top-3.5 right-3.5">
+						<span className="rounded-full border border-white/10 bg-background/80 px-3 py-1 font-bold text-[10px] text-muted-foreground uppercase tracking-wider shadow-sm backdrop-blur-md">
 							{project.category}
 						</span>
 					</div>
@@ -256,7 +258,7 @@ export function ProjectCard({ project, index }: { project: Project; index?: numb
 							<Badge
 								key={tech}
 								variant="secondary"
-								className="border-none bg-page/10 text-page text-xs transition-colors group-hover:bg-page/20"
+								className="border border-page/15 bg-page/10 font-semibold text-page text-xs backdrop-blur-md transition-colors group-hover:border-page/30 group-hover:bg-page/20"
 							>
 								{tech}
 							</Badge>
@@ -270,20 +272,29 @@ export function ProjectCard({ project, index }: { project: Project; index?: numb
 
 					<h3 className="mb-2 font-bold text-2xl tracking-tight transition-colors group-hover:text-page">{project.title}</h3>
 
-					<p className="mb-6 line-clamp-2 text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+					<p className="mb-6 line-clamp-2 text-muted-foreground text-sm leading-relaxed transition-colors group-hover:text-foreground/80">
+						{project.description}
+					</p>
 
 					{/* Footer */}
 					<div className="mt-auto flex items-center justify-between border-border/30 border-t pt-4">
 						<span className="inline-flex items-center font-semibold text-page text-sm">
 							{isExternal ? "View Repository / External" : "View Case Study"}
-							{isExternal ? (
-								<ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-							) : (
-								<ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-							)}
 						</span>
+
+						{/* Action Icon Pill */}
+						<div className="flex size-9 items-center justify-center rounded-full border border-border/40 bg-background/50 text-muted-foreground backdrop-blur-md transition-all duration-300 group-hover:border-page/30 group-hover:bg-page/10 group-hover:text-page">
+							{isExternal ? (
+								<ExternalLink className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+							) : (
+								<ArrowRight className="size-4 transition-transform duration-300" />
+							)}
+						</div>
 					</div>
 				</div>
+
+				{/* Animated Bottom Progress Line */}
+				<div className="absolute bottom-0 left-0 h-1 w-0 bg-page transition-all duration-500 ease-out group-hover:w-full" />
 			</a>
 		</motion.div>
 	)

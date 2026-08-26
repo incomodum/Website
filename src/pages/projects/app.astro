@@ -7,6 +7,7 @@ import Header from "@/components/Header"
 import ThemeManager from "@/components/ThemeManager.astro"
 import ProjectsBack from "@/components/ProjectsBack.astro"
 import { Badge } from "@/components/ui/badge"
+import ProjectCTA from "@/components/projects/ProjectCTA"
 ---
 
 <html lang="en">
@@ -49,9 +50,8 @@ import { Badge } from "@/components/ui/badge"
 		/>
 		<style>
 			:root {
-				/* Keeping your specific page color */
 				--page-color: oklch(0.7806 0.0965 80.15);
-				--page-rgb: 199, 185, 115; /* Approximate RGB for shadows */
+				--page-rgb: 199, 185, 115;
 			}
 		</style>
 		<ThemeManager defaultTheme="auto" />
@@ -90,7 +90,7 @@ import { Badge } from "@/components/ui/badge"
 							</div>
 						</div>
 
-						<div class="relative group">
+						<div class="relative group aspect-608/546">
 							<div class="absolute -inset-4 bg-page/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
 							<img
 								src="/assets/projects/app-mock.png"
@@ -104,7 +104,7 @@ import { Badge } from "@/components/ui/badge"
 				</div>
 			</section>
 
-			<section class="bg-card/30 py-24 px-8 md:px-16 lg:py-32 backdrop-blur-sm">
+			<section class="bg-card/20 py-24 px-8 md:px-16 lg:py-32 backdrop-blur-md border-y border-white/10">
 				<div class="mx-auto max-w-7xl">
 					<div class="grid gap-24 lg:grid-cols-2">
 						<div class="space-y-8">
@@ -137,12 +137,12 @@ import { Badge } from "@/components/ui/badge"
 							</p>
 
 							<div class="grid gap-4 sm:grid-cols-2">
-								<div class="rounded-2xl bg-card p-6 border border-white/5 hover:border-page/20 transition-colors">
+								<div class="rounded-2xl bg-card/40 backdrop-blur-md p-6 border border-white/10 shadow-lg hover:border-page/30 hover:bg-card/60 transition-all">
 									<Zap className="text-page mb-4 size-6" />
 									<h3 class="font-bold mb-2">Gamified Motivation</h3>
 									<p class="text-xs text-muted-foreground leading-relaxed">Earn rewards for hitting milestones and staying off social apps.</p>
 								</div>
-								<div class="rounded-2xl bg-card p-6 border border-white/5 hover:border-page/20 transition-colors">
+								<div class="rounded-2xl bg-card/40 backdrop-blur-md p-6 border border-white/10 shadow-lg hover:border-page/30 hover:bg-card/60 transition-all">
 									<Clock className="text-page mb-4 size-6" />
 									<h3 class="font-bold mb-2">Focus Analytics</h3>
 									<p class="text-xs text-muted-foreground leading-relaxed">Visualize where your time goes with precision heatmaps.</p>
@@ -163,11 +163,11 @@ import { Badge } from "@/components/ui/badge"
 							{ title: "Backend", tech: "October CMS", icon: <Database /> },
 							{ title: "Storage", tech: "MySQL", icon: <Database /> }
 						].map((item) => (
-							<div class="group rounded-2xl bg-card/50 p-8 border border-white/5 hover:bg-card transition-all transform-gpu hover:-translate-y-2">
+							<div class="group rounded-[2.5rem] bg-card/40 backdrop-blur-xl p-8 border border-white/10 shadow-xl hover:border-page/30 hover:bg-card/60 transition-all transform-gpu hover:-translate-y-2">
 								<div class="mx-auto mb-6 w-fit text-page group-hover:scale-110 transition-transform">
 									{item.icon}
 								</div>
-								<h3 class="font-bold text-sm uppercase tracking-widest text-muted-foreground mb-2">{item.title}</h3>
+								<h3 class="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-2">{item.title}</h3>
 								<p class="font-bold">{item.tech}</p>
 							</div>
 						))}
@@ -175,19 +175,15 @@ import { Badge } from "@/components/ui/badge"
 				</div>
 			</section>
 
-			<!-- <section class="px-8 md:px-16 pb-32">
-				<div class="w-full max-w-7xl mx-auto">
-					<div class="rounded-[3rem] bg-linear-to-br from-[#1C274C] to-[#6F4154] p-12 text-center text-white shadow-2xl">
-						<h2 class="mb-6 text-3xl font-bold lg:text-4xl">Interested in the Beta?</h2>
-						<p class="mb-10 text-white/70">
-							The incomodum app is currently in active development. We are fine-tuning the experience for our initial launch.
-						</p>
-						<a href="/contact" class="inline-flex items-center rounded-full bg-white px-8 py-4 font-bold text-[#1C274C] hover:bg-page hover:text-white transition-all transform-gpu hover:scale-105">
-							Get Early Access
-						</a>
-					</div>
-				</div>
-			</section> -->
+			<ProjectCTA
+				client:load
+				title="Get Early Access"
+				description="The incomodum app is currently in active development. We are fine-tuning the experience for our initial launch."
+				buttonText="Join Early Access (TBA)"
+				disabled={true}
+				href="#"
+				isExternal={false}
+			/>
 		</main>
 
 		<Footer client:load />

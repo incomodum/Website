@@ -5,7 +5,7 @@ export default function Mission() {
 	return (
 		<section aria-labelledby="heading-mission" className="py-24">
 			<div className="grid items-center gap-16 lg:grid-cols-2">
-				<motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
+				<motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false }} className="space-y-8">
 					<h2 id="heading-mission" className="font-bold text-4xl tracking-tighter lg:text-6xl">
 						Our <span className="text-page">Mission</span>
 					</h2>
@@ -35,10 +35,15 @@ export default function Mission() {
 
 					<a
 						href="/mission"
-						className="group inline-flex transform-gpu items-center rounded-full bg-page px-8 py-4 font-bold text-white transition-all hover:scale-105 hover:shadow-lg"
+						className="group relative flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-page px-9 py-4 font-bold text-white shadow-lg shadow-page/20 transition-all duration-300 hover:scale-[1.03] hover:shadow-page/30 hover:shadow-xl active:scale-[0.98] sm:w-auto"
 					>
-						Learn Our Story
-						<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+						{/* Shimmer Accent */}
+						<div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/25 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+
+						<span className="relative flex items-center text-base">
+							Learn Our Story
+							<ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+						</span>
 					</a>
 				</motion.div>
 

@@ -8,6 +8,7 @@ import navody from "/public/assets/projects/navody.webp"
 import ProjectsBack from "@/components/ProjectsBack.astro"
 import ThemeManager from "@/components/ThemeManager.astro"
 import { Badge } from "@/components/ui/badge"
+import ProjectCTA from "@/components/projects/ProjectCTA"
 ---
 
 <html lang="en">
@@ -50,7 +51,6 @@ import { Badge } from "@/components/ui/badge"
 		/>
 		<style>
 			:root {
-				/* Your specific Slovak Gov Blue */
 				--page-color: oklch(0.4351 0.1553 263.78);
 				--page-rgb: 0, 102, 204;
 			}
@@ -94,7 +94,7 @@ import { Badge } from "@/components/ui/badge"
 							</div>
 						</div>
 
-						<div class="relative group">
+						<div class="relative group aspect-608/450">
 							<div class="absolute -inset-4 bg-page/5 blur-3xl rounded-full opacity-50"></div>
 							<div class="relative overflow-hidden rounded-2xl shadow-2xl transition-all transform-gpu group-hover:scale-[1.02] border border-white/10">
 								<img
@@ -109,7 +109,7 @@ import { Badge } from "@/components/ui/badge"
 				</div>
 			</section>
 
-			<section class="bg-card/30 py-24 px-8 md:px-16 lg:py-32 backdrop-blur-sm border-y border-white/5">
+			<section class="bg-card/20 py-24 px-8 md:px-16 lg:py-32 backdrop-blur-md border-y border-white/10">
 				<div class="mx-auto max-w-7xl">
 					<div class="grid gap-24 lg:grid-cols-2">
 						<div class="space-y-8">
@@ -144,12 +144,12 @@ import { Badge } from "@/components/ui/badge"
 							</p>
 
 							<div class="grid gap-4 sm:grid-cols-2">
-								<div class="rounded-2xl bg-card p-6 border border-white/5">
+								<div class="rounded-2xl bg-card/40 backdrop-blur-md p-6 border border-white/10 shadow-lg hover:border-page/30 hover:bg-card/60 transition-all">
 									<FileText className="text-page mb-4 size-6" />
 									<h3 class="font-bold mb-2 text-sm uppercase">Custom CMS</h3>
 									<p class="text-xs text-muted-foreground">Powering dynamic tutorials with October CMS flexibility.</p>
 								</div>
-								<div class="rounded-2xl bg-card p-6 border border-white/5">
+								<div class="rounded-2xl bg-card/40 backdrop-blur-md p-6 border border-white/10 shadow-lg hover:border-page/30 hover:bg-card/60 transition-all">
 									<Globe className="text-page mb-4 size-6" />
 									<h3 class="font-bold mb-2 text-sm uppercase">IDSK 3 UI</h3>
 									<p class="text-xs text-muted-foreground">Perfectly compliant with national design standards.</p>
@@ -170,7 +170,7 @@ import { Badge } from "@/components/ui/badge"
 							{ title: "Database", tech: "MySQL", icon: <Database /> },
 							{ title: "Architecture", tech: "API-First Design", icon: <Clock /> }
 						].map((item) => (
-							<div class="group rounded-2xl bg-card/50 p-8 border border-white/5 hover:bg-card transition-all transform-gpu hover:-translate-y-2">
+							<div class="group rounded-[2.5rem] bg-card/40 backdrop-blur-xl p-8 border border-white/10 shadow-xl hover:border-page/30 hover:bg-card/60 transition-all transform-gpu hover:-translate-y-2">
 								<div class="mx-auto mb-6 w-fit text-page group-hover:rotate-12 transition-transform">
 									{item.icon}
 								</div>
@@ -182,23 +182,13 @@ import { Badge } from "@/components/ui/badge"
 				</div>
 			</section>
 
-			<section class="px-8 md:px-16 pb-32">
-				<div class="w-full max-w-7xl mx-auto">
-					<div class="rounded-[3rem] bg-linear-to-br from-[#003366] to-[#1C274C] p-12 text-center text-white shadow-2xl relative overflow-hidden">
-						<div class="relative z-10">
-							<h2 class="mb-6 text-3xl font-bold lg:text-4xl">Experience the project live</h2>
-							<p class="mb-10 text-white/70 max-w-xl mx-auto">
-								The platform is fully operational and helping thousands of citizens navigate their digital government services daily.
-							</p>
-							<a href="https://navody.slovensko.sk" target="_blank" class="inline-flex items-center rounded-full bg-white px-10 py-4 font-bold text-[#003366] hover:bg-page hover:text-white transition-all transform-gpu hover:scale-105">
-								Visit navody.slovensko.sk
-								<ExternalLink className="ml-2 size-4" />
-							</a>
-						</div>
-						<div class="absolute -right-20 -bottom-20 size-80 bg-white/10 blur-3xl rounded-full"></div>
-					</div>
-				</div>
-			</section>
+			<ProjectCTA
+				client:load
+				title="Experience the project live"
+				description="The platform is fully operational and helping thousands of citizens navigate their digital government services daily."
+				buttonText="Visit navody.slovensko.sk"
+				href="https://navody.slovensko.sk"
+			/>
 		</main>
 
 		<Footer client:load />

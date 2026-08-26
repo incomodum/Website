@@ -7,8 +7,8 @@ export default function Contact() {
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-				viewport={{ once: true }}
+				transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+				viewport={{ once: false }}
 				className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-border/50 bg-linear-to-b from-card/80 via-card/50 to-card/30 p-8 text-center shadow-2xl shadow-black/5 backdrop-blur-xl md:p-16"
 			>
 				{/* Ambient Background Aura */}
