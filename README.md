@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  Presentation website for our team
+  <strong>Sleek presentation website and project portfolio for our team.</strong>
 </p>
 
 <br/>
@@ -21,16 +21,18 @@
 
 ## 🚀 About
 
-**incomodum.com** is a sleek and modern presentation website built to showcase our team, projects, and vision. It is designed with performance and responsiveness in mind, ensuring an optimal experience across all devices.
+**incomodum.com** is a modern, high-performance presentation website built to showcase our engineering team, mission, and featured digital solutions. Designed with a custom glassmorphic aesthetic, fluid micro-interactions, and instant system/manual dark mode toggling.
 
+---
 
-## 📌 TODO
-- [ ] Team Section
-- [ ] Better mobile menu + Hover for nav items
-- [ ] Better SEO
-- [ ] Add more project pages
-<!-- - [ ] https://tailwindcss.com/plus/templates/radiant/preview -->
+## ✨ Tech Stack
 
+* **Framework:** [Astro](https://astro.build/) (Static & SSR Performance)
+* **UI & Interactivity:** [React](https://react.dev/) & [Tailwind CSS](https://tailwindcss.com/)
+* **Animations:** [Motion](https://motion.dev/)
+* **Icons:** [Lucide Icons](https://lucide.dev/)
+
+---
 
 ## 🛠️ Local Setup
 
@@ -45,13 +47,19 @@ corepack enable
 ```
 
 ### 2️⃣ Install Dependencies
-To install all required Node.js modules, run:
+To install all required packages, run:
 ```sh
 pnpm install
 ```
-
 ### 3️⃣ Run Development Server
-To start the development server, use:
+To start the local development server, use:
+
 ```sh
 pnpm run dev
 ```
+Open http://localhost:4321 in your browser to view the application.
+
+## 📌 Roadmap
+- [x] Team & Contact Section
+- [x] SEO Optimization & OpenGraph Metadata
+- [ ] Additional Project Case Studies
